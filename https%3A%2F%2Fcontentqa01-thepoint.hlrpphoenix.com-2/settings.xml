@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="0e372e93-bb1d-41e5-8cae-04cea2e3b6f7" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://contentqa01-thepoint.hlrpphoenix.com 2" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings id="2182ed70-2cbb-4a13-ba2c-e6cae3380a77">
+    <con:setting id="0e372e93-bb1d-41e5-8cae-04cea2e3b6f7fileName">https%3A%2F%2Fcontentqa01-thepoint.hlrpphoenix.com-2</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints/>
+</con:interface>

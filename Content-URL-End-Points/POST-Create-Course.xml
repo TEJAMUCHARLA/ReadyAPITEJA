@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="POST Create Course" path="/Course/Create" id="af982e1b-32f6-4c5c-87f5-5d11a2403157" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="af982e1b-32f6-4c5c-87f5-5d11a2403157fileName">POST-Create-Course</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="POST Create Course" id="4be5ca70-f5f6-470b-b561-759e2440798b" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>IsActive</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>Id</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>TitleId</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>RedirectOnComplete</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>InstitutionName</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>ProgramType</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>Name</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>Time</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>Term</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>Location</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>InstitutionId</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="POST Create Course" id="6aceb4e4-ace9-428a-8ed0-fcda01123f02" mediaType="multipart/form-data" postQueryString="true">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment><con:entry key="Cookie" value="cf_clearance=RIkc6gZHZWAkkrpZJbywHKuAgXcZQzILL_F96O6NNFk-1694575055-0-1-cde3f126.c9cea907.e8f9a00d-0.2.1694575055; ASP.NET_SessionId=s4zmmvuim3dmkbwwwvvje4tm; WKHPE.ThePoint.CookieTest=&quot;&quot;; PassiveAuthenticationCookie=true; liveagent_oref=https://preprod-sso.hlrpbooks.com/; OptanonAlertBoxClosed=2023-09-13T03:17:49.595Z; liveagent_sid=f6b0acfa-1c66-4e2a-abd9-622d20e17054; liveagent_vc=2; liveagent_ptid=f6b0acfa-1c66-4e2a-abd9-622d20e17054; .ASPXAUTH=AC7442B32275A10B8577D6C4B50BCAA4FE2221F05B87B5693E84EE256C648CDC643E27F9156FB0437487338E8863984D2676C447E547C6961FA0A8280341A9DD55990C8D983004390C273A26357AF0AE01E72621E6BFA7B7C41DD6EDBE6F12141930587A07C50507D9F73C637E3193AC2214FE06494A96E50EE69F9833B03968BFD16DABD0CC406694780DDAAD6A2ACC83380CFEC6771C7DF9608D4E81457B256AAD3B6D2CCD312F90737AF083E0E9F5BC29C57BB0FD5585446747BE8607711EAE226B7492F9AA0CB28F32EF05ADF5B89450F0C2B308357786291E748916608B95B5F550B772C2444D364DFD299F19951564E43C10497D033E44567E2D65E82ADDC3C49FB4E9D11A7941355943962FE2E7579DF49164C509F9BE7315011187413E7B32782B4FE390708FEE4472D8549E06898096C74723DB261D68E1B6C448125D23ABA91544806309AFCF078D3DCBDE70D42FCBC53E4278D3396B9CBE043EFD36CD4C10B0DEFE2876E3FD9F52834B375C2A947568AEEA5E950F796281E1798E550C4A17CBAF4E4F04B9B032F8AAEE832F22F5C04EE9E70A8B952E27E55274B38D73E673735868B58383D2CC00A0EA2A5A964C6DC92FB886BB6A298AA3E2D85CCA086A3B0A62DB2D0D846A5B04462BCF98128391EA85B73CD06AC0D9491126C7C8F19CA9B7886633A2B7C535F53C7F963836BC13F2B4FD32D74AF0EB42260F604873DC5E5557281DB4FA050522CE715FA30EBF22B9FF15EE74A1FFB7448FC98D0692E0C38DC8A3297BA8583C83048D3882B4C54AAA2ED917129840CCE6169E54E85D2C67024C87FE2E9111E8271BD4BAAD8AC1233E1AFB29ADDCACABF8AC95045A7A2FD9816A3F2156B8C195B9CA0994484B159C279FAEA8F60085A0B751E801E077E283F1455AF4552C840F40AD480BA99D18943FC50C9A7417DE934D690964C66BB22E5D94CD667EF49D0CCDE46FBF8B319F65EFCB98CACA75E4F79D4C00F9; OptanonConsent=isGpcEnabled=0&amp;datestamp=Wed+Sep+13+2023+09%3A32%3A33+GMT%2B0530+(India+Standard+Time)&amp;version=6.38.0&amp;isIABGlobal=false&amp;consentId=eac55d60-90c5-4e15-a4a7-42265c46d1f4&amp;interactionCount=1&amp;landingPath=NotLandingPage&amp;groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&amp;hosts=H160%3A1%2CH115%3A1%2CH63%3A1%2CH114%3A1%2CH117%3A1%2CH23%3A1%2CH116%3A1&amp;genVendors=&amp;geolocation=IN%3BTG&amp;AwaitingReconsent=false; CloudFront-Key-Pair-Id=APKAIFKBUKZZ73UYKL7A; thepoint_token_access=&quot;eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzc28ud2tocGUuY29tIiwiYXVkIjoiM2MzOTg0NmMtODg2YS1kZjExLWIxMTUtMDA1MDU2YzAwMDA4IiwiYXV0aF90aW1lIjoxNjk0NTg0NTE2LCJuYW1lIjoiQVBJX0F1dG9tYXRpb24gU3R1ZGVudDEwIiwianRpIjoiNDc1N2MxOGQtNTM5Ny00NTQyLTk0OTYtMzliNzY1MGU2ODY5IiwiaWF0IjoxNjk0NTg0NTE2LCJleHAiOjE2OTQ2NzA5MTYsInN1YiI6IjFhOGY0MDM5LWQzZmYtNDY5OS05NzU0LTQ1NGMwMTJjZTI0MiIsInJvbGVzIjoid2tocGUtZW5kIHVzZXIiLCJ3a2hwZV9wZXJtaXNzaW9ucyI6WyJDYW5Vc2VQZXJzb25hbGl6YXRpb25GZWF0dXJlcyJdLCJ3a2hwZV90b2tlbiI6InBzNEhnVFgxWU1jbWNoRjRyZkp0Mk1CY1dLZis0UEU5SHBPZTlIREczV28rS2MzY21ZY1JKQzQveGJueDdoM3VucFZzU0JidVR0OFQ1TWU1cmhoY2NxYlBCT0FLeE14aEFYVEtvY0tlL2R3a09seHNiM2hoNCtSTThjc0IyV2FSdjZjTmUwSlJWMHJQQXVyUmphUjQvUVBPa3RTUWhWb0ZDcHkwMjE5ZlcrZVBIYmF1aUxyZEhWbXFwbWhBcDN2WThPdFdzWW5QTDhFYktEakZkaE1xT3NQOGN2dFVvdG53U28wZGxET2JKYjN3NjFheGljOHZ3UnNvT01WMkV5bzYzMHdyQkJ1NzE1MFl5d1VOSVdXcTk0Y2ZCVjBUVVcvUyIsInRva2VuX3R5cGUiOiJiZWFyZXIifQ.nDXKTDnK-x-ApauUAtTv5umrBH9G_6mv9bERR8Xn53I2uZMC0BmixBM0jhvtKyOMaRyG6ytNPxUeT0opM_4_p-rbVVKy_3coFMS3bOnv_9U4Uw9VYVBQUhNrcScpH9mrH2xVC_ySwZ5tkm2GCszvIbqrYAkHz2IVp5Uj2zXU3ss&quot;; CloudFront-Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9xZTAxLWNjbS5obHJwcGhvZW5peC5jb20vKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTY5NDYyNzcyM319fV19; CloudFront-Signature=QhqQ~~ONfyrkmJseGtIGqla~xa6EJYIWE~VlrqjV6i6yk2Rb-PvnyTP5r94Ri88g4c61ZIxPJLwpI4X1YwwkrnimVRf4VH27TKNDh4HPA40EYFQnHs2XFAwe89hushsO~CdJ65j3f3jV8DldhVfAD2~lJzR8oBo8xLWQfmrLA1wWm94e632VVLKe84wL0DjFM2Kx58bpsv9Jsohs2Oo1L-dzOft7QZNNvRyQC4J1L~f3Q12WwiB9lqsR~PjJCNTXcmp7e0wzQnDavQKKr~Fxz3yJoKUJsYYr3aU2gzaCmIkFFkMR5NWqdr6TH1SSuQtp7JluJDQ-ZBiZQOVZZe-1aA__; AWSALB=xon7agVYgU5bTJDca5g6dbG8WtO7DTf0kahw656i16fED//Mz8nkNfIzLNketsABv/UNcqRMaNreUuHsVtNEvTJXwtJ6LwsT7/XKIxGebkEKfwDrPRQuYR7y8GW1; AWSALBCORS=xon7agVYgU5bTJDca5g6dbG8WtO7DTf0kahw656i16fED//Mz8nkNfIzLNketsABv/UNcqRMaNreUuHsVtNEvTJXwtJ6LwsT7/XKIxGebkEKfwDrPRQuYR7y8GW1" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="xaccessToken" value="${#Project#xaccessTokenInstructor}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Content-Type" value="application/x-www-form-urlencoded" xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></con:setting>
+        <con:setting id="com.eviware.soapui.support.editor.views.xml.form2.FormEditorView@ViewType">Mandatory and Data</con:setting>
+      </con:settings>
+      <con:request/>
+      <con:originalUri>https://contentqa01-thepoint.hlrpphoenix.com/NotFoundError</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="InstitutionName" value="Misc-Default Filler"/>
+        <con:entry key="InstitutionId" value="001d0000029ZCmSAAW"/>
+        <con:entry key="IsActive" value="True"/>
+        <con:entry key="Id" value="00000000-0000-0000-0000-000000000000"/>
+        <con:entry key="ProgramType" value="BSN"/>
+        <con:entry key="TitleId" value="ae1088d9-4b7c-47f1-aadf-36da00af87b9"/>
+        <con:entry key="Name" value="DEMO3451234567"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>IsActive</con:entry>
+        <con:entry>Id</con:entry>
+        <con:entry>TitleId</con:entry>
+        <con:entry>RedirectOnComplete</con:entry>
+        <con:entry>InstitutionName</con:entry>
+        <con:entry>InstitutionId</con:entry>
+        <con:entry>ProgramType</con:entry>
+        <con:entry>Name</con:entry>
+        <con:entry>Time</con:entry>
+        <con:entry>Term</con:entry>
+        <con:entry>Location</con:entry>
+      </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="cf5ed83e-b834-45a4-90bc-14b6aa7784d5">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

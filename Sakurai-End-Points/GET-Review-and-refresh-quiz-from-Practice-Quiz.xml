@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="GET Review and refresh quiz from Practice Quiz" path="/${#Project#Version}/reviewRefreshClassSettings" id="c99ca676-d919-46bf-827d-5e1058379f88" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c99ca676-d919-46bf-827d-5e1058379f88fileName">GET-Review-and-refresh-quiz-from-Practice-Quiz</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET Review and refresh quiz from Practice Quiz" id="19cf4a7b-fb4e-45d2-9444-960dd0356993" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>classId</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="GET Review and refresh quiz from Practice Quiz" id="fdba9b63-7df0-47c4-99a4-f969d03925fd" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="classId" value="1500177731"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>classId</con:entry>
+      </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

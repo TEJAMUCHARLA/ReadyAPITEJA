@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="GET Course details" path="/${#Project#Version}/classes/{ClassID}" id="6add7e1e-80ad-4f46-a716-3d1308730bb3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="6add7e1e-80ad-4f46-a716-3d1308730bb3fileName">GET-Course-details</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="true">
+      <con:name>ClassID</con:name>
+      <con:value>ClassID</con:value>
+      <con:style>TEMPLATE</con:style>
+      <con:default>ClassID</con:default>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="GET Course details" id="b9583441-8382-4096-8c15-ee7fa73e297a" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="GET Course details" id="293d2e56-549f-404d-8391-f73c565c8ee2" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

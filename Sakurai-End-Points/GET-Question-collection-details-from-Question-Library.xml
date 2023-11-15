@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="GET Question collection details from Question Library" path="/${#Project#Version}/questionSets/{QuestionCollectionID}" id="c8a216f2-904f-4a4d-9398-554e0f134bd1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c8a216f2-904f-4a4d-9398-554e0f134bd1fileName">GET-Question-collection-details-from-Question-Library</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter>
+      <con:name>QuestionCollectionID</con:name>
+      <con:value>1500132556</con:value>
+      <con:style>TEMPLATE</con:style>
+      <con:default>1500132556</con:default>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="GET Question collection details from Question Library" id="c82af7a3-10a0-4ec2-a3eb-5820d8c62f51" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="GET Question collection details from Question Library" id="8e2fa680-49f5-4573-8e09-afd511407a44" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>QuestionCollectionID</con:entry>
+      </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

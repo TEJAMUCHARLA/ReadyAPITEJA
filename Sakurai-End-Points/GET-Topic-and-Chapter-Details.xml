@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="GET Topic and Chapter Details" path="/${#Project#Version}/sections" id="06899dc2-4ab5-4292-8c94-239873fefd05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="06899dc2-4ab5-4292-8c94-239873fefd05fileName">GET-Topic-and-Chapter-Details</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="true">
+      <con:name>classId</con:name>
+      <con:value>{ClassId}</con:value>
+      <con:style>QUERY</con:style>
+      <con:default>{ClassId}</con:default>
+    </con:parameter>
+    <con:parameter required="true">
+      <con:name>isbn</con:name>
+      <con:value>{ISBN}</con:value>
+      <con:style>QUERY</con:style>
+      <con:default>{ISBN}</con:default>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="GET Topic and Chapter Details" id="6c6da71c-ddfd-4b66-800f-83e2fe03fd53" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="GET Topic and Chapter Details" id="dea09f71-4ace-4b73-8e3b-bcec7fd35084" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="classId" value="1500177741"/>
+        <con:entry key="isbn" value="9781469830599"/>
+      </con:parameters>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

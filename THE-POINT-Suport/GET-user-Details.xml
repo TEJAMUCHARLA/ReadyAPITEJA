@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="GET user Details" path="/User" id="1b6e0d9a-7807-4829-aaeb-4d6aaf202115" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="1b6e0d9a-7807-4829-aaeb-4d6aaf202115fileName">GET-user-Details</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="d8226a0b-2558-4e4d-9624-5553c0d2d5ee" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>FirstName</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>LastName</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>EmailAddress</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>Username</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>UserRoleId</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>SearchTypes</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>institutionName</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>customerId</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>currentInstitutionName</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>currentCustomerId</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>Search</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="0482f3bd-e76c-47a9-b209-96ff4856ecf0" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Cookie" value="${#Project#ACookie_Value#$}" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="Username" value="API_Automation.instrcutor33@wk.com"/>
+        <con:entry key="Search" value="Search"/>
+        <con:entry key="SearchTypes" value="ExactMatch"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>FirstName</con:entry>
+        <con:entry>LastName</con:entry>
+        <con:entry>EmailAddress</con:entry>
+        <con:entry>Username</con:entry>
+        <con:entry>UserRoleId</con:entry>
+        <con:entry>SearchTypes</con:entry>
+        <con:entry>institutionName</con:entry>
+        <con:entry>customerId</con:entry>
+        <con:entry>currentInstitutionName</con:entry>
+        <con:entry>currentCustomerId</con:entry>
+        <con:entry>Search</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="PUT Update question details from question library" path="/${#Project#Version}/questionSets/{ID}" id="4872a278-d77c-4dff-b090-d9f588e0e4f2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="4872a278-d77c-4dff-b090-d9f588e0e4f2fileName">PUT-Update-question-details-from-question-library</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter>
+      <con:name>ID</con:name>
+      <con:value>1500132545</con:value>
+      <con:style>TEMPLATE</con:style>
+      <con:default>1500132545</con:default>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="PUT Update question details from question library" id="7362bca4-9ed8-4318-8dca-e175c4e3f1c3" method="PUT">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="PUT Update question details from question library" id="7b768d44-d8fa-422f-8fb1-e80014b1a526" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request>{
+  "parentId": null,
+  "name": "Test345",
+  "mode": "info",
+  "totalQuestions": 2,
+  "totalRetiredQuestions": null,
+  "clinicalJudgmentExam": null,
+  "enabled": true,
+  "isStandardizedExam": false,
+  "questionSetItems": [
+    {
+      "itemId": 23955,
+      "type": "question",
+      "order": 1
+    },
+    {
+      "itemId": 22688,
+      "type": "question",
+      "order": 2
+    }
+  ],
+  "classIdScope": null,
+  "parentOwner": null,
+  "user": "1500764322",
+  "product": "89",
+  "questions": [
+    "23955",
+    "22688"
+  ],
+  "caseStudies": [],
+  "onHoldQuestions": []
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>ID</con:entry>
+      </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

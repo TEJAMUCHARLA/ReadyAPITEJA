@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Add and update subscripitions" path="/Subscription/Update" id="518b4232-5372-4a7d-8aa5-0382cf5c1aa0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="518b4232-5372-4a7d-8aa5-0382cf5c1aa0fileName">Add-and-update-subscripitions</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="true">
+      <con:name>format</con:name>
+      <con:value>json</con:value>
+      <con:style>QUERY</con:style>
+      <con:default>json</con:default>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="Method 1" id="6dd768af-6d26-4332-9e61-198930ae941d" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="f1f3a3d2-25c8-450a-9e18-eea97dbab231" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Cookie" value="${#Project#ACookie_Value#$}" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+      </con:settings>
+      <con:request>{
+  "ExpireSubscriptions": [],
+  "IncreaseExpirationOfSubscriptions": [],
+  "NewSubscriptions": [
+    {
+      "Isbn": "9781975186777",
+      "ExpirationDate": "11/11/2024",
+      "UserInstanceId": "3051890"
+    }
+  ],
+  "SubscriptionChangeDocumentation": {
+    "Reason": "Student: Internal Testing/Review",
+    "OtherReason": null,
+    "ServiceCloudCaseId": "Test"
+  }
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

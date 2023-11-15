@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="POST Create question from question library" path="/${#Project#Version}/questions" id="076f0a89-f85c-4c34-b671-ad7680161f3f" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="076f0a89-f85c-4c34-b671-ad7680161f3ffileName">POST-Create-question-from-question-library</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="POST Create question from question library" id="b358b986-c712-4a6c-b1ba-7d5df3edda02" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="POST Create question from question library" id="74738366-6c81-4c06-a1a6-768f1579d08b" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request>{
+  "questionText": "Question1",
+  "mediaType": null,
+  "questionMedia": null,
+  "mediaUrl": null,
+  "interactions": [
+    {
+      "type": "choice",
+      "subType": "multiple_choice",
+      "minChoices": 1,
+      "maxChoices": 1,
+      "shuffle": true,
+      "expectedLength": 1,
+      "label": "",
+      "prompt": "",
+      "answerChoices": [
+        {
+          "id": 0,
+          "text": "a",
+          "columnLabel": "",
+          "mediaUrl": "",
+          "media": null,
+          "mediaType": null,
+          "fixed": false,
+          "orderPriority": 0,
+          "correctColumnLabel": "",
+          "group": 0
+        }
+      ],
+      "correctResponse": {
+        "id": null,
+        "value": [
+          0
+        ],
+        "ordered": false
+      },
+      "tools": [],
+      "answerChoicesLabel": "",
+      "answerChoicesLabelSecondary": "",
+      "selectedAnswerLabel": ""
+    }
+  ],
+  "feedbacks": [],
+  "references": [],
+  "difficulty": null,
+  "order": null,
+  "status": null,
+  "isSecure": false,
+  "unassociated": false,
+  "answerCount": null,
+  "referenceQuestionId": null,
+  "misconceptionRating": null,
+  "classMisconceptionRating": null,
+  "parentId": null,
+  "hasVariant": false,
+  "assignmentMeanTimeOnQuestion": null,
+  "assignmentMedianTimeOnQuestion": null,
+  "inQCDisplayContext": false,
+  "product": "89",
+  "scenarioItems": null,
+  "instructor": "1500764322",
+  "author": null,
+  "learningObjectives": [
+    "16864",
+    "17824"
+  ],
+  "editorialState": null
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

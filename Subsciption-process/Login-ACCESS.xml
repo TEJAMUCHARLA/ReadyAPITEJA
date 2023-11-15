@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="3870b619-f389-47b9-8a52-ac6ee673b4b8" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Login ACCESS" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="3870b619-f389-47b9-8a52-ac6ee673b4b8fileName">Login-ACCESS</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Genarete Access tokens" id="b474c32e-5654-4240-858c-9eab9cf67560">
+    <con:settings/>
+    <con:config service="UsernameInSso" resourcePath="/Authentication/UsernameInSso" methodName="UsernameInSSO" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Genarete Access tokens" id="36f7287c-3c0a-4cce-b51d-818ec310d707" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request>{
+  "Email": "aadmin",
+  "Password": "Welcome01",
+  "PostbackUrlOnSuccess": "https://qe02-support.thepoint.hlrpphoenix.com/Authentication/ProcessPostbackFromSso",
+  "SiteId": "eb73bd9b-fd16-4440-819c-e73a755b6c6f",
+  "StaySignIn": true,
+  "UrlToRedirectOnSuccess": "/home/index",
+  "Timestamp": "2023-11-07T04:32:15.677Z",
+  "SourceUrl": "",
+  "AccessCode": "",
+  "SiteInfoType": "",
+  "WorkflowId": ""
+}</con:request>
+        <con:originalUri>https://preprod-sso.hlrpbooks.com/Authentication/UsernameInSso</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="bb369fa7-200c-43ad-bedd-77d8ab02c489" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="GroovyScriptAssertion" id="d095396d-a409-4927-b408-dc5189ed6103" name="Script Assertion">
+          <con:configuration>
+            <scriptText>import groovy.json.JsonSlurper
+import java.lang.*;
+
+def response = context.expand( '${Genarete Access tokens#Response}' )
+
+def verifyResponse = new JsonSlurper().parseText(response)
+log.info(verifyResponse.Data.AuthenicationResult)
+
+assert verifyResponse.Data.AuthenicationResult != null</scriptText>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="format" value="json"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>format</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="REST Request" id="4790efcf-a473-405c-95ad-1cad8ac02c58">
+    <con:settings/>
+    <con:config service="THE POINT Suport" resourcePath="/Authentication/ProcessPostbackFromSso" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request" id="ef41c1b9-e47c-41a3-8cd7-181639e969c2" mediaType="multipart/form-data" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qe02-support.thepoint.hlrpphoenix.com/Authentication/Challenge</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="deed2cf1-76a8-49d0-bbfc-799d6def48f3" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="REST Request 2" id="ab04f276-f5f2-40a7-b684-de535fa37982">
+    <con:settings/>
+    <con:config service="Content URL End Points" resourcePath="/Authentication/ProcessPostbackFromSso" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request 2" id="b433da26-0b30-4662-b3f8-c6ee22b06fea" mediaType="multipart/form-data" postQueryString="true">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qe02-support.thepoint.hlrpphoenix.com/Authentication/Challenge</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="4674d5cd-0885-4f13-8b42-10404068742b" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="PostbackUrlOnSuccess" value=""/>
+          <con:entry key="MessageSignature" value="df"/>
+          <con:entry key="AuthenicationResult" value="sds"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>AuthenicationResult</con:entry>
+          <con:entry>MessageSignature</con:entry>
+          <con:entry>TimeStamp</con:entry>
+          <con:entry>UrlToRedirectOnSuccess</con:entry>
+          <con:entry>SourceUrl</con:entry>
+          <con:entry>PostbackUrlOnSuccess</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

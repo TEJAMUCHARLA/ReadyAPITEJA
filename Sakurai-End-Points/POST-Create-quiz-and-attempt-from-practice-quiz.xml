@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="POST Create quiz and attempt from practice quiz" path="/${#Project#Version}/quizzes" id="cafb6b21-3e86-4b42-a5c1-c5ba9ceed5a9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="cafb6b21-3e86-4b42-a5c1-c5ba9ceed5a9fileName">POST-Create-quiz-and-attempt-from-practice-quiz</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="POST Create quiz and attempt from practice quiz" id="b96d962b-a4ed-4ae3-a94b-fb127d37ad47" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="POST Create quiz and attempt from practice quiz" id="61ae3b76-57f7-4ffa-9b88-57193b44500e" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request>{
+  "startedOnTimeStamp": null,
+  "questionsCompleted": null,
+  "correctResultsCount": null,
+  "quizLength": 5,
+  "quizIndex": null,
+  "isPracticeItemQuiz": false,
+  "timeLeft": null,
+  "student": "1500765541",
+  "class": "1500175351",
+  "courseSection": null,
+  "termTaxonomies": [
+    "312"
+  ],
+  "assignment": null
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

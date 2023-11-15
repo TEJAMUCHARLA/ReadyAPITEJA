@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="ab26e40e-0f63-41a1-a44f-524be590e2f4" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="StudentInstructorLogin 2" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" zephyrTestName="" zephyrTestId="" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="ab26e40e-0f63-41a1-a44f-524be590e2f4fileName">StudentInstructorLogin-2</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Get Instructor Access Token" id="10126cc1-ade7-4fc8-8956-6e5e9211db23">
+    <con:settings/>
+    <con:config service="UsernameInSso" resourcePath="/Authentication/UsernameInSso" methodName="UsernameInSSO" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Get Instructor Access Token" id="36f7287c-3c0a-4cce-b51d-818ec310d707" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request>{
+  "Email": "aadmin",
+  "Password": "Welcome01",
+  "PostbackUrlOnSuccess": "https://qe02-support.thepoint.hlrpphoenix.com/Authentication/ProcessPostbackFromSso",
+  "SiteId": "eb73bd9b-fd16-4440-819c-e73a755b6c6f",
+  "StaySignIn": true,
+  "UrlToRedirectOnSuccess": "/home/index",
+  "Timestamp": "2023-11-09T12:20:49.007Z",
+  "SourceUrl": "",
+  "AccessCode": "",
+  "SiteInfoType": "",
+  "WorkflowId": ""
+}</con:request>
+        <con:originalUri>https://preprod-sso.hlrpbooks.com/Authentication/UsernameInSso</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="bb369fa7-200c-43ad-bedd-77d8ab02c489" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="GroovyScriptAssertion" id="d095396d-a409-4927-b408-dc5189ed6103" name="Script Assertion">
+          <con:configuration>
+            <scriptText>import groovy.json.JsonSlurper
+import java.lang.*;
+
+def response = context.expand( '${Get Instructor Access Token#Response}' )
+
+def verifyResponse = new JsonSlurper().parseText(response)
+log.info(verifyResponse.Data.AuthenicationResult)
+
+assert verifyResponse.Data.AuthenicationResult != null</scriptText>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="format" value="json"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>format</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Wait for Access instructor" id="eb399bc6-3843-456a-81a8-d57ce3b832c2">
+    <con:settings/>
+    <con:config>
+      <delay>${#Project#LoginDealy}</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="TEJA" id="ffe7c2a3-e488-4809-93ea-1093f91c47ba">
+    <con:settings/>
+    <con:config>
+      <script>import groovy.json.JsonSlurper
+import java.lang.*;
+/*
+def value = testRunner.testCase.testSteps["Get Instructor Access Token"].testRequest.response.responseHeaders
+
+for(def cookie in value)
+{
+	log.info(cookie)
+}
+*/
+def value = testRunner.testCase.testSteps["Get Instructor Access Token"].testRequest.response.responseHeaders["Set-Cookie"]
+
+def data = ""
+
+for(def dataEach in value)
+{
+	data=data+dataEach
+	//log.info("dataEach "+dataEach)
+}
+
+log.info("value "+data.toString())
+testRunner.testCase.setPropertyValue("TEJACOOKIE", data.toString())</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="httprequest" name="PSTBACK" id="8f53d313-79a5-407e-9dc6-e65831d28b3c" disabled="true">
+    <con:settings/>
+    <con:config method="POST" xsi:type="con:HttpRequest" id="d6fb5dcc-bc85-4773-b472-3205ddd6b8d1" name="PSTBACK" postQueryString="false" mediaType="multipart/form-data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://qe02-support.thepoint.hlrpphoenix.com/Authentication/ProcessPostbackFromSso</con:endpoint>
+      <con:request><![CDATA[AuthenicationResult:<WkhpeAuthenticationResult xmlns="http://schemas.sso.wkhpe.com/2010/07/10" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><AccessToken>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzc28ud2tocGUuY29tIiwiYXVkIjoiZWI3M2JkOWItZmQxNi00NDQwLTgxOWMtZTczYTc1NWI2YzZmIiwiYXV0aF90aW1lIjoxNjk5NTM1MjkzLCJuYW1lIjoiYW50b2FydWwgdGh5YWdhcmFqYW4iLCJqdGkiOiJhM2EwMjhjOS04ODBmLTQ0YjgtYWY4ZC0xOTg1NzRkOTQxMDQiLCJpYXQiOjE2OTk1MzUyOTMsImV4cCI6MTY5OTYyMTY5Mywic3ViIjoiN2FmNDhjNjktNTU0NC00NWNlLTlhMDEtNDQwYjAwZjkzMWYzIiwicm9sZXMiOiJ3a2hwZS1hZG1pbiIsIndraHBlX3Blcm1pc3Npb25zIjpbIkhhc0FjY2Vzc1RvQWxsQ29udGVudCIsIkNhblVzZVBlcnNvbmFsaXphdGlvbkZlYXR1cmVzIl0sIndraHBlX3Rva2VuIjoiY1k4dVJBc0ZTK2RkTThKdVluKzFtcE01aXRsUW5XK2QxLzFoeERrUm9keC94cnh6S0dVVE9JZlIybDl6UjlMb2tQcUxsWHBNT3JYeXlKVnBjWFpiaVEyRmRDNEplOUV0Zjh6ZEJGZlpyQk5MR0ZrZHlhZGpRN0F4alorMlY5bGd3c2lwRTE4UlVnWTBjSC8yVGtocFFROWcxVy8ybmJrM0JGbDR0a2oxMjY2QVduVDJPYzJCeXhraStEakozSStOTXdIRVlBYmhuQXBLalIyVU01c2x2ZkRyVnJHSnp5L0JHeWc0eFhZVEtqcmZUQ3NFRzd2WG5SM2o1VUZZamtSaHIzUnVWckF2WUtnYktEakZkaE1xT3ZLektRQmttMnhody94eSsxU2kyZkQ2aFBEVGZjaXlxYlVlM20wVjlRVWEiLCJ0b2tlbl90eXBlIjoiYmVhcmVyIn0.bhuDTi6-0dhBA6-_oktKWUXo1hH05XRD5z-je-zfXZemRVvpsgYB6qMq_ezJG_MyALH_RGKujCBAV64D9BeizSA33cBHlElzs1kSpIVuK3kPh9lwrxMNMHeRJ_5nAM8WoLuYrVtH8R7j_qv6TY5aAOBoL8MwYaKdATuXNjIWiBs</AccessToken><AccountMeetsTermsAndConditionsResults i:nil="true"/><AccountType>PersonalAccount</AccountType><ActiveProductCodesAndExpirations/><AddressLine1 i:nil="true"/><AddressLine2 i:nil="true"/><AllProductCodesAndExpirations/><AuthenticationMethod>Username</AuthenticationMethod><City i:nil="true"/><Country i:nil="true"/><Email>antoarul.thyagarajan@wolterskluwer.com</Email><FailureReasonCode i:nil="true"/><FailureResonMessage i:nil="true"/><FirstName>antoarul</FirstName><IdToken>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzc28ud2tocGUuY29tIiwiYXVkIjoiZWI3M2JkOWItZmQxNi00NDQwLTgxOWMtZTczYTc1NWI2YzZmIiwiYXV0aF90aW1lIjoxNjk5NTM1MjkzLCJuYW1lIjoiYW50b2FydWwgdGh5YWdhcmFqYW4iLCJqdGkiOiIzNWU1ZDdlOC05Y2M2LTQ2MzUtOWUxZS1iZDAyMjEwZDExYjkiLCJpYXQiOjE2OTk1MzUyOTMsImV4cCI6MTY5OTYyMTY5Mywic3ViIjoiN2FmNDhjNjktNTU0NC00NWNlLTlhMDEtNDQwYjAwZjkzMWYzIiwicm9sZXMiOiJ3a2hwZS1hZG1pbiIsIndraHBlX3Blcm1pc3Npb25zIjpbIkhhc0FjY2Vzc1RvQWxsQ29udGVudCIsIkNhblVzZVBlcnNvbmFsaXphdGlvbkZlYXR1cmVzIl0sImdpdmVuX25hbWUiOiJhbnRvYXJ1bCIsImZhbWlseV9uYW1lIjoidGh5YWdhcmFqYW4iLCJlbWFpbCI6ImFudG9hcnVsLnRoeWFnYXJhamFuQHdvbHRlcnNrbHV3ZXIuY29tIiwidXBkYXRlZF9hdCI6MTY1NDg3Mzc5Nywid2tocGVfYWN0aXZlX3N1YnNjcmlwdGlvbnMiOiJbXSJ9.JXMcp1gokK9wlQIQN6Ae9qYFsGaqc-8R4EBfdqzmCnS8TFmf_Uj_ytJH0t9toEOIcojNiOiX8ny1yIZnGtHSrvA0WiTQkP-zKWgnNyWyQDxeVr4wS6CzXYOLQ2ngmJPvN79RZv6S5hSsznS1UYsrpS5dZSvg6v8W10pywxMyV18</IdToken><Impersonator i:nil="true"/><InstitutionName>Wolters Kluwer</InstitutionName><IsReadOnly>false</IsReadOnly><LastName>thyagarajan</LastName><MessageId>9b60403f-feaa-48b0-99ac-8eddbd07d089</MessageId><Name>antoarul thyagarajan</Name><OriginalAuthenticationMethod>Username</OriginalAuthenticationMethod><Permisions><Permission><Description>Can create users for thePoint</Description><Id>4</Id></Permission><Permission><Description>Allow login into admin@thePoint</Description><Id>2</Id></Permission><Permission><Description>Allow login into support@thePoint</Description><Id>3</Id></Permission><Permission><Description>Can create users for thePoint</Description><Id>4</Id></Permission><Permission><Description>Has access all data for thePoint</Description><Id>5</Id></Permission><Permission><Description>Allow login into thePoint</Description><Id>1</Id></Permission><Permission><Description>Allow login into support@thePoint</Description><Id>6</Id></Permission><Permission><Description>Has access to hidden data for thePoint</Description><Id>7</Id></Permission><Permission><Description>Can Report on user subscriptions</Description><Id>10</Id></Permission><Permission><Description>Allow release of pending changes</Description><Id>11</Id></Permission><Permission><Description>Allows the user to edit production information</Description><Id>15</Id></Permission><Permission><Description>Allows the user to edit production resources</Description><Id>16</Id></Permission><Permission><Description>Allows the user to use personalized features in thePoint Product Suite</Description><Id>17</Id></Permission><Permission><Description>Allow the user to edit a template</Description><Id>21</Id></Permission><Permission><Description>Allow the user to release template changes</Description><Id>22</Id></Permission><Permission><Description>Allow user to create trial user accounts.</Description><Id>23</Id></Permission><Permission><Description>Allow user to create trial product offers.</Description><Id>24</Id></Permission><Permission><Description>Allow user to set up CBN institutional libraries.</Description><Id>25</Id></Permission><Permission><Description>Allow user to setup global, feature specific or isbn specific messages on thePoint.</Description><Id>26</Id></Permission><Permission><Description>Allow user to access ezpass 2.0 admin</Description><Id>27</Id></Permission><Permission><Description>Allow user to access ezpass 2.0 admin advanced functions</Description><Id>28</Id></Permission><Permission><Description>Allow user to view or update ezPass batch</Description><Id>34</Id></Permission><Permission><Description>Allow user to apply revisions to customer libraries</Description><Id>29</Id></Permission><Permission><Description>Allow user to impersonate other users</Description><Id>30</Id></Permission><Permission><Description>Allow user to request Sales Rep access codes</Description><Id>32</Id></Permission><Permission><Description>Allow user to add/remove available SRAC title offers</Description><Id>33</Id></Permission><Permission><Description>Can edit user profile</Description><Id>8</Id></Permission></Permisions><Postal i:nil="true"/><Province i:nil="true"/><RoleId>3</RoleId><SessionId>00000000-0000-0000-0000-000000000000</SessionId><Successful>true</Successful><TimeStamp>2023-11-09T13:08:13.9382429Z</TimeStamp><TimeToLive>2023-12-09T13:08:13.9382429Z</TimeToLive><TokenKey>cY8uRAsFS+ddM8JuYn+1mpM5itlQnW+d1/1hxDkRodx/xrxzKGUTOIfR2l9zR9LokPqLlXpMOrXyyJVpcXZbiQ2FdC4Je9Etf8zdBFfZrBNLGFkdyadjQ7AxjZ+2V9lgwsipE18RUgY0cH/2TkhpQQ9g1W/2nbk3BFl4tkj1266AWnT2Oc2Byxki+DjJ3I+NMwHEYAbhnApKjR2UM5slvfDrVrGJzy/BGyg4xXYTKjrfTCsEG7vXnR3j5UFYjkRhr3RuVrAvYKgbKDjFdhMqOvKzKQBkm2xhw/xy+1Si2fD6hPDTfciyqbUe3m0V9QUa</TokenKey><UserId>7af48c69-5544-45ce-9a01-440b00f931f3</UserId><Institution><BookstoreNumber i:nil="true"/><Country>US</Country><Identifier>03adb8f2-5ac9-44c2-b2f6-44977007ec6d</Identifier><InstitutionNumber i:nil="true"/><Name>Wolters Kluwer</Name><SLXAccountId i:nil="true"/><SfdcAccountId i:nil="true"/></Institution><ThirdPartyIntegrations/><UserType>Unknown</UserType></WkhpeAuthenticationResult>
+MessageSignature:fab67095c3d6608e0483339907a92ba52c049acf
+TimeStamp:11/9/2023 1:08:13 PM
+UrlToRedirectOnSuccess:/home/index
+SourceUrl:
+PostbackUrlOnSuccess:https://qe02-support.thepoint.hlrpphoenix.com/Authentication/ProcessPostbackFromSso]]></con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="httprequest" name="HTTP Request" id="d974d3f9-2674-4323-88e2-150c5a8b1464">
+    <con:settings/>
+    <con:config method="POST" xsi:type="con:HttpRequest" id="6e87ac7b-4e4f-45a2-8bfe-f62a4fb89388" name="HTTP Request" postQueryString="true" mediaType="multipart/form-data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Cookie" value="cf_clearance=YPdUGNtSCZi6g1aZFjRGRitdwSYXSi69k8_jFi_K6BQ-1699512467-0-1-bec9ad25.50b4d2e1.7183dbeb-0.2.1699512467; ASP.NET_SessionId=hoxpyxlr5sem4mnrboslwnz4; CloudFront-Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jb250ZW50cWEwMS1jY20uaGxycHBob2VuaXguY29tLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2OTk1NzY5Mjl9fX1dfQ__; CloudFront-Signature=VjaCwRC33dau-Ngxgn~FmdQ~qJK2Ch4N3ZsZ8QKiXCi-bxnY1r14MJKvAMYcUltZA6tzRCUBDGxOwtDYS3hXKEdz9J7WTbnbzWRQ8HGHGSi7KVBgWMoapRxb4MQR52AjAi81DybW2q2IljCQlnFW7-TJfQZ8bsOqODi4DEvpo1Wl7J5f1NQ5eQ9KChW5wp6BWMrB8uCddCbycmr5RNG9S8H4qieTJh1ZtIDqQlkrwXBtY3DP5sgNoLOTPSavm-GNivJuwbGHAOWgTjeI8um46xWHvnc9WLPZM636hFkCNb1jLUVzYZAAFFFIPP3nbRJzYruT2eycQSGWh0hn271NGg__; CloudFront-Key-Pair-Id=APKAIFKBUKZZ73UYKL7A; AWSALBCORS=RvulfUltlm3heNSwZ8Ls6xGg7KLcY26T1YigXYc6SuZbVKlcceZxctqpMBuqNNrx1NpT0GL8F5b18hxI8c8X0V/q2OtlBez27X+mvQM//MUyZb894LzfE1DTvHR2" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+      </con:settings>
+      <con:endpoint>https://contentqa01-thepoint.hlrpphoenix.com/Authentication/ProcessPostbackFromSso</con:endpoint>
+      <con:request><![CDATA[AuthenicationResult:<WkhpeAuthenticationResult xmlns="http://schemas.sso.wkhpe.com/2010/07/10" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><AccessToken>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzc28ud2tocGUuY29tIiwiYXVkIjoiM2MzOTg0NmMtODg2YS1kZjExLWIxMTUtMDA1MDU2YzAwMDA4IiwiYXV0aF90aW1lIjoxNjk5NTQ5ODQ0LCJuYW1lIjoiQVBJX0F1dG9tYXRpb24gU3R1ZGVudDAxIiwianRpIjoiNjQ1ODgwZjQtNTExMy00ZmQ2LTg3YWYtZWJmMThiYWFkZTFiIiwiaWF0IjoxNjk5NTQ5ODQ0LCJleHAiOjE2OTk2MzYyNDQsInN1YiI6IjJlYzA0NGE2LThjMDctNGIxMi04NTI0LTQ1NGMwMTIyMmViNiIsInJvbGVzIjoid2tocGUtZW5kIHVzZXIiLCJ3a2hwZV9wZXJtaXNzaW9ucyI6WyJDYW5Vc2VQZXJzb25hbGl6YXRpb25GZWF0dXJlcyJdLCJ3a2hwZV90b2tlbiI6IjVNMVE2OFpTanY1cW1USmkweWx6L0dDUnlvZG5CL1BiRldvUUVtRG52L0dYV05lZ1BzakNBUVFYbmY0VHo2ZTBNbTJGQk5tS3VwdVhoVnN1cUhLZXBYSFBoVHpZNzVVbjFCRysvQUh0VGJ6NlI5SHNlRUVwcExCQkI5N3BjMHo5M1hEUE82ZFk4VzVmMGJRVEtnSVIvcjNNVmN4YkhLdkpCUWZ2RXZpTlR3MmN3VVNIVndDbTh0QmtabldIaWJEemM2VTlPbytQNnA1WnFxWm9RS2Q3Mk1QOGN2dFVvdG53RkUxbnJJWGV5bkZ6cFQwNmo0L3FubG1xcG1oQXAzdlluWVp2MGJaUTl2ZitsZUlHR05CK2JLWDhuV1NzVzlvWCIsInRva2VuX3R5cGUiOiJiZWFyZXIifQ.uymUwVjXO3FnSpHz7C55NInMovNSKn-AueuuFnGXjURemYfZVqRyY04um_Hg8GTmHqTOiOSAeROSTuEx8qz222Kt4mGMduaNoL2sUqPeFYjxg8hP7h9jSFdmTxG3u89knu7qkBkH-BRZKSyjCViGypxVbMUfaSZZ6R0-F4Ay0Ow</AccessToken><AccountMeetsTermsAndConditionsResults i:nil="true"/><AccountType>PersonalAccount</AccountType><ActiveProductCodesAndExpirations><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975186777</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975182380</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975123901</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975178659</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975132552</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975222826</ProductCode></ProductCodeAndExpirationResult></ActiveProductCodesAndExpirations><AddressLine1 i:nil="true"/><AddressLine2 i:nil="true"/><AllProductCodesAndExpirations><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975186777</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975182380</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975123901</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975178659</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975132552</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975222826</ProductCode></ProductCodeAndExpirationResult></AllProductCodesAndExpirations><AuthenticationMethod>Username</AuthenticationMethod><City i:nil="true"/><Country i:nil="true"/><Email>API_Automation.Student01@wktest.com</Email><FailureReasonCode i:nil="true"/><FailureResonMessage i:nil="true"/><FirstName>API_Automation</FirstName><IdToken>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzc28ud2tocGUuY29tIiwiYXVkIjoiM2MzOTg0NmMtODg2YS1kZjExLWIxMTUtMDA1MDU2YzAwMDA4IiwiYXV0aF90aW1lIjoxNjk5NTQ5ODQ0LCJuYW1lIjoiQVBJX0F1dG9tYXRpb24gU3R1ZGVudDAxIiwianRpIjoiMDlkYzcxYjctNjQyNS00NzZhLThhYWQtOTkyODkyN2ViZjE1IiwiaWF0IjoxNjk5NTQ5ODQ0LCJleHAiOjE2OTk2MzYyNDQsInN1YiI6IjJlYzA0NGE2LThjMDctNGIxMi04NTI0LTQ1NGMwMTIyMmViNiIsInJvbGVzIjoid2tocGUtZW5kIHVzZXIiLCJ3a2hwZV9wZXJtaXNzaW9ucyI6WyJDYW5Vc2VQZXJzb25hbGl6YXRpb25GZWF0dXJlcyJdLCJnaXZlbl9uYW1lIjoiQVBJX0F1dG9tYXRpb24iLCJmYW1pbHlfbmFtZSI6IlN0dWRlbnQwMSIsImVtYWlsIjoiQVBJX0F1dG9tYXRpb24uU3R1ZGVudDAxQHdrdGVzdC5jb20iLCJ1cGRhdGVkX2F0IjoxNjk1MzYzNTg1LCJ3a2hwZV9hY3RpdmVfc3Vic2NyaXB0aW9ucyI6Ilt7XCJpc2JuXCI6XCI5NzgxOTc1MTg2Nzc3XCIsXCJwZXJzb25hXCI6XCJTdHVkZW50LCBDUFBsdXNcIixcImNvZGVcIjpcIjk3ODE5NzUxODY3NzdcIn0se1wiaXNiblwiOlwiOTc4MTk3NTE4MjM4MFwiLFwicGVyc29uYVwiOlwiU3R1ZGVudFwiLFwiY29kZVwiOlwiOTc4MTk3NTE4MjM4MFwifSx7XCJpc2JuXCI6XCI5NzgxOTc1MTIzOTAxXCIsXCJwZXJzb25hXCI6XCJTdHVkZW50LCBDUFBsdXNcIixcImNvZGVcIjpcIjk3ODE5NzUxMjM5MDFcIn0se1wiaXNiblwiOlwiOTc4MTk3NTE3ODY1OVwiLFwicGVyc29uYVwiOlwiU3R1ZGVudCwgQ1BQbHVzXCIsXCJjb2RlXCI6XCI5NzgxOTc1MTc4NjU5XCJ9LHtcImlzYm5cIjpcIjk3ODE5NzUxMzI1NTJcIixcInBlcnNvbmFcIjpcIlN0dWRlbnRcIixcImNvZGVcIjpcIjk3ODE5NzUxMzI1NTJcIn0se1wiaXNiblwiOlwiOTc4MTk3NTIyMjgyNlwiLFwicGVyc29uYVwiOlwiU3R1ZGVudFwiLFwiY29kZVwiOlwiOTc4MTk3NTIyMjgyNlwifV0ifQ.bgXK6MQNC0zwRTomc9hvfksNgfT_N3mdFjPaiufYhPKetvQjLm5wQV-QO5kg52GJNrfKnYK7b5AxzgJS6TUGgJP7F0Zc86RnhnA5OmoESwq0BgxtHJTETQfaOZfO7_mpIGR9DIsisw8-9tvOb33HIt07yO5XzCcOKXjiX17-l4o</IdToken><Impersonator i:nil="true"/><InstitutionName i:nil="true"/><IsReadOnly>false</IsReadOnly><LastName>Student01</LastName><MessageId>572119c7-149c-4f2f-9e04-2e81ad1e2721</MessageId><Name>API_Automation Student01</Name><OriginalAuthenticationMethod>Username</OriginalAuthenticationMethod><Permisions><Permission><Description>Allow login into thePoint</Description><Id>1</Id></Permission><Permission><Description>Allows the user to use personalized features in thePoint Product Suite</Description><Id>17</Id></Permission><Permission><Description>Can edit user profile</Description><Id>8</Id></Permission></Permisions><Postal i:nil="true"/><Province i:nil="true"/><RoleId>1</RoleId><SessionId>00000000-0000-0000-0000-000000000000</SessionId><Successful>true</Successful><TimeStamp>2023-11-09T17:10:44.8899553Z</TimeStamp><TimeToLive i:nil="true"/><TokenKey>5M1Q68ZSjv5qmTJi0ylz/GCRyodnB/PbFWoQEmDnv/GXWNegPsjCAQQXnf4Tz6e0Mm2FBNmKupuXhVsuqHKepXHPhTzY75Un1BG+/AHtTbz6R9HseEEppLBBB97pc0z93XDPO6dY8W5f0bQTKgIR/r3MVcxbHKvJBQfvEviNTw2cwUSHVwCm8tBkZnWHibDzc6U9Oo+P6p5ZqqZoQKd72MP8cvtUotnwFE1nrIXeynFzpT06j4/qnlmqpmhAp3vYnYZv0bZQ9vf+leIGGNB+bKX8nWSsW9oX</TokenKey><UserId>2ec044a6-8c07-4b12-8524-454c01222eb6</UserId><Institution><BookstoreNumber i:nil="true"/><Country i:nil="true"/><Identifier>99999999-9999-9999-9999-999999999999</Identifier><InstitutionNumber i:nil="true"/><Name>Unaffiliated</Name><SLXAccountId i:nil="true"/><SfdcAccountId i:nil="true"/></Institution><ThirdPartyIntegrations/><UserType>Unknown</UserType></WkhpeAuthenticationResult>
+MessageSignature:eb67516f8b368b2a411e1ef8519995d8effbe33b
+TimeStamp:11/9/2023 5:10:44 PM
+UrlToRedirectOnSuccess:https://contentqa01-thepoint.hlrpphoenix.com/MyContent
+SourceUrl:https://contentqa01-thepoint.hlrpphoenix.com/gateway
+PostbackUrlOnSuccess:https://contentqa01-thepoint.hlrpphoenix.com/Authentication/ProcessPostbackFromSso]]></con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="httprequest" name="PARAAM" id="f0b78600-aa87-4203-9947-ac2a256d15a8">
+    <con:settings/>
+    <con:config method="POST" xsi:type="con:HttpRequest" id="021734ac-0c40-4ef6-bcc4-e99fba234519" name="PARAAM" postQueryString="true" mediaType="multipart/form-data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment><con:entry key="Origin" value="https://qe02-sso.hlrpphoenix.com" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Cookie" value="cf_clearance=qxMvvE6g18bWWZ7T_NoPE94Rf2LDhiFCmIXJSRI7y78-1699529537-0-1-cd0fc955.c265b9.21f56cb3-0.2.1699529537; ASP.NET_SessionId=5hjgj0i34qqontsfrz30i5th; AWSALB=xv3N+jl0CEiG0jY8z2Xn5OjypWFMwmDpMDtMcNA6irAkEUb96jmwu6xqgSxWTMPCpxEghCa9E7Gs7uARsBFKFWyUNP6P9TaDavsUcCNMK00kKaLwTKskjwuHKedg; AWSALBCORS=xv3N+jl0CEiG0jY8z2Xn5OjypWFMwmDpMDtMcNA6irAkEUb96jmwu6xqgSxWTMPCpxEghCa9E7Gs7uARsBFKFWyUNP6P9TaDavsUcCNMK00kKaLwTKskjwuHKedg" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="path" value="/Authentication/ProcessPostbackFromSso" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="scheme" value="https" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="authority" value="qe02-support.thepoint.hlrpphoenix.com" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Referer" value="https://qe02-sso.hlrpphoenix.com/" xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></con:setting>
+      </con:settings>
+      <con:endpoint>https://qe02-support.thepoint.hlrpphoenix.com/Authentication/ProcessPostbackFromSso</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>AuthenicationResult</con:name>
+          <con:value>${Get Instructor Access Token#Response#$['Data']['AuthenicationResult']}</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>${Get Instructor Access Token#Response#$['Data']['AuthenicationResult']}</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>MessageSignature</con:name>
+          <con:value>${Get Instructor Access Token#Response#$['Data']['MessageSignature']}</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>${Get Instructor Access Token#Response#$['Data']['MessageSignature']}</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>TimeStamp</con:name>
+          <con:value>${Get Instructor Access Token#Response#$['Data']['TimeStamp']}</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>${Get Instructor Access Token#Response#$['Data']['TimeStamp']}</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>UrlToRedirectOnSuccess</con:name>
+          <con:value>/home/index</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>/home/index</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>SourceUrl</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+        </con:parameter>
+        <con:parameter>
+          <con:name>PostbackUrlOnSuccess</con:name>
+          <con:value>https://qe02-support.thepoint.hlrpphoenix.com/Authentication/ProcessPostbackFromSso</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>https://qe02-support.thepoint.hlrpphoenix.com/Authentication/ProcessPostbackFromSso</con:default>
+        </con:parameter>
+      </con:parameters>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>TEJACOOKIE</con:name>
+      <con:value>AWSALB=IYcVAAGrUwDMsoQDV36hRuEUPShTv7KIS61LzqN+StvehSASckzhLNwCHPW9Mr8aP7qen7eJGz9xot+K4xczGVZaghTSCCEP0cjXeFHBlBW24xtLamTjXWsneDoD; Expires=Thu, 16 Nov 2023 12:24:47 GMT; Path=/AWSALBCORS=IYcVAAGrUwDMsoQDV36hRuEUPShTv7KIS61LzqN+StvehSASckzhLNwCHPW9Mr8aP7qen7eJGz9xot+K4xczGVZaghTSCCEP0cjXeFHBlBW24xtLamTjXWsneDoD; Expires=Thu, 16 Nov 2023 12:24:47 GMT; Path=/; SameSite=None; SecureWKHPEAuth.Attempts=; expires=Wed, 08-Nov-2023 12:24:48 GMT; path=/; SameSite=None;HttpOnly=trueWKHPEAuthToken.AutoSignedIn=cY8uRAsFS%2bevQVvfkX5OH%2b8u95TLoi5hwuuubINCRc371XCz6EsxUxGLv6EJTos11D5oSY8By%2bIw9Hc%2b2d3%2fyyk37%2f8Yp0kjefE%2b1sZOKn2QwzSGwezAaSMy9Je3Vhk81r72uIqv2fg7G5fZ%2buI1Ga7q4Wdsam%2bMmB%2bQOdsU%2beZfQkwGCrAo0Z2JjxmcPT2TG7cftN95PSgBzaFnuCjB9nOlPTqPj%2bqeWaqmaECne9idhm%2fRtlD298R0GzEkYZ2XeKtCmGR4RLZZqqZoQKd72PDrVrGJzy%2fBw%2fxy%2b1Si2fAlnPxbwYR9zRG8Pq1ZljUa; expires=Sat, 09-Dec-2023 12:24:48 GMT; path=/; SameSite=None;HttpOnly=trueWKHPEAuthToken=cY8uRAsFS%2bevQVvfkX5OH%2b8u95TLoi5hwuuubINCRc371XCz6EsxUxGLv6EJTos11D5oSY8By%2bIw9Hc%2b2d3%2fyyk37%2f8Yp0kjefE%2b1sZOKn2QwzSGwezAaSMy9Je3Vhk81r72uIqv2fg7G5fZ%2buI1Ga7q4Wdsam%2bMmB%2bQOdsU%2beZfQkwGCrAo0Z2JjxmcPT2TG7cftN95PSgBzaFnuCjB9nOlPTqPj%2bqeWaqmaECne9idhm%2fRtlD298R0GzEkYZ2XeKtCmGR4RLZZqqZoQKd72PDrVrGJzy%2fBw%2fxy%2b1Si2fAlnPxbwYR9zRG8Pq1ZljUa; path=/; HttpOnly; SameSite=None;HttpOnly=true</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

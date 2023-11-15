@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Create user" path="/User/SaveUser?format=json" id="b684000a-90e6-413f-b449-736ffebfda6e" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="b684000a-90e6-413f-b449-736ffebfda6efileName">Create-user</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="7b821a26-d9d5-42e3-b890-37cb6cc98787" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="51bef275-7081-4d81-847b-a1f5ba88345c" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Cookie" value="${#Project#ACookie_Value#$}" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+      </con:settings>
+      <con:request>{
+  "Id": "00000000-0000-0000-0000-000000000000",
+  "InstanceId": "0",
+  "FirstName": "API_Automation",
+  "LastName": "Student21",
+  "UserName": "API_Automation.Student21@wk.com",
+  "Password": "Api@2023",
+  "Email": "API_Automation.Student21@wk.com",
+  "UserRoleId": "1",
+  "CanEdit": true,
+  "MaxConcurrentUsersWarning": "",
+  "MaxConcurrentUsersError": ""
+}</con:request>
+      <con:originalUri>https://qe02-support.thepoint.hlrpphoenix.com/Authentication/Challenge</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

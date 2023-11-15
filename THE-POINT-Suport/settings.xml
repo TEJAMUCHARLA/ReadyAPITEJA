@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="12e1caa6-1965-49ad-9afb-aafbcb2849e5" name="THE POINT Suport" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="12e1caa6-1965-49ad-9afb-aafbcb2849e5fileName">THE-POINT-Suport</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart="THE POINT Suport.json">
+    <con:part>
+      <con:url>THE POINT Suport.json</con:url>
+      <con:content>{"openapi":"3.0.1","info":{"title":"THE POINT Suport","version":"1.0.0"},"servers":[{"url":"/"}],"paths":{"/User":{"get":{"responses":{"default":{"description":"Default response"}}}},"/Subscription/Update":{"post":{"requestBody":{"content":{"application/json":{"example":"{\n  \"ExpireSubscriptions\": [],\n  \"IncreaseExpirationOfSubscriptions\": [],\n  \"NewSubscriptions\": [\n    {\n      \"Isbn\": \"9781975186777\",\n      \"ExpirationDate\": \"11/11/2024\",\n      \"UserInstanceId\": \"3051890\"\n    }\n  ],\n  \"SubscriptionChangeDocumentation\": {\n    \"Reason\": \"Student: Internal Testing/Review\",\n    \"OtherReason\": null,\n    \"ServiceCloudCaseId\": \"Test\"\n  }\n}"}}},"responses":{"default":{"description":"Default response"}}},"parameters":[{"name":"format","in":"query","required":false,"style":"form","explode":true}]},"/User/SaveUser?format=json":{"description":"","post":{"description":"","requestBody":{"content":{"application/json":{"example":"{\n  \"Id\": \"00000000-0000-0000-0000-000000000000\",\n  \"InstanceId\": \"0\",\n  \"FirstName\": \"API_Automation\",\n  \"LastName\": \"Student21\",\n  \"UserName\": \"API_Automation.Student21@wk.com\",\n  \"Password\": \"Api@2023\",\n  \"Email\": \"API_Automation.Student21@wk.com\",\n  \"UserRoleId\": \"1\",\n  \"CanEdit\": true,\n  \"MaxConcurrentUsersWarning\": \"\",\n  \"MaxConcurrentUsersError\": \"\"\n}"}}},"responses":{"default":{"description":"Default response"}}}},"/Authentication/ProcessPostbackFromSso":{"description":"","post":{"description":"","requestBody":{"content":{"application/json":{}}},"responses":{"default":{"description":"Default response"}}}}}}</con:content>
+      <con:type>https://swagger.io/openapiv3/specification</con:type>
+    </con:part>
+  </con:definitionCache>
+  <con:endpoints/>
+</con:interface>

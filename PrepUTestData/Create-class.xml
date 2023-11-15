@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="09be986e-afd9-4b4f-adc3-0285e5a3df6c" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="true" name="Create class" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" zephyrTestName="" zephyrTestId="" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="09be986e-afd9-4b4f-adc3-0285e5a3df6cfileName">Create-class</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="POST class create" id="49fb95ab-8d7e-4cbf-82b6-6e39f9253478">
+    <con:settings/>
+    <con:config service="Content URL End Points" resourcePath="/Course/Create" methodName="POST Create Course" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="POST class create" id="6aceb4e4-ace9-428a-8ed0-fcda01123f02" mediaType="multipart/form-data" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<con:entry key="Cookie" value="cf_clearance=RIkc6gZHZWAkkrpZJbywHKuAgXcZQzILL_F96O6NNFk-1694575055-0-1-cde3f126.c9cea907.e8f9a00d-0.2.1694575055;  ASP.NET_SessionId=s4zmmvuim3dmkbwwwvvje4tm;  WKHPE.ThePoint.CookieTest=&quot;&quot;;  PassiveAuthenticationCookie=true;  liveagent_oref=https://preprod-sso.hlrpbooks.com/;  OptanonAlertBoxClosed=2023-09-13T03:17:49.595Z;  liveagent_sid=f6b0acfa-1c66-4e2a-abd9-622d20e17054;  liveagent_vc=2;  liveagent_ptid=f6b0acfa-1c66-4e2a-abd9-622d20e17054;  .ASPXAUTH=AC7442B32275A10B8577D6C4B50BCAA4FE2221F05B87B5693E84EE256C648CDC643E27F9156FB0437487338E8863984D2676C447E547C6961FA0A8280341A9DD55990C8D983004390C273A26357AF0AE01E72621E6BFA7B7C41DD6EDBE6F12141930587A07C50507D9F73C637E3193AC2214FE06494A96E50EE69F9833B03968BFD16DABD0CC406694780DDAAD6A2ACC83380CFEC6771C7DF9608D4E81457B256AAD3B6D2CCD312F90737AF083E0E9F5BC29C57BB0FD5585446747BE8607711EAE226B7492F9AA0CB28F32EF05ADF5B89450F0C2B308357786291E748916608B95B5F550B772C2444D364DFD299F19951564E43C10497D033E44567E2D65E82ADDC3C49FB4E9D11A7941355943962FE2E7579DF49164C509F9BE7315011187413E7B32782B4FE390708FEE4472D8549E06898096C74723DB261D68E1B6C448125D23ABA91544806309AFCF078D3DCBDE70D42FCBC53E4278D3396B9CBE043EFD36CD4C10B0DEFE2876E3FD9F52834B375C2A947568AEEA5E950F796281E1798E550C4A17CBAF4E4F04B9B032F8AAEE832F22F5C04EE9E70A8B952E27E55274B38D73E673735868B58383D2CC00A0EA2A5A964C6DC92FB886BB6A298AA3E2D85CCA086A3B0A62DB2D0D846A5B04462BCF98128391EA85B73CD06AC0D9491126C7C8F19CA9B7886633A2B7C535F53C7F963836BC13F2B4FD32D74AF0EB42260F604873DC5E5557281DB4FA050522CE715FA30EBF22B9FF15EE74A1FFB7448FC98D0692E0C38DC8A3297BA8583C83048D3882B4C54AAA2ED917129840CCE6169E54E85D2C67024C87FE2E9111E8271BD4BAAD8AC1233E1AFB29ADDCACABF8AC95045A7A2FD9816A3F2156B8C195B9CA0994484B159C279FAEA8F60085A0B751E801E077E283F1455AF4552C840F40AD480BA99D18943FC50C9A7417DE934D690964C66BB22E5D94CD667EF49D0CCDE46FBF8B319F65EFCB98CACA75E4F79D4C00F9;  thepoint_token_access=&quot;eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzc28ud2tocGUuY29tIiwiYXVkIjoiM2MzOTg0NmMtODg2YS1kZjExLWIxMTUtMDA1MDU2YzAwMDA4IiwiYXV0aF90aW1lIjoxNjk0NTc1MTYzLCJuYW1lIjoicHJlcHUwNSBJbnN0cnVjdG9yMDUiLCJqdGkiOiJlY2Q0NDBiNy1lYmFkLTQxYTgtOTk1NC00MzQzNGQzNDkxMGUiLCJpYXQiOjE2OTQ1NzUxNjMsImV4cCI6MTY5NDY2MTU2Mywic3ViIjoiMDgyNDIyZTMtNDgyNi00NzU4LTkwZmMtNDU1ZTAxMGFjNWIwIiwicm9sZXMiOiJ3a2hwZS1lbmQgdXNlciIsIndraHBlX3Blcm1pc3Npb25zIjpbIkNhblVzZVBlcnNvbmFsaXphdGlvbkZlYXR1cmVzIl0sIndraHBlX3Rva2VuIjoiblpqSkg2SmlRb0wxUFR4TjlnODNkMTR2Y1cyN0J1WHl4VFVyaWE1Y0lnR0dmNzBkMDlQbFdrUCtGQmUwUnU2a3gwdUNlYUZVZDJRUGhXdHV4eWZya0hIUGhUelk3NVVuMUJHKy9BSHRUYno2UjlIc2VFRXBwTEJCQjk3cGMwejl2cVE4RU53WXI5RkpmVHBQQUlma3JKVzk2UzR5YjJ1T280QUNnbm95VitTbFJ1aVlrYmFUQk5Ca1puV0hpYkR6YzZVOU9vK1A2cDVacXFab1FLZDcyTVA4Y3Z0VW90bndGRTFucklYZXluRnpwVDA2ajQvcW5sbXFwbWhBcDN2WW5ZWnYwYlpROXZmK2xlSUdHTkIrYktYOG5XU3NXOW9YIiwidG9rZW5fdHlwZSI6ImJlYXJlciJ9.tbJBE8G7Po0ILaOh7j_ZcqCJVnfCdaNOjtyXCTorh83YBJmglLZsnALwUdijJDVhJyk19C07utPGgs1GA--8XgxCRXe-JFKOmPw1BR1qpUxQCZjOjhN1U8dW4QWOkfu__mPiOAYTGKrb1WsiX8vRJ9B57g3vHxZQRe7BU01tjTE&quot;;  OptanonConsent=isGpcEnabled=0&amp;datestamp=Wed+Sep+13+2023+08%3A49%3A30+GMT%2B0530+(India+Standard+Time)&amp;version=6.38.0&amp;isIABGlobal=false&amp;consentId=eac55d60-90c5-4e15-a4a7-42265c46d1f4&amp;interactionCount=1&amp;landingPath=NotLandingPage&amp;groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&amp;hosts=H160%3A1%2CH115%3A1%2CH63%3A1%2CH114%3A1%2CH117%3A1%2CH23%3A1%2CH116%3A1&amp;genVendors=&amp;geolocation=IN%3BTG&amp;AwaitingReconsent=false;  AWSALB=BW29wUaO8RpTaLfs7Hlh0HICzMn7XNpzwy0gMizXLtxlAQV9suMSkYA1bGxce8/cu7uJC/4izjcIW12sEndnoywS5z+iVntJLnPjX0Kr+6fMDrL1UJzDePwP/FsT;  AWSALBCORS=BW29wUaO8RpTaLfs7Hlh0HICzMn7XNpzwy0gMizXLtxlAQV9suMSkYA1bGxce8/cu7uJC/4izjcIW12sEndnoywS5z+iVntJLnPjX0Kr+6fMDrL1UJzDePwP/FsT" xmlns:con="http://eviware.com/soapui/config"/>]]></con:setting>
+        </con:settings>
+        <con:request>IsActive:True
+Id:00000000-0000-0000-0000-000000000000
+TitleId:ae1088d9-4b7c-47f1-aadf-36da00af87b9
+InstitutionName:Misc-Default Filler
+InstitutionId:001d0000029ZCmSAAW
+ProgramType:LPN/LVN
+Name:Ready API Test1
+Section:sec1
+Time:
+Term:
+Location:</con:request>
+        <con:originalUri>https://contentqa01-thepoint.hlrpphoenix.com/Instrumentation/ClientTest</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="a8ed9539-c72b-462c-bbf9-c60aaf99f110" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>300</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="InstitutionName" value=""/>
+          <con:entry key="InstitutionId" value=""/>
+          <con:entry key="IsActive" value=""/>
+          <con:entry key="RedirectOnComplete" value=""/>
+          <con:entry key="Time" value=""/>
+          <con:entry key="Id" value=""/>
+          <con:entry key="ProgramType" value=""/>
+          <con:entry key="Term" value=""/>
+          <con:entry key="TitleId" value=""/>
+          <con:entry key="Name" value=""/>
+          <con:entry key="Location" value=""/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>IsActive</con:entry>
+          <con:entry>Id</con:entry>
+          <con:entry>TitleId</con:entry>
+          <con:entry>RedirectOnComplete</con:entry>
+          <con:entry>InstitutionName</con:entry>
+          <con:entry>ProgramType</con:entry>
+          <con:entry>Name</con:entry>
+          <con:entry>Time</con:entry>
+          <con:entry>Term</con:entry>
+          <con:entry>Location</con:entry>
+          <con:entry>InstitutionId</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="properties" name="Properties 1" id="65dc9497-0a63-477c-8379-2ba6e85e9395">
+    <con:settings/>
+    <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:properties>
+        <con:property>
+          <con:name>Error</con:name>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="transfer" name="PropertyTransfer 1" id="0e8b4531-8576-4acd-a5ab-e458e8ec4ede">
+    <con:settings/>
+    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>Error</con:name>
+        <con:sourceType>Error</con:sourceType>
+        <con:sourceStep>Properties 1</con:sourceStep>
+        <con:sourcePath/>
+        <con:targetType>Request</con:targetType>
+        <con:targetStep>REST Request</con:targetStep>
+        <con:targetPath>//Error[1]</con:targetPath>
+        <con:type xsi:nil="true"/>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="REST Request" id="c0f87ce3-8f59-4c12-9e6f-e8f11623f1e5">
+    <con:settings/>
+    <con:config service="sdfdf" resourcePath="/Course/Create" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request" id="bff1c81f-8f52-4d69-8a8a-364849accaf5" mediaType="multipart/form-data" postQueryString="true">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<con:entry key="Cookie" value="cf_clearance=Pbebmp7Ii50btkUNbzbSLnsM75x9_9f9yxAE7VYLZFE-1695362697-0-1-8019a61d.7888ba74.59bfb37e-0.2.1695362697; ASP.NET_SessionId=2hf2oahnicrbowf5ujfd2csp; WKHPE.ThePoint.CookieTest=&quot;&quot;; liveagent_oref=https://preprod-sso.hlrpbooks.com/; liveagent_sid=0da2e125-22d1-44be-be86-d43d610eae4d; liveagent_vc=2; liveagent_ptid=0da2e125-22d1-44be-be86-d43d610eae4d; OptanonAlertBoxClosed=2023-09-22T06:05:11.807Z; CloudFront-Key-Pair-Id=APKAIFKBUKZZ73UYKL7A; CloudFront-Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jb250ZW50cWEwMS1jY20uaGxycHBob2VuaXguY29tLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2OTU0MDc2NDR9fX1dfQ__; CloudFront-Signature=pZV8Igrjc8S-rPVacB3b9ddjzURQ67Km7d99oqVyl1naUl15aj1a4-fU-283lDdhc3InHU6hPPyyuWNPo2KjgogE0d~lpRp49-tqNISMoMAgWLjZxOfgdq3PtVL8iKhz5c4WTBv1JZkSwN~Dfm1g7P4293whw9~qC2Ivz~2~l7y5AyZBSu4iy3i7vo3Lpa~v3uyjWbkPuL2VFaiJcxVPV6oiy4q6TtoF0Jm33aF~cnD~VNaEGJQE~FOT7fx-NqFTzlgIASzILvJziMhTbhVbDULzXSBm9ouK4I7-Kv9EORPlKOR-p26N9PdTScbQGgJr77pfmTilpeKZPaTZwoqrqg__; PassiveAuthenticationCookie=true; .ASPXAUTH=7714DE4C91A76DA3E07A6C89B4D9E07D643340C0E586D8E337AC97D2A40FB2842933B609815F0DD204F007B5CD25B31151AC9830B50DCE528B60F02C0F0D7EE9BBB0F56D71932BA9C664E565BEEDDBDDD8D0CF000E82559C893079523261C18E5B7B8E7BB41275E59183F80A975EC7C1E962576C427F893D2B7E89BCD9C2337D91C41BCFAAE253499A17F69DB9E3F4C5974E1168A9CD80F0D86C0A82A92107DAC3CE790B7A9E46224A46C5EF50496EC1916F061D6A5226A0452166B86C7BC6C43EA1A650E554F0FC8DF0B2C70F50451511DC0542624BB64AD6E4F9B99B5DF3ADF15D23B3E4E67256505F00F1B6A06022578AC8C367014DCF5DFB2541461E2B4F130EBBE13920ED4B6535BB21AFFAC719FE4EBEE15CBDDB36BFB597436DF0E3CE383DFFD720991BC4337AF1DC1FEEBB0316EF8F04F02C4CE3D779CA856EDFFA81B7680D4D660402C35843DF2B5952080E7D2D789D8245D7BDC2B4C1719630F3A6F97E92F59B0FAE313C709F9C69F9661ABFA6FA25541246C7CD104EDF59396A2E93513ECFFB283ABFF3446F4C97950B86091D00E4BB2D0CB0E9B2469FD048810F3E4A10329B2FC0435F6C4447C23A3CFE35DF4EA1D1D126DAFE884959FDFBBA0C8FFD216288D1BA815025260F0AEF81299BB86804459ECF37216FEB3420962E833962463110F4A7884450B3176857B3FC15347992A85A995D4931CCD8B570A0A8030EB56AC9F1E6D97EB21E2A951B2013D5340D3137BBEF356156579F559589D5AF1BDCFCCAE8D1CD24C0592877518AAA93CD7F48CC7D6D750D015C226111DC6A3B28C294B29EEAFCBBC703CFE91772F8250DF78706B8EB3AD1C61750769822747A8151345BFDE1F8E8AE759072C30076DEA20478B28CCFBC0CAFCB46EF94849093B8422C8D4E1A9BB57AE49DAD2AF247F261EED1B51CE8E57025DC1AE5A4AE60F2924D3C81A3A510AE05284E3ACDBB8D438CADA10A1880400CA3D29E6232F452; thepoint_token_access=&quot;eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzc28ud2tocGUuY29tIiwiYXVkIjoiM2MzOTg0NmMtODg2YS1kZjExLWIxMTUtMDA1MDU2YzAwMDA4IiwiYXV0aF90aW1lIjoxNjk1MzcyNzgyLCJuYW1lIjoicHJlcHUwNSBJbnN0cnVjdG9yMDUiLCJqdGkiOiI3M2FkM2U4MC05MGEyLTQ1OTgtYjEyZC05ZmMxNTdlYzE3YTEiLCJpYXQiOjE2OTUzNzI3ODIsImV4cCI6MTY5NTQ1OTE4Miwic3ViIjoiMDgyNDIyZTMtNDgyNi00NzU4LTkwZmMtNDU1ZTAxMGFjNWIwIiwicm9sZXMiOiJ3a2hwZS1lbmQgdXNlciIsIndraHBlX3Blcm1pc3Npb25zIjpbIkNhblVzZVBlcnNvbmFsaXphdGlvbkZlYXR1cmVzIl0sIndraHBlX3Rva2VuIjoiZTRUblNOMllKRXZXOWNtL0c2aFRPM09sR1hrY0t2WXBId3dTOGZLU1cwdGRLeVcyTUJrTG5GQkFCNHpzRUluY1dsYVR0SjcwTDY1aHRCQ1VqbkJrZEtiUEJPQUt4TXhoQVhUS29jS2UvZHdrT2x4c2IzaGg0Nkhwb2dtcFp0Rk5qUnBWRW9BV3J4dGgrSjNpRnFIQi9BZXdoMjhaOE9BYXpJRC9wb1QxcUtEZjI3NEg0MlVHb1ZtcXBtaEFwM3ZZOE90V3NZblBMOEViS0RqRmRoTXFPc1A4Y3Z0VW90bndTbzBkbERPYkpiM3c2MWF4aWM4dndSc29PTVYyRXlvNjMwd3JCQnU3MTUwWXl3VU5JV1dxOTRjZkJWMFRVVy9TIiwidG9rZW5fdHlwZSI6ImJlYXJlciJ9.JBQJvQtVmdOTFot2V2yvCTgetEalamIX8UoPNTGZ2MLNDvHYwK4EqZE5Nev7tAYc53ItgFjFYNudJ-YJzcmU86NbRKi521qSflvwE2XDvOhwFHnhlQ552tTaRVaoMycrZg00prtbZ1nuahlUadbVWtRIaQEWrbL6oM2HN_ku_3s&quot;; OptanonConsent=isGpcEnabled=0&amp;datestamp=Fri+Sep+22+2023+14%3A34%3A07+GMT%2B0530+(India+Standard+Time)&amp;version=6.38.0&amp;isIABGlobal=false&amp;consentId=74e598b7-9e4b-4d85-abfd-115ac8f686f4&amp;interactionCount=1&amp;landingPath=NotLandingPage&amp;groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&amp;hosts=H160%3A1%2CH115%3A1%2CH63%3A1%2CH114%3A1%2CH117%3A1%2CH23%3A1%2CH116%3A1&amp;genVendors=&amp;geolocation=IN%3BAP&amp;AwaitingReconsent=false; AWSALB=NTHgJHH3cZ0kpEO4J4HpcwW84846HfTiafqhmxYFVaVpNI8IqjhELcD15LwTbrcxa0pHIJ3Z3yIvzWyIOoyEn66DTWreA/kYHbqAYJZjXtMqzdQ9rbcC0NRZjNx4; AWSALBCORS=NTHgJHH3cZ0kpEO4J4HpcwW84846HfTiafqhmxYFVaVpNI8IqjhELcD15LwTbrcxa0pHIJ3Z3yIvzWyIOoyEn66DTWreA/kYHbqAYJZjXtMqzdQ9rbcC0NRZjNx4" xmlns:con="http://eviware.com/soapui/config"/>]]></con:setting>
+        </con:settings>
+        <con:request>IsActive: True
+Id: 00000000-0000-0000-0000-000000000000
+TitleId: ae1088d9-4b7c-47f1-aadf-36da00af87b9
+InstitutionName: Misc-Default Filler
+InstitutionId: 001d0000029ZCmSAAW
+ProgramType: LPN/LVN
+Name: TEST TEJA 12
+Section: sec1
+Time:
+Term:
+Location:</con:request>
+        <con:originalUri>https://contentqa01-thepoint.hlrpphoenix.com/Instrumentation/ClientTest</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="555f7cc3-0270-402c-b2e0-b5565c43c881" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>302</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="InstitutionName" value=""/>
+          <con:entry key="InstitutionId" value=""/>
+          <con:entry key="RedirectOnComplete" value=""/>
+          <con:entry key="Time" value=""/>
+          <con:entry key="Id" value=""/>
+          <con:entry key="ProgramType" value=""/>
+          <con:entry key="Term" value=""/>
+          <con:entry key="Section" value=""/>
+          <con:entry key="TitleId" value=""/>
+          <con:entry key="Name" value=""/>
+          <con:entry key="Location" value=""/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>IsActive</con:entry>
+          <con:entry>Id</con:entry>
+          <con:entry>TitleId</con:entry>
+          <con:entry>RedirectOnComplete</con:entry>
+          <con:entry>InstitutionName</con:entry>
+          <con:entry>InstitutionId</con:entry>
+          <con:entry>ProgramType</con:entry>
+          <con:entry>Name</con:entry>
+          <con:entry>Section</con:entry>
+          <con:entry>Time</con:entry>
+          <con:entry>Term</con:entry>
+          <con:entry>Location</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="cf5ed83e-b834-45a4-90bc-14b6aa7784d5">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="POST class create 2" id="4a17a28f-adc6-46e0-8ab3-31a5e611bb43">
+    <con:settings/>
+    <con:config service="Content URL End Points" resourcePath="/Course/Create" methodName="POST Create Course" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="POST class create 2" id="6aceb4e4-ace9-428a-8ed0-fcda01123f02" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<con:entry key="Cookie" value="cf_clearance=RIkc6gZHZWAkkrpZJbywHKuAgXcZQzILL_F96O6NNFk-1694575055-0-1-cde3f126.c9cea907.e8f9a00d-0.2.1694575055; ASP.NET_SessionId=s4zmmvuim3dmkbwwwvvje4tm; WKHPE.ThePoint.CookieTest=&quot;&quot;; PassiveAuthenticationCookie=true; liveagent_oref=https://preprod-sso.hlrpbooks.com/; OptanonAlertBoxClosed=2023-09-13T03:17:49.595Z; liveagent_sid=f6b0acfa-1c66-4e2a-abd9-622d20e17054; liveagent_vc=2; liveagent_ptid=f6b0acfa-1c66-4e2a-abd9-622d20e17054; .ASPXAUTH=AC7442B32275A10B8577D6C4B50BCAA4FE2221F05B87B5693E84EE256C648CDC643E27F9156FB0437487338E8863984D2676C447E547C6961FA0A8280341A9DD55990C8D983004390C273A26357AF0AE01E72621E6BFA7B7C41DD6EDBE6F12141930587A07C50507D9F73C637E3193AC2214FE06494A96E50EE69F9833B03968BFD16DABD0CC406694780DDAAD6A2ACC83380CFEC6771C7DF9608D4E81457B256AAD3B6D2CCD312F90737AF083E0E9F5BC29C57BB0FD5585446747BE8607711EAE226B7492F9AA0CB28F32EF05ADF5B89450F0C2B308357786291E748916608B95B5F550B772C2444D364DFD299F19951564E43C10497D033E44567E2D65E82ADDC3C49FB4E9D11A7941355943962FE2E7579DF49164C509F9BE7315011187413E7B32782B4FE390708FEE4472D8549E06898096C74723DB261D68E1B6C448125D23ABA91544806309AFCF078D3DCBDE70D42FCBC53E4278D3396B9CBE043EFD36CD4C10B0DEFE2876E3FD9F52834B375C2A947568AEEA5E950F796281E1798E550C4A17CBAF4E4F04B9B032F8AAEE832F22F5C04EE9E70A8B952E27E55274B38D73E673735868B58383D2CC00A0EA2A5A964C6DC92FB886BB6A298AA3E2D85CCA086A3B0A62DB2D0D846A5B04462BCF98128391EA85B73CD06AC0D9491126C7C8F19CA9B7886633A2B7C535F53C7F963836BC13F2B4FD32D74AF0EB42260F604873DC5E5557281DB4FA050522CE715FA30EBF22B9FF15EE74A1FFB7448FC98D0692E0C38DC8A3297BA8583C83048D3882B4C54AAA2ED917129840CCE6169E54E85D2C67024C87FE2E9111E8271BD4BAAD8AC1233E1AFB29ADDCACABF8AC95045A7A2FD9816A3F2156B8C195B9CA0994484B159C279FAEA8F60085A0B751E801E077E283F1455AF4552C840F40AD480BA99D18943FC50C9A7417DE934D690964C66BB22E5D94CD667EF49D0CCDE46FBF8B319F65EFCB98CACA75E4F79D4C00F9; OptanonConsent=isGpcEnabled=0&amp;datestamp=Wed+Sep+13+2023+09%3A32%3A33+GMT%2B0530+(India+Standard+Time)&amp;version=6.38.0&amp;isIABGlobal=false&amp;consentId=eac55d60-90c5-4e15-a4a7-42265c46d1f4&amp;interactionCount=1&amp;landingPath=NotLandingPage&amp;groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&amp;hosts=H160%3A1%2CH115%3A1%2CH63%3A1%2CH114%3A1%2CH117%3A1%2CH23%3A1%2CH116%3A1&amp;genVendors=&amp;geolocation=IN%3BTG&amp;AwaitingReconsent=false; CloudFront-Key-Pair-Id=APKAIFKBUKZZ73UYKL7A; thepoint_token_access=&quot;eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzc28ud2tocGUuY29tIiwiYXVkIjoiM2MzOTg0NmMtODg2YS1kZjExLWIxMTUtMDA1MDU2YzAwMDA4IiwiYXV0aF90aW1lIjoxNjk0NTg0NTE2LCJuYW1lIjoiQVBJX0F1dG9tYXRpb24gU3R1ZGVudDEwIiwianRpIjoiNDc1N2MxOGQtNTM5Ny00NTQyLTk0OTYtMzliNzY1MGU2ODY5IiwiaWF0IjoxNjk0NTg0NTE2LCJleHAiOjE2OTQ2NzA5MTYsInN1YiI6IjFhOGY0MDM5LWQzZmYtNDY5OS05NzU0LTQ1NGMwMTJjZTI0MiIsInJvbGVzIjoid2tocGUtZW5kIHVzZXIiLCJ3a2hwZV9wZXJtaXNzaW9ucyI6WyJDYW5Vc2VQZXJzb25hbGl6YXRpb25GZWF0dXJlcyJdLCJ3a2hwZV90b2tlbiI6InBzNEhnVFgxWU1jbWNoRjRyZkp0Mk1CY1dLZis0UEU5SHBPZTlIREczV28rS2MzY21ZY1JKQzQveGJueDdoM3VucFZzU0JidVR0OFQ1TWU1cmhoY2NxYlBCT0FLeE14aEFYVEtvY0tlL2R3a09seHNiM2hoNCtSTThjc0IyV2FSdjZjTmUwSlJWMHJQQXVyUmphUjQvUVBPa3RTUWhWb0ZDcHkwMjE5ZlcrZVBIYmF1aUxyZEhWbXFwbWhBcDN2WThPdFdzWW5QTDhFYktEakZkaE1xT3NQOGN2dFVvdG53U28wZGxET2JKYjN3NjFheGljOHZ3UnNvT01WMkV5bzYzMHdyQkJ1NzE1MFl5d1VOSVdXcTk0Y2ZCVjBUVVcvUyIsInRva2VuX3R5cGUiOiJiZWFyZXIifQ.nDXKTDnK-x-ApauUAtTv5umrBH9G_6mv9bERR8Xn53I2uZMC0BmixBM0jhvtKyOMaRyG6ytNPxUeT0opM_4_p-rbVVKy_3coFMS3bOnv_9U4Uw9VYVBQUhNrcScpH9mrH2xVC_ySwZ5tkm2GCszvIbqrYAkHz2IVp5Uj2zXU3ss&quot;; CloudFront-Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9xZTAxLWNjbS5obHJwcGhvZW5peC5jb20vKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTY5NDYyNzcyM319fV19; CloudFront-Signature=QhqQ~~ONfyrkmJseGtIGqla~xa6EJYIWE~VlrqjV6i6yk2Rb-PvnyTP5r94Ri88g4c61ZIxPJLwpI4X1YwwkrnimVRf4VH27TKNDh4HPA40EYFQnHs2XFAwe89hushsO~CdJ65j3f3jV8DldhVfAD2~lJzR8oBo8xLWQfmrLA1wWm94e632VVLKe84wL0DjFM2Kx58bpsv9Jsohs2Oo1L-dzOft7QZNNvRyQC4J1L~f3Q12WwiB9lqsR~PjJCNTXcmp7e0wzQnDavQKKr~Fxz3yJoKUJsYYr3aU2gzaCmIkFFkMR5NWqdr6TH1SSuQtp7JluJDQ-ZBiZQOVZZe-1aA__; AWSALB=xon7agVYgU5bTJDca5g6dbG8WtO7DTf0kahw656i16fED//Mz8nkNfIzLNketsABv/UNcqRMaNreUuHsVtNEvTJXwtJ6LwsT7/XKIxGebkEKfwDrPRQuYR7y8GW1; AWSALBCORS=xon7agVYgU5bTJDca5g6dbG8WtO7DTf0kahw656i16fED//Mz8nkNfIzLNketsABv/UNcqRMaNreUuHsVtNEvTJXwtJ6LwsT7/XKIxGebkEKfwDrPRQuYR7y8GW1" xmlns:con="http://eviware.com/soapui/config"/>]]></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://contentqa01-thepoint.hlrpphoenix.com/Instrumentation/ClientTest</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="a8ed9539-c72b-462c-bbf9-c60aaf99f110" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>300</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>IsActive</con:entry>
+          <con:entry>Id</con:entry>
+          <con:entry>TitleId</con:entry>
+          <con:entry>RedirectOnComplete</con:entry>
+          <con:entry>InstitutionName</con:entry>
+          <con:entry>InstitutionId</con:entry>
+          <con:entry>ProgramType</con:entry>
+          <con:entry>Name</con:entry>
+          <con:entry>Time</con:entry>
+          <con:entry>Term</con:entry>
+          <con:entry>Location</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="cf5ed83e-b834-45a4-90bc-14b6aa7784d5">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>49fb95ab-8d7e-4cbf-82b6-6e39f9253478</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>c0f87ce3-8f59-4c12-9e6f-e8f11623f1e5</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

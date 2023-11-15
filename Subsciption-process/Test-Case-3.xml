@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="877d970e-2ff1-4b9e-9f25-44da1dbbd680" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test Case 3" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="877d970e-2ff1-4b9e-9f25-44da1dbbd680fileName">Test-Case-3</con:setting>
+  </con:settings>
+  <con:testStep type="httprequest" name="Create course" id="380bfc18-1e9f-40c7-ac39-2afbfb1e0f55">
+    <con:settings/>
+    <con:config method="POST" xsi:type="con:HttpRequest" id="881a12fe-45bf-4bdb-882a-018961ddb97a" name="Create course" postQueryString="false" mediaType="application/json" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Cookie" value="cf_clearance=8CBPfFoJx4aNUvlWEjriTndVtIbvaa3zg.ixJ592wFU-1699282296-0-1-cd0fc955.c265b9.21f56cb3-0.2.1699282296; .ASPXAUTH=3F5203E8736D3451382D06C085D107659682D4308D9B4C3286BCF9D6C34D08BBF85029E7B26281152E398BB19594581B363C91AC4C7D21AA66B25E7A597A14C6F732D3D3D639DC7F5511487B129767CD9410DF9590AFCECEE67B4F8D5378B30DEC67826B109DAEA0CA87D907EE8D1A39375C92E4028B77C86FDFFCB272CA7E194BB7BDEC92E74B2BC85F6C25935A3651CCE52993169968395EA69CC0564D3566; ASP.NET_SessionId=mtqwy0cudhgwq0gnbyqmfxov; AWSALB=1yFB5P2gU4+iZ1uVY0HOnXYmCtWRgwBvnfX3QqgwV7Z4A6yokEmc3rNDPqEsTGSE5yg/x+JaqsV+a840d0exPxZ8Qd5BhqxEchQi6yp5FdIWe4ifS8uc44l2ch2L; AWSALBCORS=1yFB5P2gU4+iZ1uVY0HOnXYmCtWRgwBvnfX3QqgwV7Z4A6yokEmc3rNDPqEsTGSE5yg/x+JaqsV+a840d0exPxZ8Qd5BhqxEchQi6yp5FdIWe4ifS8uc44l2ch2L" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+      </con:settings>
+      <con:endpoint>https://qe02-support.thepoint.hlrpphoenix.com/User/SaveUser?format=json</con:endpoint>
+      <con:request>{
+  "Id": "00000000-0000-0000-0000-000000000000",
+  "InstanceId": "0",
+  "FirstName": "API_Automation",
+  "LastName": "Student21",
+  "UserName": "API_Automation.Student21@wk.com",
+  "Password": "Api@2023",
+  "Email": "API_Automation.Student21@wk.com",
+  "UserRoleId": "1",
+  "CanEdit": true,
+  "MaxConcurrentUsersWarning": "",
+  "MaxConcurrentUsersError": ""
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="httprequest" name="GET USER  DETAILS" id="93d4a6dc-84a5-447e-9ac7-de8e4e39e5bc">
+    <con:settings/>
+    <con:config method="GET" xsi:type="con:HttpRequest" id="9ee4c762-da6f-4e52-99e5-6059a88795dd" name="GET USER  DETAILS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Cookie" value="cf_clearance=8CBPfFoJx4aNUvlWEjriTndVtIbvaa3zg.ixJ592wFU-1699282296-0-1-cd0fc955.c265b9.21f56cb3-0.2.1699282296; .ASPXAUTH=3F5203E8736D3451382D06C085D107659682D4308D9B4C3286BCF9D6C34D08BBF85029E7B26281152E398BB19594581B363C91AC4C7D21AA66B25E7A597A14C6F732D3D3D639DC7F5511487B129767CD9410DF9590AFCECEE67B4F8D5378B30DEC67826B109DAEA0CA87D907EE8D1A39375C92E4028B77C86FDFFCB272CA7E194BB7BDEC92E74B2BC85F6C25935A3651CCE52993169968395EA69CC0564D3566; ASP.NET_SessionId=mtqwy0cudhgwq0gnbyqmfxov; AWSALB=1yFB5P2gU4+iZ1uVY0HOnXYmCtWRgwBvnfX3QqgwV7Z4A6yokEmc3rNDPqEsTGSE5yg/x+JaqsV+a840d0exPxZ8Qd5BhqxEchQi6yp5FdIWe4ifS8uc44l2ch2L; AWSALBCORS=1yFB5P2gU4+iZ1uVY0HOnXYmCtWRgwBvnfX3QqgwV7Z4A6yokEmc3rNDPqEsTGSE5yg/x+JaqsV+a840d0exPxZ8Qd5BhqxEchQi6yp5FdIWe4ifS8uc44l2ch2L" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+      </con:settings>
+      <con:endpoint>https://qe02-support.thepoint.hlrpphoenix.com/Subscription/UserEdit?userId=3051890</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="httprequest" name="Add Sub" id="4211d20f-91b2-4b60-b127-c8abd379956b">
+    <con:settings/>
+    <con:config method="POST" xsi:type="con:HttpRequest" id="6261c1a3-4a35-4cbd-9d29-0f39b9deaba1" name="Add Sub" postQueryString="false" mediaType="application/json" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Cookie" value="cf_clearance=8CBPfFoJx4aNUvlWEjriTndVtIbvaa3zg.ixJ592wFU-1699282296-0-1-cd0fc955.c265b9.21f56cb3-0.2.1699282296; ASP.NET_SessionId=mtqwy0cudhgwq0gnbyqmfxov; .ASPXAUTH=A0F7DACE7BEA860F380D752CCF2AFA86C6AB6AD861E90F5C4E8124FB73021CC991E74226647762BA35AA38F2DBD3483675311E44686741E102D0CE3637088D41C0E4D3DC0D56CF1343CA379E46E88EBFC687401EE283A7C7C88011BCB68AABFAF28338FA950DA3D884E2011653362D197472B76217642578C3157C2C7708E0DE8DBCE7B056F0F0FC713270DF289864C44EED7296178B32692C26C4DF4D9F05AB; AWSALB=SN/uT6+H76WOpqgQ0PoM+zCBFpVJPkUi0/L/8y7VzAmNZg6qbJX4hzq+VtCRkdbL2S4R8l077Zn/wwyvwbEp2CH5AQMXH+29BK1gqm4JhYn1NIvZRRPNcPQS3CQm; AWSALBCORS=SN/uT6+H76WOpqgQ0PoM+zCBFpVJPkUi0/L/8y7VzAmNZg6qbJX4hzq+VtCRkdbL2S4R8l077Zn/wwyvwbEp2CH5AQMXH+29BK1gqm4JhYn1NIvZRRPNcPQS3CQm" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+      </con:settings>
+      <con:endpoint>https://qe02-support.thepoint.hlrpphoenix.com/Subscription/Update?format=json</con:endpoint>
+      <con:request>{
+  "ExpireSubscriptions": [],
+  "IncreaseExpirationOfSubscriptions": [],
+  "NewSubscriptions": [
+    {
+      "Isbn": "9781975186777",
+      "ExpirationDate": "11/11/2024",
+      "UserInstanceId": "3051890"
+    }
+  ],
+  "SubscriptionChangeDocumentation": {
+    "Reason": "Student: Internal Testing/Review",
+    "OtherReason": null,
+    "ServiceCloudCaseId": "Test"
+  }
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

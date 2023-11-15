@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="POST Question Filters" path="/${#Project#Version}/questionFilters" id="1fa525eb-6f89-44a4-a7d1-99003e3aba3a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="1fa525eb-6f89-44a4-a7d1-99003e3aba3afileName">POST-Question-Filters</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="POST Question Filters" id="f74c15e0-2011-42d6-bb6c-935c484eac05" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="POST Question Filters" id="1f7f9dca-9e7d-4293-af31-f762f98d62a4" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

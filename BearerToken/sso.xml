@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="sso" path="/${#Project#Version}/authKeys/sso" id="48c5c69e-0a46-4a0e-9631-671913ad9257" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="48c5c69e-0a46-4a0e-9631-671913ad9257fileName">sso</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="sso" id="416a59fd-08c2-4882-8d66-b80f63d7c80d" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>token</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>product</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="sso" id="8c80f011-d1af-4025-910c-5444162ade09" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Sakurai-Primary-Product-Isbn" value="${#Project#Sakurai-Primary-Product-Isbn#$}" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:originalUri>https://sakurai-api-contentqa.prep-u.com/1/authKeys/sso</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="product" value="9781469830599"/>
+        <con:entry key="token" value="GlQSj/Wsi6hgOOMGOB/ZHrTH3Wnps3B9e1T6hNFvdNpQHAe1CWR0jqM8xx7gD7aThVzO2gc7TPfZwuQ+G32v2Bm0p7890LFVvXtwH0t/UIq6olhIWpqn7HgF97TIGKTGSnpCNoRaXfTByhQytubJhnHXqLfwtVx5ut39NVG7ftpWwZAUTBM+TohcHSCIQNzzZbwK5yAPiC3D/HL7VKLZ8PKzKQBkm2xhc6U9Oo+P6p7D/HL7VKLZ8AELpsdPz3C30GRmdYeJsPNzpT06j4/qnlmqpmhAp3vYw/xy+1Si2fBytLxIk85AvS7+yVPOGSY7aruZfyO/YNc="/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>token</con:entry>
+        <con:entry>product</con:entry>
+      </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

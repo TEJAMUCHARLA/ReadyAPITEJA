@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="a62e73a5-5288-4787-ad43-a4ba70cf7ff3" created="3.46.1" activeEnvironment="CQA PrepU" encryptionMode="Not encrypted" name="API PrepU Smoke NOV 7" projectVersion="" updated="3.42.1" resourceRoot="" compositeProjectFormat="1.3" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="a62e73a5-5288-4787-ad43-a4ba70cf7ff3fileName">PrepU-Smoke-readyapi-project</con:setting>
+  </con:settings>
+  <con:requirements/>
+  <con:properties>
+    <con:property>
+      <con:name>AccesUrl</con:name>
+    </con:property>
+    <con:property>
+      <con:name>ACookie_Value</con:name>
+    </con:property>
+    <con:property>
+      <con:name>Auth URL</con:name>
+    </con:property>
+    <con:property>
+      <con:name>BearerToken</con:name>
+    </con:property>
+    <con:property>
+      <con:name>ENV</con:name>
+      <con:value>https://contentqa01-thepoint.hlrpphoenix.com</con:value>
+    </con:property>
+    <con:property>
+      <con:name>InstructorEmail</con:name>
+      <con:value>prepu.instructor05</con:value>
+    </con:property>
+    <con:property>
+      <con:name>InstructorPassword</con:name>
+      <con:value>Prp@2023</con:value>
+    </con:property>
+    <con:property>
+      <con:name>instructorUserId</con:name>
+    </con:property>
+    <con:property>
+      <con:name>IN_Set-Cookie</con:name>
+    </con:property>
+    <con:property>
+      <con:name>PostbackUrlOnSuccess</con:name>
+    </con:property>
+    <con:property>
+      <con:name>QCSSoToken</con:name>
+    </con:property>
+    <con:property>
+      <con:name>sakurai ENV URL</con:name>
+    </con:property>
+    <con:property>
+      <con:name>Sakurai-Primary-Product-Isbn</con:name>
+    </con:property>
+    <con:property>
+      <con:name>Set-Cookie</con:name>
+    </con:property>
+    <con:property>
+      <con:name>SiteInfoType</con:name>
+    </con:property>
+    <con:property>
+      <con:name>SourceUrl</con:name>
+    </con:property>
+    <con:property>
+      <con:name>ssoInstructor</con:name>
+    </con:property>
+    <con:property>
+      <con:name>ssoStudent</con:name>
+    </con:property>
+    <con:property>
+      <con:name>StudentEmail</con:name>
+      <con:value>prepu.student05</con:value>
+    </con:property>
+    <con:property>
+      <con:name>StudentPassword</con:name>
+      <con:value>Prp@2023</con:value>
+    </con:property>
+    <con:property>
+      <con:name>StudentUserId</con:name>
+    </con:property>
+    <con:property>
+      <con:name>Student_Set-Cookie</con:name>
+    </con:property>
+    <con:property>
+      <con:name>UrlToRedirectOnSuccess</con:name>
+    </con:property>
+    <con:property>
+      <con:name>Version</con:name>
+    </con:property>
+    <con:property>
+      <con:name>xaccessTokenInstructor</con:name>
+    </con:property>
+    <con:property>
+      <con:name>xaccessTokenStudent</con:name>
+    </con:property>
+    <con:property>
+      <con:name>TestDataExcelFile</con:name>
+    </con:property>
+  </con:properties>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest">
+    <con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
+// This code is often used for adding custom authentication to ReadyAPI functional tests
+
+// If hardcoding the token, uncomment and change line 5
+// token = '4567'
+
+// If your token is parameterized in Project level custom property, uncomment line 8
+// token = request.parent.testCase.testSuite.project.getProperty('auth_token').getValue()
+
+// To modify all outgoing calls, remove comments from lines 11 to 16
+// headers = request.requestHeaders
+// if (headers.containsKey('auth_token2') == false) {
+//   headers.put('auth_token2', token)
+//   request.requestHeaders = headers
+// }</con:script>
+  </con:eventHandlers>
+  <con:eventHandlers type="TestRunListener.afterStep" name="TestRunListener.afterStep">
+    <con:script>// Save all test step results into files
+// Change the directory path in line 5 to a location where you want to store details
+// then uncomment lines 5 to 10
+
+// filePath = 'C:\\tempOutputDirectory\\'
+// fos = new java.io.FileOutputStream(filePath + testStepResult.testStep.label + '.txt', true)
+// pw = new java.io.PrintWriter(fos)
+// testStepResult.writeTo(pw)
+// pw.close()
+// fos.close()</con:script>
+  </con:eventHandlers>
+  <con:environment id="cf5ed83e-b834-45a4-90bc-14b6aa7784d5" name="CQA PrepU" index="0">
+    <con:service type="REST" name="UsernameInSso">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">${#Project#Auth URL}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="BearerToken">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">${#Project#sakurai ENV URL}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="Sakurai End Points">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">${#Project#sakurai ENV URL}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="Content URL End Points">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">${#Project#ENV}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="sdfdf">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://contentqa01-thepoint.hlrpphoenix.com</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="THE POINT Suport">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${#Project#ENV}</con:endpoint>
+    </con:service>
+    <con:property>
+      <con:name>UrlToRedirectOnSuccess</con:name>
+      <con:value>${#Project#AccesUrl}/MyContent</con:value>
+    </con:property>
+    <con:property>
+      <con:name>xaccessTokenInstructor</con:name>
+      <con:value>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzc28ud2tocGUuY29tIiwiYXVkIjoiM2MzOTg0NmMtODg2YS1kZjExLWIxMTUtMDA1MDU2YzAwMDA4IiwiYXV0aF90aW1lIjoxNjk5MzMzNzQ5LCJuYW1lIjoicHJlcHUwNSBJbnN0cnVjdG9yMDUiLCJqdGkiOiI2MDQ5NmY1Yy1kNjNiLTRkODUtYWVkNi05Y2E5NDc4ZDRlNDciLCJpYXQiOjE2OTkzMzM3NDksImV4cCI6MTY5OTQyMDE0OSwic3ViIjoiMDgyNDIyZTMtNDgyNi00NzU4LTkwZmMtNDU1ZTAxMGFjNWIwIiwicm9sZXMiOiJ3a2hwZS1lbmQgdXNlciIsIndraHBlX3Blcm1pc3Npb25zIjpbIkNhblVzZVBlcnNvbmFsaXphdGlvbkZlYXR1cmVzIl0sIndraHBlX3Rva2VuIjoiVVpIZjlwWHJlQm4raVlSdEZ4TnFjaWNhUlhuUmRHaHcxS1lzZ2tyK0FLd0NyUWwyL2xhdjU5a0E1dVFGeDdTL1prZHFKMTY4SUlBQngzK0xNOEpyVEhIUGhUelk3NVVuMUJHKy9BSHRUYno2UjlIc2VFRXBwTEJCQjk3cGMwejl2cVE4RU53WXI5RkpmVHBQQUlma3JKVzk2UzR5YjJ1T280QUNnbm95VitTbFJ1aVlrYmFUQk5Ca1puV0hpYkR6YzZVOU9vK1A2cDVacXFab1FLZDcyTVA4Y3Z0VW90bndGRTFucklYZXluRnpwVDA2ajQvcW5sbXFwbWhBcDN2WW5ZWnYwYlpROXZmK2xlSUdHTkIrYktYOG5XU3NXOW9YIiwidG9rZW5fdHlwZSI6ImJlYXJlciJ9.cCRHKqNYkXuYYpyPSKrQjONgXkA6cDntuJEx-t164Ib-j7tZ6k1-EWQxoGGZD-NbuYSByDEvM0kSGZ-UptVZq7BLzxEQp8h6YknjGTakZ5Hp-ukmKWMgGHASKI9Yiui1yPUi26E3_OoO0_WiNF6qA865x419yV3CJ5GDB2KY8ds</con:value>
+    </con:property>
+    <con:property>
+      <con:name>SourceUrl</con:name>
+      <con:value>${#Project#AccesUrl}/gateway</con:value>
+    </con:property>
+    <con:property>
+      <con:name>AccesUrl</con:name>
+      <con:value>https://contentqa01-thepoint.hlrpphoenix.com</con:value>
+    </con:property>
+    <con:property>
+      <con:name>ACookie_Value</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>SiteInfoType</con:name>
+      <con:value>Education</con:value>
+    </con:property>
+    <con:property>
+      <con:name>sakurai ENV URL</con:name>
+      <con:value>https://sakurai-api-contentqa.prep-u.com</con:value>
+    </con:property>
+    <con:property>
+      <con:name>InstructorEmail</con:name>
+      <con:value>prepu.instructor05</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Auth URL</con:name>
+      <con:value>https://preprod-sso.hlrpbooks.com</con:value>
+    </con:property>
+    <con:property>
+      <con:name>ENV</con:name>
+      <con:value>https://contentqa01-thepoint.hlrpphoenix.com</con:value>
+    </con:property>
+    <con:property>
+      <con:name>BearerToken</con:name>
+      <con:value>Bearer ZmYxYjNjNjViMzJkYTFhMTg1NDc0MTliNzAyNTIwZjUyZDQyOTFhNWExNzZmMDBhYmI5NTkxZTI5NDYzOGVlYw</con:value>
+    </con:property>
+    <con:property>
+      <con:name>InstructorPassword</con:name>
+      <con:value>Prp@2023</con:value>
+    </con:property>
+    <con:property>
+      <con:name>instructorUserId</con:name>
+      <con:value>082422e3-4826-4758-90fc-455e010ac5b0</con:value>
+    </con:property>
+    <con:property>
+      <con:name>IN_Set-Cookie</con:name>
+      <con:value>WKHPEAuthToken=UZHf9pXreBn%2biYRtFxNqcicaRXnRdGhw1KYsgkr%2bAKwCrQl2%2flav59kA5uQFx7S%2fZkdqJ168IIABx3%2bLM8JrTHHPhTzY75Un1BG%2b%2fAHtTbz6R9HseEEppLBBB97pc0z9vqQ8ENwYr9FJfTpPAIfkrJW96S4yb2uOo4ACgnoyV%2bSlRuiYkbaTBNBkZnWHibDzc6U9Oo%2bP6p5ZqqZoQKd72MP8cvtUotnwFE1nrIXeynFzpT06j4%2fqnlmqpmhAp3vYnYZv0bZQ9vf%2bleIGGNB%2bbKX8nWSsW9oX; path=/; secure; HttpOnly; SameSite=None;HttpOnly=true</con:value>
+    </con:property>
+    <con:property>
+      <con:name>PostbackUrlOnSuccess</con:name>
+      <con:value>${#Project#AccesUrl}/Authentication/ProcessPostbackFromSso</con:value>
+    </con:property>
+    <con:property>
+      <con:name>QCSSoToken</con:name>
+      <con:value>UZHf9pXreBn+iYRtFxNqcicaRXnRdGhw1KYsgkr+AKwCrQl2/lav59kA5uQFx7S/ZkdqJ168IIABx3+LM8JrTHHPhTzY75Un1BG+/AHtTbz6R9HseEEppLBBB97pc0z9vqQ8ENwYr9FJfTpPAIfkrJW96S4yb2uOo4ACgnoyV+SlRuiYkbaTBNBkZnWHibDzc6U9Oo+P6p5ZqqZoQKd72MP8cvtUotnwFE1nrIXeynFzpT06j4/qnlmqpmhAp3vYnYZv0bZQ9vf+leIGGNB+bKX8nWSsW9oX</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Sakurai-Primary-Product-Isbn</con:name>
+      <con:value>9781469830599</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Set-Cookie</con:name>
+      <con:value>WKHPEAuthToken=ps4HgTX1YMeubzU22wIla23%2fs08P5LY2tMae0lhWcm76QAzI5ABS9MiBd1WEY9xT6%2fsZxIJF7bEM%2fzU3pAorHKbPBOAKxMxhAXTKocKe%2fdwkOlxsb3hh46HpogmpZtFNjRpVEoAWrxth%2bJ3iFqHB%2fAewh28Z8OAazID%2fpoT1qKDf274H42UGoVmqpmhAp3vY8OtWsYnPL8EbKDjFdhMqOsP8cvtUotnwSo0dlDObJb3w61axic8vwRsoOMV2Eyo630wrBBu7150YywUNIWWq94cfBV0TUW%2fS; path=/; secure; HttpOnly; SameSite=None;HttpOnly=true</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Student_Set-Cookie</con:name>
+      <con:value>[AWSALB=UttKYD3CceUG0dOrgubowphE3E5o6HZkEj5sErMcWH3DwdXR9l6jIxoG+VaevOmxQQdBugnNrnGCLI6GiWPdYr44nCoqD4tUTAVi+EENJFwGyb+/pVx+suZ6sd6k; Expires=Tue, 14 Nov 2023 05:10:15 GMT; Path=/, AWSALBCORS=UttKYD3CceUG0dOrgubowphE3E5o6HZkEj5sErMcWH3DwdXR9l6jIxoG+VaevOmxQQdBugnNrnGCLI6GiWPdYr44nCoqD4tUTAVi+EENJFwGyb+/pVx+suZ6sd6k; Expires=Tue, 14 Nov 2023 05:10:15 GMT; Path=/; SameSite=None; Secure, WKHPEAuth.Attempts=; expires=Mon, 06-Nov-2023 05:10:15 GMT; path=/; secure; SameSite=None;HttpOnly=true, WKHPEAuthToken=UZHf9pXreBlqmTJi0ylz%2fNv1%2fKiIDeI9%2bWX7wHOKAzC%2f5fUQyX3R9uJ%2b1Gr45agdGu2uF1mHH%2f14AdZwgmuvCnHPhTzY75Un1BG%2b%2fAHtTbz6R9HseEEppLBBB97pc0z9Lo8tovbvh1OLOI8oZKwdfblK0HCMLuWipwXW011f47tyweaMW5QwwtBkZnWHibDzc6U9Oo%2bP6p5ZqqZoQKd72MP8cvtUotnwFE1nrIXeynFzpT06j4%2fqnlmqpmhAp3vYnYZv0bZQ9vf%2bleIGGNB%2bbKX8nWSsW9oX; path=/; secure; HttpOnly; SameSite=None;HttpOnly=true]</con:value>
+    </con:property>
+    <con:property>
+      <con:name>ssoInstructor</con:name>
+      <con:value>UZHf9pXreBn+iYRtFxNqcicaRXnRdGhw1KYsgkr+AKwCrQl2/lav59kA5uQFx7S/ZkdqJ168IIABx3+LM8JrTHHPhTzY75Un1BG+/AHtTbz6R9HseEEppLBBB97pc0z9vqQ8ENwYr9FJfTpPAIfkrJW96S4yb2uOo4ACgnoyV+SlRuiYkbaTBNBkZnWHibDzc6U9Oo+P6p5ZqqZoQKd72MP8cvtUotnwFE1nrIXeynFzpT06j4/qnlmqpmhAp3vYnYZv0bZQ9vf+leIGGNB+bKX8nWSsW9oX</con:value>
+    </con:property>
+    <con:property>
+      <con:name>StudentEmail</con:name>
+      <con:value>prepu.student05</con:value>
+    </con:property>
+    <con:property>
+      <con:name>StudentPassword</con:name>
+      <con:value>Prp@2023</con:value>
+    </con:property>
+    <con:property>
+      <con:name>ssoStudent</con:name>
+      <con:value>UZHf9pXreBlqmTJi0ylz/Nv1/KiIDeI9+WX7wHOKAzC/5fUQyX3R9uJ+1Gr45agdGu2uF1mHH/14AdZwgmuvCnHPhTzY75Un1BG+/AHtTbz6R9HseEEppLBBB97pc0z9Lo8tovbvh1OLOI8oZKwdfblK0HCMLuWipwXW011f47tyweaMW5QwwtBkZnWHibDzc6U9Oo+P6p5ZqqZoQKd72MP8cvtUotnwFE1nrIXeynFzpT06j4/qnlmqpmhAp3vYnYZv0bZQ9vf+leIGGNB+bKX8nWSsW9oX</con:value>
+    </con:property>
+    <con:property>
+      <con:name>StudentUserId</con:name>
+      <con:value>d4a9b88c-07ba-484b-b445-455e013943e2</con:value>
+    </con:property>
+    <con:property>
+      <con:name>xaccessTokenStudent</con:name>
+      <con:value>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzc28ud2tocGUuY29tIiwiYXVkIjoiM2MzOTg0NmMtODg2YS1kZjExLWIxMTUtMDA1MDU2YzAwMDA4IiwiYXV0aF90aW1lIjoxNjk5MzMzODE1LCJuYW1lIjoicHJlcHUwNSBzdHVkZW50MDUiLCJqdGkiOiIyMTIyMWRlZS1kYTBhLTQ0NjEtYTRiNi0yMjg2YjA2ZTU0YzIiLCJpYXQiOjE2OTkzMzM4MTUsImV4cCI6MTY5OTQyMDIxNSwic3ViIjoiZDRhOWI4OGMtMDdiYS00ODRiLWI0NDUtNDU1ZTAxMzk0M2UyIiwicm9sZXMiOiJ3a2hwZS1lbmQgdXNlciIsIndraHBlX3Blcm1pc3Npb25zIjpbIkNhblVzZVBlcnNvbmFsaXphdGlvbkZlYXR1cmVzIl0sIndraHBlX3Rva2VuIjoiVVpIZjlwWHJlQmxxbVRKaTB5bHovTnYxL0tpSURlSTkrV1g3d0hPS0F6Qy81ZlVReVgzUjl1SisxR3I0NWFnZEd1MnVGMW1ISC8xNEFkWndnbXV2Q25IUGhUelk3NVVuMUJHKy9BSHRUYno2UjlIc2VFRXBwTEJCQjk3cGMwejlMbzh0b3ZidmgxT0xPSThvWkt3ZGZibEswSENNTHVXaXB3WFcwMTFmNDd0eXdlYU1XNVF3d3RCa1puV0hpYkR6YzZVOU9vK1A2cDVacXFab1FLZDcyTVA4Y3Z0VW90bndGRTFucklYZXluRnpwVDA2ajQvcW5sbXFwbWhBcDN2WW5ZWnYwYlpROXZmK2xlSUdHTkIrYktYOG5XU3NXOW9YIiwidG9rZW5fdHlwZSI6ImJlYXJlciJ9.sxl2_mNU49RFD2cRmw-AuPiNy2fFj5hmN84KJ3-2V9UkU9ERV8akw9ifDmTQMTrXXJrhYVNOWWq8taonZzAHYFnrxZ9W7wHRjK3GJ3jWDsqYIrZ2MyCRm8vqD2e567kVLU7MkcGV66HMYucLPsAt2ZZG_Xrkmx8tIHV32TpSrtI</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Version</con:name>
+      <con:value>1</con:value>
+    </con:property>
+    <con:property>
+      <con:name>TestDataExcelFile</con:name>
+      <con:value/>
+    </con:property>
+    <con:databaseConnectionContainer/>
+    <con:jmsConnectionContainer/>
+  </con:environment>
+  <con:environment id="fc5dccc3-63b2-40b9-8037-0f625641ec42" name="QE02" index="1">
+    <con:service type="REST" name="UsernameInSso">
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${#Project#Auth URL}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="BearerToken">
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${#Project#sakurai ENV URL}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="Sakurai End Points">
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${#Project#sakurai ENV URL}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="Content URL End Points">
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${#Project#ENV}</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="sdfdf">
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://contentqa01-thepoint.hlrpphoenix.com</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="THE POINT Suport">
+      <con:endpoint authProfile="No Authorization" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">${#Project#ENV}</con:endpoint>
+    </con:service>
+    <con:property>
+      <con:name>UrlToRedirectOnSuccess</con:name>
+      <con:value>${#Project#AccesUrl}/MyContent</con:value>
+    </con:property>
+    <con:property>
+      <con:name>xaccessTokenInstructor</con:name>
+      <con:value>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzc28ud2tocGUuY29tIiwiYXVkIjoiZWI3M2JkOWItZmQxNi00NDQwLTgxOWMtZTczYTc1NWI2YzZmIiwiYXV0aF90aW1lIjoxNjk5NTMwNTEzLCJuYW1lIjoiYW50b2FydWwgdGh5YWdhcmFqYW4iLCJqdGkiOiJkN2M1YWU4ZC00NTc5LTQ2NjAtYWIxZi1kY2VmNGY3NjZmM2YiLCJpYXQiOjE2OTk1MzA1MTMsImV4cCI6MTY5OTYxNjkxMywic3ViIjoiN2FmNDhjNjktNTU0NC00NWNlLTlhMDEtNDQwYjAwZjkzMWYzIiwicm9sZXMiOiJ3a2hwZS1hZG1pbiIsIndraHBlX3Blcm1pc3Npb25zIjpbIkhhc0FjY2Vzc1RvQWxsQ29udGVudCIsIkNhblVzZVBlcnNvbmFsaXphdGlvbkZlYXR1cmVzIl0sIndraHBlX3Rva2VuIjoiY1k4dVJBc0ZTK2VGUDA0WWUwcENHWGw0Yi9RUXVJaWt3dXV1YklOQ1JjMXQzVEZoUlhFWGJkcFRGVjNpNk5udVFZaGVBZHBxZ2FYMHhDaVZLZ01CSytIQmRDMm1HTHlJdHlIMmVQUWNsdk9Rd3pTR3dlekFhU015OUplM1ZoazgxcjcydUlxdjJmZzdHNWZaK3VJMUdhN3E0V2RzYW0rTW1CK1FPZHNVK2VaZlFrd0dDckFvMFoySmp4bWNQVDJURzdjZnROOTVQU2dCemFGbnVDakI5bk9sUFRxUGorcWVXYXFtYUVDbmU5aWRobS9SdGxEMjk4UjBHekVrWVoyWGVLdENtR1I0UkxaWnFxWm9RS2Q3MlBEclZyR0p6eS9Cdy94eSsxU2kyZkFsblB4YndZUjl6Ukc4UHExWmxqVWEiLCJ0b2tlbl90eXBlIjoiYmVhcmVyIn0.EdGmuxpEMghGacFtseSsVTcfXt9DSmwodS-4ebEstdqJsNxB4S6DYFrUx5Qxc4pnGWLXStGwvol-1lZoK7xWVoLzpH7B0-KZBPwT4I2sYrmkiqJM5LBVv72FpJIEfAttxSo1WqjPo5hPzM9SfptArWoZI45qC9wBrddODS9OQj8</con:value>
+    </con:property>
+    <con:property>
+      <con:name>SourceUrl</con:name>
+      <con:value>${#Project#AccesUrl}/gateway</con:value>
+    </con:property>
+    <con:property>
+      <con:name>AccesUrl</con:name>
+      <con:value>https://qe02-support.thepoint.hlrpphoenix.com</con:value>
+    </con:property>
+    <con:property>
+      <con:name>ACookie_Value</con:name>
+      <con:value>cf_clearance=_gVIp8gyNf0G_cNaFrQIvY08YTQpFO0NVDuPwL.E9Io-1699331275-0-1-cd0fc955.c265b9.21f56cb3-0.2.1699331275; .ASPXAUTH=96CAC0E65E8086E58234602217E0314B51A2CBF0646BCE923BB7A806B26F20A654385BE43FC4E65A2CA1F304634F0B971EFB6A439D2422EEA8510A6C1A1612D6E8902EC580EADEC3F313CAD1945912911E8E1A0EAAE1AEA7A41B561BAD4EE8ACF14500AD2F58E288153E5905893832096B600C833470505BA746E558053DC149D855FDEB17A4B29027D86E559D706ABC357E2B24892563892CEB73F9A82460AA; ASP.NET_SessionId=3my0wrb0olgj15h53sw1dd53; AWSALB=2pjTn+ElF1EgcPSn3z8yf/eJrOiuRaA2GhmiU3Iu1bJWXZBOgmXdYvIjsFsAq+xr15sEgt+7e773ATfKvRLe3h/iS5+/zjMjkhRVCvomMC1BtjE8o6QYOOGshVjf; AWSALBCORS=2pjTn+ElF1EgcPSn3z8yf/eJrOiuRaA2GhmiU3Iu1bJWXZBOgmXdYvIjsFsAq+xr15sEgt+7e773ATfKvRLe3h/iS5+/zjMjkhRVCvomMC1BtjE8o6QYOOGshVjf</con:value>
+    </con:property>
+    <con:property>
+      <con:name>SiteInfoType</con:name>
+      <con:value>Education</con:value>
+    </con:property>
+    <con:property>
+      <con:name>sakurai ENV URL</con:name>
+      <con:value>https://sakurai-api-contentqa.prep-u.com</con:value>
+    </con:property>
+    <con:property>
+      <con:name>InstructorEmail</con:name>
+      <con:value>prepu.instructor05</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Auth URL</con:name>
+      <con:value>https://qe02-sso.hlrpphoenix.com</con:value>
+    </con:property>
+    <con:property>
+      <con:name>ENV</con:name>
+      <con:value>https://qe02-support.thepoint.hlrpphoenix.com</con:value>
+    </con:property>
+    <con:property>
+      <con:name>BearerToken</con:name>
+      <con:value>Bearer ZmYxYjNjNjViMzJkYTFhMTg1NDc0MTliNzAyNTIwZjUyZDQyOTFhNWExNzZmMDBhYmI5NTkxZTI5NDYzOGVlYw</con:value>
+    </con:property>
+    <con:property>
+      <con:name>InstructorPassword</con:name>
+      <con:value>Prp@2023</con:value>
+    </con:property>
+    <con:property>
+      <con:name>instructorUserId</con:name>
+      <con:value>7af48c69-5544-45ce-9a01-440b00f931f3</con:value>
+    </con:property>
+    <con:property>
+      <con:name>IN_Set-Cookie</con:name>
+      <con:value>WKHPEAuthToken.AutoSignedIn=cY8uRAsFS%2beFP04Ye0pCGXl4b%2fQQuIikwuuubINCRc1t3TFhRXEXbdpTFV3i6NnuQYheAdpqgaX0xCiVKgMBK%2bHBdC2mGLyItyH2ePQclvOQwzSGwezAaSMy9Je3Vhk81r72uIqv2fg7G5fZ%2buI1Ga7q4Wdsam%2bMmB%2bQOdsU%2beZfQkwGCrAo0Z2JjxmcPT2TG7cftN95PSgBzaFnuCjB9nOlPTqPj%2bqeWaqmaECne9idhm%2fRtlD298R0GzEkYZ2XeKtCmGR4RLZZqqZoQKd72PDrVrGJzy%2fBw%2fxy%2b1Si2fAlnPxbwYR9zRG8Pq1ZljUa; expires=Sat, 09-Dec-2023 11:48:33 GMT; path=/; SameSite=None;HttpOnly=true</con:value>
+    </con:property>
+    <con:property>
+      <con:name>PostbackUrlOnSuccess</con:name>
+      <con:value>${#Project#AccesUrl}/Authentication/ProcessPostbackFromSso</con:value>
+    </con:property>
+    <con:property>
+      <con:name>QCSSoToken</con:name>
+      <con:value>cY8uRAsFS+eFP04Ye0pCGXl4b/QQuIikwuuubINCRc1t3TFhRXEXbdpTFV3i6NnuQYheAdpqgaX0xCiVKgMBK+HBdC2mGLyItyH2ePQclvOQwzSGwezAaSMy9Je3Vhk81r72uIqv2fg7G5fZ+uI1Ga7q4Wdsam+MmB+QOdsU+eZfQkwGCrAo0Z2JjxmcPT2TG7cftN95PSgBzaFnuCjB9nOlPTqPj+qeWaqmaECne9idhm/RtlD298R0GzEkYZ2XeKtCmGR4RLZZqqZoQKd72PDrVrGJzy/Bw/xy+1Si2fAlnPxbwYR9zRG8Pq1ZljUa</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Sakurai-Primary-Product-Isbn</con:name>
+      <con:value>9781469830599</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Set-Cookie</con:name>
+      <con:value>WKHPEAuthToken=ps4HgTX1YMeubzU22wIla23%2fs08P5LY2tMae0lhWcm76QAzI5ABS9MiBd1WEY9xT6%2fsZxIJF7bEM%2fzU3pAorHKbPBOAKxMxhAXTKocKe%2fdwkOlxsb3hh46HpogmpZtFNjRpVEoAWrxth%2bJ3iFqHB%2fAewh28Z8OAazID%2fpoT1qKDf274H42UGoVmqpmhAp3vY8OtWsYnPL8EbKDjFdhMqOsP8cvtUotnwSo0dlDObJb3w61axic8vwRsoOMV2Eyo630wrBBu7150YywUNIWWq94cfBV0TUW%2fS; path=/; secure; HttpOnly; SameSite=None;HttpOnly=true</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Student_Set-Cookie</con:name>
+      <con:value>[AWSALB=8NL5gY2aUkbeoM8HdNdZSgcCtkQWgZF/LBfiagNAaKiIkrSymUt7FdRLHIzknDRJ6qoJQ5KHEj5wybKlBGaIkRbBMNAfoQsG56Ttvmx6ZBSTaczVXUnxygreNiD8; Expires=Tue, 24 Oct 2023 12:32:15 GMT; Path=/, AWSALBCORS=8NL5gY2aUkbeoM8HdNdZSgcCtkQWgZF/LBfiagNAaKiIkrSymUt7FdRLHIzknDRJ6qoJQ5KHEj5wybKlBGaIkRbBMNAfoQsG56Ttvmx6ZBSTaczVXUnxygreNiD8; Expires=Tue, 24 Oct 2023 12:32:15 GMT; Path=/; SameSite=None; Secure, WKHPEAuth.Attempts=; expires=Mon, 16-Oct-2023 12:32:15 GMT; path=/; secure; SameSite=None;HttpOnly=true, WKHPEAuthToken=tfQ4d3TzfutULqfEGz6%2bqdSszy5DUdLQFzdShqEo0A4NHgvr2mCR6ppUwdhEKzEIay9GDOZRS07MZ47vAX36CXHPhTzY75Un1BG%2b%2fAHtTbz6R9HseEEppLBBB97pc0z9Lo8tovbvh1OLOI8oZKwdfblK0HCMLuWipwXW011f47tyweaMW5QwwtBkZnWHibDzc6U9Oo%2bP6p5ZqqZoQKd72MP8cvtUotnwFE1nrIXeynFzpT06j4%2fqnlmqpmhAp3vYnYZv0bZQ9vf%2bleIGGNB%2bbKX8nWSsW9oX; path=/; secure; HttpOnly; SameSite=None;HttpOnly=true]</con:value>
+    </con:property>
+    <con:property>
+      <con:name>ssoInstructor</con:name>
+      <con:value>cY8uRAsFS+eFP04Ye0pCGXl4b/QQuIikwuuubINCRc1t3TFhRXEXbdpTFV3i6NnuQYheAdpqgaX0xCiVKgMBK+HBdC2mGLyItyH2ePQclvOQwzSGwezAaSMy9Je3Vhk81r72uIqv2fg7G5fZ+uI1Ga7q4Wdsam+MmB+QOdsU+eZfQkwGCrAo0Z2JjxmcPT2TG7cftN95PSgBzaFnuCjB9nOlPTqPj+qeWaqmaECne9idhm/RtlD298R0GzEkYZ2XeKtCmGR4RLZZqqZoQKd72PDrVrGJzy/Bw/xy+1Si2fAlnPxbwYR9zRG8Pq1ZljUa</con:value>
+    </con:property>
+    <con:property>
+      <con:name>StudentEmail</con:name>
+      <con:value>prepu.student05</con:value>
+    </con:property>
+    <con:property>
+      <con:name>StudentPassword</con:name>
+      <con:value>Prp@2023</con:value>
+    </con:property>
+    <con:property>
+      <con:name>ssoStudent</con:name>
+      <con:value>tfQ4d3TzfutULqfEGz6+qdSszy5DUdLQFzdShqEo0A4NHgvr2mCR6ppUwdhEKzEIay9GDOZRS07MZ47vAX36CXHPhTzY75Un1BG+/AHtTbz6R9HseEEppLBBB97pc0z9Lo8tovbvh1OLOI8oZKwdfblK0HCMLuWipwXW011f47tyweaMW5QwwtBkZnWHibDzc6U9Oo+P6p5ZqqZoQKd72MP8cvtUotnwFE1nrIXeynFzpT06j4/qnlmqpmhAp3vYnYZv0bZQ9vf+leIGGNB+bKX8nWSsW9oX</con:value>
+    </con:property>
+    <con:property>
+      <con:name>StudentUserId</con:name>
+      <con:value>d4a9b88c-07ba-484b-b445-455e013943e2</con:value>
+    </con:property>
+    <con:property>
+      <con:name>xaccessTokenStudent</con:name>
+      <con:value>cf_clearance=mlKn7A2yI_Gzea0bFlSo_V6M0eTrflHQFgQXelfu_z0-1699331474-0-1-cd0fc955.c265b9.21f56cb3-0.2.1699331474; ASP.NET_SessionId=zc2d4k1mjrpmi2d1ox4tr10j; AWSALB=CwYH81HAJfowHnIpNgxITgkPm/ekdFjMR9G+YXiLAp4eOwcOBVe9zVNKSV5DiVX9TuycepcF4T0rmjilevH9hBa1IygwKorTkgjIsHzX5LQkKrZsAfURJDJ23Nbh; AWSALBCORS=CwYH81HAJfowHnIpNgxITgkPm/ekdFjMR9G+YXiLAp4eOwcOBVe9zVNKSV5DiVX9TuycepcF4T0rmjilevH9hBa1IygwKorTkgjIsHzX5LQkKrZsAfURJDJ23Nbh; .ASPXAUTH=3AF509E2B03936DD7DD762311AC09EBBA18900D7C8D6FD95AEA19067B796DF45613D57EFD3121845758921C76ED88ECFA4C484943D87AC4D4FCC8466C7941F579A31E4EEE4875F221A5A82DD61DA4657F39CBEA74D8EC7FEECFEDC9CD32BC9C4380B2EDBA396CAD03571EFD4412FD10CC165830F28C101DEEFAE917928E9E7FA84EF7BC00FABE56C503FC706CCB7CB9C8CCF5EC70F20D4A5145F102A9E77866B</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Version</con:name>
+      <con:value>1</con:value>
+    </con:property>
+    <con:property>
+      <con:name>TestDataExcelFile</con:name>
+      <con:value>${projectDir}\Testdata.xlsx</con:value>
+    </con:property>
+    <con:databaseConnectionContainer/>
+    <con:jmsConnectionContainer/>
+  </con:environment>
+  <con:authRepository/>
+  <con:environmentSpec>
+    <con:entry environmentId="cf5ed83e-b834-45a4-90bc-14b6aa7784d5">
+      <con:authProfile>No Authorization</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+      <con:authProfile>No Authorization</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+  <con:tags/>
+</con:soapui-project>

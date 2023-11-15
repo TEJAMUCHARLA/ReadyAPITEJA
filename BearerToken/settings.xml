@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="5fa3c98b-9cb6-4c6c-a6b5-6a4421f055cf" name="BearerToken" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings id="49bcc16f-18bf-413c-9499-e553d94cef2e">
+    <con:setting id="5fa3c98b-9cb6-4c6c-a6b5-6a4421f055cffileName">BearerToken</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart="BearerToken.json">
+    <con:part>
+      <con:url>BearerToken.json</con:url>
+      <con:content>{"openapi":"3.0.1","info":{"title":"BearerToken","version":"1.0.0"},"servers":[{"url":"/"}],"paths":{"/${#Project#Version}/authKeys/sso":{"description":"","get":{"description":"","parameters":[{"name":"token","in":"query","required":true,"schema":{"type":"string"}},{"name":"product","in":"query","required":true,"schema":{"type":"string"}}],"responses":{"default":{"description":"Default response"}}}}}}</con:content>
+      <con:type>https://swagger.io/openapiv3/specification</con:type>
+    </con:part>
+  </con:definitionCache>
+  <con:endpoints/>
+</con:interface>

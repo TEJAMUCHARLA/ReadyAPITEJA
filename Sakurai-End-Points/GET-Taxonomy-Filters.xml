@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="GET Taxonomy Filters" path="/${#Project#Version}/termTaxonomyFilters" id="b40ad677-4b9d-4145-ad89-e958fd86783b" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="b40ad677-4b9d-4145-ad89-e958fd86783bfileName">GET-Taxonomy-Filters</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="true">
+      <con:name>productId</con:name>
+      <con:value>89</con:value>
+      <con:style>QUERY</con:style>
+      <con:default>89</con:default>
+    </con:parameter>
+    <con:parameter required="true">
+      <con:name>userId</con:name>
+      <con:value>1500764322</con:value>
+      <con:style>QUERY</con:style>
+      <con:default>1500764322</con:default>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="GET Taxonomy Filters" id="db97a891-216a-43b1-8fce-836b68589316" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="GET Taxonomy Filters" id="eaf7af99-4fd9-4617-a7c9-a61cf49b4418" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

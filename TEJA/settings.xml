@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="220942b6-1f47-4983-9616-850cd214542f" name="TEJA" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="220942b6-1f47-4983-9616-850cd214542ffileName">TEJA</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

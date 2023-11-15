@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="ProcessPostbackFromSso" path="/Authentication/ProcessPostbackFromSso" id="ed4d189e-f251-4818-b7e5-619f4589244c" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="ed4d189e-f251-4818-b7e5-619f4589244cfileName">ProcessPostbackFromSso</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="2b52e7ab-daa3-4630-8d32-56d748959721" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="ef41c1b9-e47c-41a3-8cd7-181639e969c2" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:originalUri>https://qe02-support.thepoint.hlrpphoenix.com/Authentication/Challenge</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

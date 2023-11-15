@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="PUT Update question collection details from question library" path="/${#Project#Version}/questionSets/{ID}" id="99f56d8a-6648-4585-afc2-51dac13ed781" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="99f56d8a-6648-4585-afc2-51dac13ed781fileName">PUT-Update-question-collection-details-from-question-library</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter>
+      <con:name>ID</con:name>
+      <con:value>1500132554</con:value>
+      <con:style>TEMPLATE</con:style>
+      <con:default>1500132554</con:default>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="PUT Update question collection details from question library" id="e84fa37a-994f-4c49-9ee5-f82a399ffa59" method="PUT">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="PUT Update question collection details from question library" id="a1102f1f-67fc-4b37-a5a5-acd81977c87c" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request>{
+  "parentId": null,
+  "name": "QC1345",
+  "mode": "info",
+  "totalQuestions": 0,
+  "totalRetiredQuestions": null,
+  "clinicalJudgmentExam": null,
+  "enabled": true,
+  "isStandardizedExam": false,
+  "questionSetItems": [],
+  "classIdScope": null,
+  "parentOwner": null,
+  "user": "1500764322",
+  "product": "89",
+  "questions": [],
+  "caseStudies": [],
+  "onHoldQuestions": []
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>ID</con:entry>
+      </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>
