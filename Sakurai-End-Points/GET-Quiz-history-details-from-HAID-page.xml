@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="GET Quiz history details from HAID page" path="/${#Project#Version}/quizzes" id="02d1fe9f-3b88-4ecd-bd66-d3317cebdd4a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="02d1fe9f-3b88-4ecd-bd66-d3317cebdd4afileName">GET-Quiz-history-details-from-HAID-page</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET Quiz history details from HAID page" id="9f5f8526-0d52-4ca7-9268-cc125f474f8e" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>classId</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>currentPage</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>direction</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>pageSize</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>sort</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>studentId</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>type</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="GET Quiz history details from HAID page" id="d26ca7bf-e549-4711-81df-0ee0a8c50189" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="studentId" value="1500765541"/>
+        <con:entry key="classId" value="1500177756"/>
+        <con:entry key="pageSize" value="10"/>
+        <con:entry key="sort" value="startedOn"/>
+        <con:entry key="currentPage" value="1"/>
+        <con:entry key="type" value="question_collection"/>
+        <con:entry key="direction" value="DESC"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>classId</con:entry>
+        <con:entry>currentPage</con:entry>
+        <con:entry>direction</con:entry>
+        <con:entry>pageSize</con:entry>
+        <con:entry>sort</con:entry>
+        <con:entry>studentId</con:entry>
+        <con:entry>type</con:entry>
+      </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

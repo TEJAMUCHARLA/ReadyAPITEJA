@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="GET Question details from Question Library" path="/${#Project#Version}/questions" id="27c872e2-43b8-4eb8-962f-29410efe47b1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="27c872e2-43b8-4eb8-962f-29410efe47b1fileName">GET-Question-details-from-Question-Library</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET Question details from Question Library" id="15c3a41a-0948-4ace-afdc-38beb61f2a65" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>classId</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>currentPage</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>direction</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>instructorId</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>isQuestionLibrary</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>pageSize</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>productId</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>sort</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="GET Question details from Question Library" id="49fa6253-2ed2-4947-a080-5511a9a1da36" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="classId" value="1500177725"/>
+        <con:entry key="isQuestionLibrary" value="1"/>
+        <con:entry key="productId" value="89"/>
+        <con:entry key="pageSize" value="25"/>
+        <con:entry key="sort" value="difficulty"/>
+        <con:entry key="currentPage" value="1"/>
+        <con:entry key="direction" value="ASC"/>
+        <con:entry key="instructorId" value="1500764322"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>classId</con:entry>
+        <con:entry>currentPage</con:entry>
+        <con:entry>direction</con:entry>
+        <con:entry>instructorId</con:entry>
+        <con:entry>isQuestionLibrary</con:entry>
+        <con:entry>pageSize</con:entry>
+        <con:entry>productId</con:entry>
+        <con:entry>sort</con:entry>
+      </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

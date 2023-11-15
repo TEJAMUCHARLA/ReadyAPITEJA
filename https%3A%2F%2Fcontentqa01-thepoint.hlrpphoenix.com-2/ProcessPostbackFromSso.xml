@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="ProcessPostbackFromSso" path="/Authentication/ProcessPostbackFromSso" id="1a407c80-64c3-429b-9e84-ed36d5c8d222" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="1a407c80-64c3-429b-9e84-ed36d5c8d222fileName">ProcessPostbackFromSso</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="ProcessPostbackFromSso" id="bac7ef92-a288-4325-9222-cacebac7ba02" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>AuthenicationResult</con:name>
+        <con:value><![CDATA[<WkhpeAuthenticationResult xmlns="http://schemas.sso.wkhpe.com/2010/07/10" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><AccessToken>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzc28ud2tocGUuY29tIiwiYXVkIjoiM2MzOTg0NmMtODg2YS1kZjExLWIxMTUtMDA1MDU2YzAwMDA4IiwiYXV0aF90aW1lIjoxNjk5NzE3OTQzLCJuYW1lIjoiQVBJX0F1dG9tYXRpb24gSW5zdHJ1Y3RvcjEwIiwianRpIjoiZTc5M2MyMmItYTNkZi00ZmUxLTkxZjAtMDkxZjZkYWRkNGUxIiwiaWF0IjoxNjk5NzE3OTQzLCJleHAiOjE2OTk4MDQzNDMsInN1YiI6ImVkMjQ2MWJmLThlODAtNDAxZS04YmU5LTQ1NGMwMTMzOTg1MyIsInJvbGVzIjoid2tocGUtZW5kIHVzZXIiLCJ3a2hwZV9wZXJtaXNzaW9ucyI6WyJDYW5Vc2VQZXJzb25hbGl6YXRpb25GZWF0dXJlcyJdLCJ3a2hwZV90b2tlbiI6ImR1Nnp1dnBhMXFvNDBlVlBHOG94NWZRUllabWRmdy9VNGVNTjdDbmZjYmVNV042SU5Ec2JKS3R3UzVCTGlYN1JKM2NuRlAwVHZucXdXZFY2RXJhS0pEdDVvMlR6ZnpPeXBZUlRtQUlIT01WQllnU21ralBTVW01OTBFKzIvSmxXVmNpR2M2b3JkV25NcFhjTWFFWWtBR2tqeW1sdUNwM2VBeFBrZC9CT0hYamRWcHRadU1YWHhLOTBibGF3TDJDb0d5ZzR4WFlUS2pyeXN5a0FaSnRzWWNQOGN2dFVvdG53UnRqTC9aYXVjdlliS0RqRmRoTXFPdkt6S1FCa20yeGg2eGRlS2Vjd3BTM29WSU50SVZJRmJROUc0Tm5WTHJDSWFydVpmeU8vWU5jPSIsInRva2VuX3R5cGUiOiJiZWFyZXIifQ.MGIAPs3PhXocj_jDJfOHJTKooCNHle7HDNwnGepS8t55MD9H2-hyraPeppzO_vOhG4ewCInYigB19fQGS0KX8DqMr70qUA6YvWscgE8gVzn24ojJD0J-vL2C-_YcMsTSg4cYHGLJOiRnr4CWf2hXdGnBz4NgmMY5PTUKvTSwkvA</AccessToken><AccountMeetsTermsAndConditionsResults i:nil="true"/><AccountType>PersonalAccount</AccountType><ActiveProductCodesAndExpirations><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975132729</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975178703</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975124571</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975182649</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975186852</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975216863</ProductCode></ProductCodeAndExpirationResult></ActiveProductCodesAndExpirations><AddressLine1 i:nil="true"/><AddressLine2 i:nil="true"/><AllProductCodesAndExpirations><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975132729</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975178703</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975124571</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975182649</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975186852</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975216863</ProductCode></ProductCodeAndExpirationResult></AllProductCodesAndExpirations><AuthenticationMethod>Username</AuthenticationMethod><City i:nil="true"/><Country i:nil="true"/><Email>API_Automation.Instructor10@wktest.com</Email><FailureReasonCode i:nil="true"/><FailureResonMessage i:nil="true"/><FirstName>API_Automation</FirstName><IdToken>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzc28ud2tocGUuY29tIiwiYXVkIjoiM2MzOTg0NmMtODg2YS1kZjExLWIxMTUtMDA1MDU2YzAwMDA4IiwiYXV0aF90aW1lIjoxNjk5NzE3OTQzLCJuYW1lIjoiQVBJX0F1dG9tYXRpb24gSW5zdHJ1Y3RvcjEwIiwianRpIjoiMDNhYTFlZWYtNTZiMy00OGIxLTk4ZjktY2U3NTUyYjdhMDZkIiwiaWF0IjoxNjk5NzE3OTQzLCJleHAiOjE2OTk4MDQzNDMsInN1YiI6ImVkMjQ2MWJmLThlODAtNDAxZS04YmU5LTQ1NGMwMTMzOTg1MyIsInJvbGVzIjoid2tocGUtZW5kIHVzZXIiLCJ3a2hwZV9wZXJtaXNzaW9ucyI6WyJDYW5Vc2VQZXJzb25hbGl6YXRpb25GZWF0dXJlcyJdLCJnaXZlbl9uYW1lIjoiQVBJX0F1dG9tYXRpb24iLCJmYW1pbHlfbmFtZSI6Ikluc3RydWN0b3IxMCIsImVtYWlsIjoiQVBJX0F1dG9tYXRpb24uSW5zdHJ1Y3RvcjEwQHdrdGVzdC5jb20iLCJ1cGRhdGVkX2F0IjoxNjk1MzYyNzU1LCJ3a2hwZV9hY3RpdmVfc3Vic2NyaXB0aW9ucyI6Ilt7XCJpc2JuXCI6XCI5NzgxOTc1MTMyNTUyXCIsXCJwZXJzb25hXCI6XCJJbnN0cnVjdG9yXCIsXCJjb2RlXCI6XCI5NzgxOTc1MTMyNzI5XCJ9LHtcImlzYm5cIjpcIjk3ODE5NzUxNzg2NTlcIixcInBlcnNvbmFcIjpcIkluc3RydWN0b3IsIENQUGx1c1wiLFwiY29kZVwiOlwiOTc4MTk3NTE3ODcwM1wifSx7XCJpc2JuXCI6XCI5NzgxOTc1MTIzOTAxXCIsXCJwZXJzb25hXCI6XCJJbnN0cnVjdG9yLCBDUFBsdXNcIixcImNvZGVcIjpcIjk3ODE5NzUxMjQ1NzFcIn0se1wiaXNiblwiOlwiOTc4MTk3NTE4MjM4MFwiLFwicGVyc29uYVwiOlwiSW5zdHJ1Y3RvclwiLFwiY29kZVwiOlwiOTc4MTk3NTE4MjY0OVwifSx7XCJpc2JuXCI6XCI5NzgxOTc1MTg2Nzc3XCIsXCJwZXJzb25hXCI6XCJJbnN0cnVjdG9yLCBDUFBsdXNcIixcImNvZGVcIjpcIjk3ODE5NzUxODY4NTJcIn0se1wiaXNiblwiOlwiOTc4MTk3NTIyMjgyNlwiLFwicGVyc29uYVwiOlwiSW5zdHJ1Y3RvclwiLFwiY29kZVwiOlwiOTc4MTk3NTIxNjg2M1wifV0ifQ.nCjq9jLgh4nlhMUMiqEp4WlPPCTqXTVSUYNijm38NRV7089mWGPVgYmSwV-JLpuUhUDWj9Zz7KOl3O-8VJ3H_Lah55P4t7JcxTjZ0HFBnnaBAcq_rOeJH3Sr3klJoRp8nlOYvcKAP71CXO45FejSp4qdSVqKfkHoizX-0xF_IJo</IdToken><Impersonator i:nil="true"/><InstitutionName i:nil="true"/><IsReadOnly>false</IsReadOnly><LastName>Instructor10</LastName><MessageId>67e399ff-a5ec-4435-a816-809f9b984cd6</MessageId><Name>API_Automation Instructor10</Name><OriginalAuthenticationMethod>Username</OriginalAuthenticationMethod><Permisions><Permission><Description>Allow login into thePoint</Description><Id>1</Id></Permission><Permission><Description>Allows the user to use personalized features in thePoint Product Suite</Description><Id>17</Id></Permission><Permission><Description>Can edit user profile</Description><Id>8</Id></Permission></Permisions><Postal i:nil="true"/><Province i:nil="true"/><RoleId>1</RoleId><SessionId>00000000-0000-0000-0000-000000000000</SessionId><Successful>true</Successful><TimeStamp>2023-11-11T15:52:23.0388027Z</TimeStamp><TimeToLive i:nil="true"/><TokenKey>du6zuvpa1qo40eVPG8ox5fQRYZmdfw/U4eMN7CnfcbeMWN6INDsbJKtwS5BLiX7RJ3cnFP0TvnqwWdV6EraKJDt5o2TzfzOypYRTmAIHOMVBYgSmkjPSUm590E+2/JlWVciGc6ordWnMpXcMaEYkAGkjymluCp3eAxPkd/BOHXjdVptZuMXXxK90blawL2CoGyg4xXYTKjrysykAZJtsYcP8cvtUotnwRtjL/ZaucvYbKDjFdhMqOvKzKQBkm2xh6xdeKecwpS3oVINtIVIFbQ9G4NnVLrCIaruZfyO/YNc=</TokenKey><UserId>ed2461bf-8e80-401e-8be9-454c01339853</UserId><Institution><BookstoreNumber i:nil="true"/><Country i:nil="true"/><Identifier>99999999-9999-9999-9999-999999999999</Identifier><InstitutionNumber i:nil="true"/><Name>Unaffiliated</Name><SLXAccountId i:nil="true"/><SfdcAccountId i:nil="true"/></Institution><ThirdPartyIntegrations><ThirdPartyIntegration i:type="VitalSourceThirdPartyIntegration"><Type>VitalSourceThirdPartyIntegration</Type><AccessToken>c3f410ec4187087b1d585cd31c452482</AccessToken><Id>KSJQVRQMJE88CRMZZ58S</Id></ThirdPartyIntegration></ThirdPartyIntegrations><UserType>Unknown</UserType></WkhpeAuthenticationResult>]]></con:value>
+        <con:style>QUERY</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>MessageSignature</con:name>
+        <con:value>7165391b327afc33ccd51e73e869f8cd31b8d7f4</con:value>
+        <con:style>QUERY</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>TimeStamp</con:name>
+        <con:value>11/11/2023 3:52:23 PM</con:value>
+        <con:style>QUERY</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>UrlToRedirectOnSuccess</con:name>
+        <con:value>https://contentqa01-thepoint.hlrpphoenix.com/MyContent</con:value>
+        <con:style>QUERY</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>SourceUrl</con:name>
+        <con:value>https://contentqa01-thepoint.hlrpphoenix.com/gateway</con:value>
+        <con:style>QUERY</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>PostbackUrlOnSuccess</con:name>
+        <con:value>https://contentqa01-thepoint.hlrpphoenix.com/Authentication/ProcessPostbackFromSso</con:value>
+        <con:style>QUERY</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>multipart/form-data</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>text/html; charset=utf-8</con:mediaType>
+      <con:status>400 403 404</con:status>
+      <con:params/>
+      <con:element>html</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType xsi:nil="true"/>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:element>data</con:element>
+    </con:representation>
+    <con:request name="TEJATEJ12345" id="6ff3ddbf-8637-4e8d-89aa-eab5c278c3b0" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment><con:entry key="Cookie" value="cf_clearance=MM.FTAWUgf0mZkKU1YtdITZDUbUihWqdePF4VBJBH3s-1699717660-0-1-cd0fc955.c265b9.21f56cb3-0.2.1699717660; liveagent_sid=c8245f4b-151b-45b3-b8b1-71458d718409; liveagent_vc=3; CloudFront-Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jb250ZW50cWEwMS1hcHAuaGxycHBob2VuaXguY29tLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2OTk3NjExMTl9fX1dfQ__; CloudFront-Signature=jwYiuaxPnQl8cFDdFQA0QIALPH5GEPA~DI8AxcofQ0Y0kcOuJpuBv85k9RPDmajVEHzyrWmGL5~FHC~UmpaEgdY-3FHTSd1dswxjq~wETBfQgsYWNA4LWssy~99RWavfM9hNRozcx6LBkdxaoiD28sG7A-1u29vPtF4KuucfAhiw6Ao7K-1jwLa7aChoI-UicjPDh-TTZHTi-qO9WGDmX7PGwBY4--JOvr26B4y~jEblrU6v~~YHNcyzEtoZZH-CrhEqPc5ChR19qGFvNanJfgDBasDC3c1WGuBXUc-kQ5RpBqwXLHvnTAxL-JYviVaXts8A5-vdhmvFaEwfmuhKsQ__; CloudFront-Key-Pair-Id=APKAIFKBUKZZ73UYKL7A; thepoint_token_access=&quot;eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzc28ud2tocGUuY29tIiwiYXVkIjoiM2MzOTg0NmMtODg2YS1kZjExLWIxMTUtMDA1MDU2YzAwMDA4IiwiYXV0aF90aW1lIjoxNjk5NzE5OTA0LCJuYW1lIjoiQVBJX0F1dG9tYXRpb24gSW5zdHJ1Y3RvcjEwIiwianRpIjoiMzY1M2M0MDQtOWRkYy00NDBjLThhYTMtNDk1NzAyZThmM2E5IiwiaWF0IjoxNjk5NzE5OTA0LCJleHAiOjE2OTk4MDYzMDQsInN1YiI6ImVkMjQ2MWJmLThlODAtNDAxZS04YmU5LTQ1NGMwMTMzOTg1MyIsInJvbGVzIjoid2tocGUtZW5kIHVzZXIiLCJ3a2hwZV9wZXJtaXNzaW9ucyI6WyJDYW5Vc2VQZXJzb25hbGl6YXRpb25GZWF0dXJlcyJdLCJ3a2hwZV90b2tlbiI6ImR1Nnp1dnBhMXFvU3NUc01wWStyOTlkSkN4bTN4dXNaanR0a2NERThoMDRSQUJubEFENDFXc0NIeUNwdXhWMGJIemNGOGRCSWZjcnc2N3FSM2FhVHhUdDVvMlR6ZnpPeXBZUlRtQUlIT01WQllnU21ralBTVW01OTBFKzIvSmxXVmNpR2M2b3JkV25NcFhjTWFFWWtBR2tqeW1sdUNwM2VBeFBrZC9CT0hYamRWcHRadU1YWHhLOTBibGF3TDJDb0d5ZzR4WFlUS2pyeXN5a0FaSnRzWWNQOGN2dFVvdG53UnRqTC9aYXVjdlliS0RqRmRoTXFPdkt6S1FCa20yeGg2eGRlS2Vjd3BTM29WSU50SVZJRmJROUc0Tm5WTHJDSWFydVpmeU8vWU5jPSIsInRva2VuX3R5cGUiOiJiZWFyZXIifQ.H2xMnCpfHgGF4w6q7zYrHm8ki_FENDhtlrPlXUePYYgeiw9ixYMjdjaBgwwnjWsZr66ec7eSP1c53XPrUG-jtC6tX6b3GpdLEdnKO5mG2LhgnwkAGYlQMHvvKB34xPB-GkOYqnCJXjNBTU2FMPD3M5NeGYtlpVHy_-sgasxrycM&quot;" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Origin" value="https://preprod-sso.hlrpbooks.com" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="scheme" value="https" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Referer" value="https://preprod-sso.hlrpbooks.com/" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Sec-Fetch-Dest" value="document" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Accept-Encoding" value="gzip, deflate, br" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="path" value="/Authentication/ProcessPostbackFromSso" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Cache-Control" value="max-age=0" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Upgrade-Insecure-Requests" value="1" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="authority" value="contentqa01-thepoint.hlrpphoenix.com" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Accept-Language" value="en-US,en;q=0.9" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Content-Length" value="8565" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Content-Type" value="application/x-www-form-urlencoded" xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></con:setting>
+        <con:setting id="RecordRequestRepresentations">false</con:setting>
+        <con:setting id="com.eviware.soapui.support.editor.views.xml.form2.FormEditorView@ViewType">Only the first nodes</con:setting>
+      </con:settings>
+      <con:endpoint>https://contentqa01-thepoint.hlrpphoenix.com</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://contentqa01-thepoint.hlrpphoenix.com/Authentication/ProcessPostbackFromSso</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>AuthenicationResult</con:entry>
+        <con:entry>MessageSignature</con:entry>
+        <con:entry>TimeStamp</con:entry>
+        <con:entry>UrlToRedirectOnSuccess</con:entry>
+        <con:entry>SourceUrl</con:entry>
+        <con:entry>PostbackUrlOnSuccess</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

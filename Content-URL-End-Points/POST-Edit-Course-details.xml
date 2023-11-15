@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="POST Edit Course details" path="/Course/Save" id="9c52150a-75af-42ef-8265-6e454318f53f" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="9c52150a-75af-42ef-8265-6e454318f53ffileName">POST-Edit-Course-details</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="POST Edit Course details" id="e6808bea-d455-4788-b1c7-d90802239b91" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="POST Edit Course details" id="3416818e-6f47-4192-95ba-1038748e0086" mediaType="multipart/form-data" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request>IsActive: True
+Id: d9464989-5ac7-4e75-aef7-45b500b1ec45
+TitleId: ae1088d9-4b7c-47f1-aadf-36da00af87b9
+RedirectOnComplete: 
+InstitutionName: Misc-Default Filler
+InstitutionId: 001d0000029ZCmSAAW
+ProgramType: BSN
+Name: DEMO345456
+Section: sec1
+Time: 
+Term: 
+Location:</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

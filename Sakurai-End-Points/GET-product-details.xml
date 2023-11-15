@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="GET product details" path="/${#Project#Version}/products/{ProductID}" id="85557948-eb88-4c18-ba0f-d4c13a5f2984" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="85557948-eb88-4c18-ba0f-d4c13a5f2984fileName">GET-product-details</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter>
+      <con:name>ProductID</con:name>
+      <con:value>89</con:value>
+      <con:style>TEMPLATE</con:style>
+      <con:default>89</con:default>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="GET product details" id="fc037b28-2339-4795-b944-bfb4648ee0a9" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="GET product details" id="8ca3ee30-1084-431a-812b-b1ea34e2cf04" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>ProductID</con:entry>
+      </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

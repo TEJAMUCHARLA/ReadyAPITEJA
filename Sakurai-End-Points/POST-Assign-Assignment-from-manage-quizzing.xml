@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="POST Assign Assignment from manage quizzing" path="/${#Project#Version}/assignments" id="01c759be-12f0-4306-8886-0ee082323079" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="01c759be-12f0-4306-8886-0ee082323079fileName">POST-Assign-Assignment-from-manage-quizzing</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="POST Assign Assignment from manage quizzing" id="7ef6f8d3-7cb2-4a17-b4c5-d6cb31e633ae" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>batch</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="POST Assign Assignment from manage quizzing" id="12b8da30-77bc-4195-9184-124fb3c503e2" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request>[
+  {
+    "name": "QCAssignment01",
+    "availableDate": "2023-08-11T02:30:00Z",
+    "dueDate": "2023-08-18T02:30:00Z",
+    "timeZone": "Asia/Kolkata",
+    "chapter": null,
+    "termTaxonomy": null,
+    "points": "20",
+    "type": "question_collection",
+    "targetMasteryLevel": null,
+    "classes": [
+      "1500177737"
+    ],
+    "allowBookmarks": true,
+    "shuffleQuestions": false,
+    "answerKeyView": "overdue",
+    "questionSet": "1500132545"
+  }
+]</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="batch" value="true"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>batch</con:entry>
+      </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

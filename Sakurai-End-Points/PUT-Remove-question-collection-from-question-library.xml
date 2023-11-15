@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="PUT Remove question collection from question library" path="/${#Project#Version}/questionSets/{ID}" id="5cd7ac6f-d2c4-4cf6-a81d-6085a6eb86e3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="5cd7ac6f-d2c4-4cf6-a81d-6085a6eb86e3fileName">PUT-Remove-question-collection-from-question-library</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter>
+      <con:name>ID</con:name>
+      <con:value>1500132343</con:value>
+      <con:style>TEMPLATE</con:style>
+      <con:default>1500132343</con:default>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="PUT Remove question collection from question library" id="26ae9646-9fd8-4b80-9410-642c988bdc37" method="PUT">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="PUT Remove question collection from question library" id="2bc95344-d8da-46f8-9bff-0ae259af1798" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request>{
+  "parentId": null,
+  "name": "1 Aug QC",
+  "mode": "info",
+  "totalQuestions": 3,
+  "totalRetiredQuestions": 1,
+  "clinicalJudgmentExam": null,
+  "enabled": false,
+  "isStandardizedExam": false,
+  "questionSetItems": [
+    {
+      "itemId": 1176,
+      "type": "case_study",
+      "order": 2
+    },
+    {
+      "itemId": 177705,
+      "type": "question",
+      "order": 1
+    },
+    {
+      "itemId": 1500104257,
+      "type": "question",
+      "order": 3
+    }
+  ],
+  "classIdScope": null,
+  "parentOwner": null,
+  "user": "1500764322",
+  "product": "89",
+  "questions": [
+    "177705",
+    "1500104257"
+  ],
+  "caseStudies": [
+    "1176"
+  ],
+  "onHoldQuestions": []
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>ID</con:entry>
+      </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

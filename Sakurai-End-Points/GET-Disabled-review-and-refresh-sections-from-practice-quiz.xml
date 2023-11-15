@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="GET Disabled review and refresh sections from practice quiz" path="/${#Project#Version}/reviewRefreshSections/disabledReviewRefreshSections" id="09ad5456-1e59-4f82-91e8-43c8b5486e32" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="09ad5456-1e59-4f82-91e8-43c8b5486e32fileName">GET-Disabled-review-and-refresh-sections-from-practice-quiz</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET Disabled review and refresh sections from practice quiz" id="fda132c9-474c-48db-8e03-154eb61d536d" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>classId</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>studentId</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>targetMasteryLevel</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="GET Disabled review and refresh sections from practice quiz" id="e685780a-7437-4023-a3fc-7f914827d4e9" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="studentId" value="1500765541"/>
+        <con:entry key="classId" value="1500177731"/>
+        <con:entry key="targetMasteryLevel" value="5"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>classId</con:entry>
+        <con:entry>studentId</con:entry>
+        <con:entry>targetMasteryLevel</con:entry>
+      </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

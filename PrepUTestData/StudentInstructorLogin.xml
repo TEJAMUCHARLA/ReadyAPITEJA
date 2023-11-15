@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="70d73e5a-711c-419c-91b4-928b283c44f5" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="StudentInstructorLogin" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" zephyrTestName="" zephyrTestId="" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="70d73e5a-711c-419c-91b4-928b283c44f5fileName">StudentInstructorLogin</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Get Instructor Access Token" id="a74b0db2-af15-43fd-9541-4f068e18564a">
+    <con:settings/>
+    <con:config service="UsernameInSso" resourcePath="/Authentication/UsernameInSso" methodName="UsernameInSSO" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Get Instructor Access Token" id="36f7287c-3c0a-4cce-b51d-818ec310d707" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request>{"Email":"API_Automation.Instructor10","Password":"Api@2023","PostbackUrlOnSuccess":"https://contentqa01-thepoint.hlrpphoenix.com/Authentication/ProcessPostbackFromSso","SiteId":"3c39846c-886a-df11-b115-005056c00008","StaySignIn":false,"UrlToRedirectOnSuccess":"https://contentqa01-thepoint.hlrpphoenix.com/MyContent","Timestamp":"2023-11-11T15:52:22.484Z","SourceUrl":"https://contentqa01-thepoint.hlrpphoenix.com/gateway","AccessCode":"","SiteInfoType":"Education","WorkflowId":""}</con:request>
+        <con:originalUri>https://preprod-sso.hlrpbooks.com/Authentication/UsernameInSso</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="bb369fa7-200c-43ad-bedd-77d8ab02c489" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="GroovyScriptAssertion" id="d095396d-a409-4927-b408-dc5189ed6103" name="Script Assertion">
+          <con:configuration>
+            <scriptText>import groovy.json.JsonSlurper
+import java.lang.*;
+
+def response = context.expand( '${Get Instructor Access Token#Response}' )
+
+def verifyResponse = new JsonSlurper().parseText(response)
+log.info(verifyResponse.Data.AuthenicationResult)
+
+assert verifyResponse.Data.AuthenicationResult != null</scriptText>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="format" value="json"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>format</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Wait for Access instructor" id="c1ee7909-25bf-467a-9075-d6d20c7e8871">
+    <con:settings/>
+    <con:config>
+      <delay>${#Project#LoginDealy}</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="TEJA" id="57465aba-c0cf-46f9-b7fc-e31cf0859d55">
+    <con:settings/>
+    <con:config>
+      <script>import groovy.json.JsonSlurper
+import java.lang.*;
+/*
+def value = testRunner.testCase.testSteps["Get Instructor Access Token"].testRequest.response.responseHeaders
+
+for(def cookie in value)
+{
+	log.info(cookie)
+}
+*/
+def value = testRunner.testCase.testSteps["Get Instructor Access Token"].testRequest.response.responseHeaders["Set-Cookie"]
+
+def data = ""
+
+for(def dataEach in value)
+{
+	data=data+dataEach
+	//log.info("dataEach "+dataEach)
+}
+
+log.info("value "+data.toString())
+testRunner.testCase.setPropertyValue("TEJACOOKIE", data.toString())</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Groovy Script 3" id="3f69d67a-8bf1-4b04-9d1b-d24720ca957e">
+    <con:settings/>
+    <con:config>
+      <script>def student_SetCookie = context.expand( '${#Project#IN_Set-Cookie}' )
+
+
+log.info(student_SetCookie)
+
+def student_SetCookie2 = student_SetCookie.toString().replace("WKHPEAuthToken=","")
+log.info(student_SetCookie2)
+//testRunner.testCase.testSuite.setPropertyValue("student_SetCookie2", student_SetCookie2.toString())
+
+def index1 =student_SetCookie2.indexOf(";")
+log.info("index1 "+index1)
+def lastindex  = student_SetCookie2.size()
+log.info("lastindex "+lastindex)
+
+//def actualData =student_SetCookie2.substring(index1, lastindex);
+def actualData =student_SetCookie2.substring(0, index1);
+log.info("actualData "+actualData)
+
+testRunner.testCase.testSuite.setPropertyValue("IR_WKHPEAuthToken", actualData.toString())</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="httprequest" name="Requst" id="0e7e95ea-bea4-4205-8034-09f87fb5b6d4">
+    <con:settings/>
+    <con:config method="POST" xsi:type="con:HttpRequest" id="e6bdda88-e293-4d8a-b0bc-59f6d741b133" name="Requst" postQueryString="false" mediaType="multipart/form-data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Cookie" value="ASP.NET_SessionId=2gaol0horvfhs40gm2rumsp0; CloudFront-Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jb250ZW50cWEwMS1hcHAuaGxycHBob2VuaXguY29tLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2OTk3NjExMTl9fX1dfQ__; CloudFront-Signature=jwYiuaxPnQl8cFDdFQA0QIALPH5GEPA~DI8AxcofQ0Y0kcOuJpuBv85k9RPDmajVEHzyrWmGL5~FHC~UmpaEgdY-3FHTSd1dswxjq~wETBfQgsYWNA4LWssy~99RWavfM9hNRozcx6LBkdxaoiD28sG7A-1u29vPtF4KuucfAhiw6Ao7K-1jwLa7aChoI-UicjPDh-TTZHTi-qO9WGDmX7PGwBY4--JOvr26B4y~jEblrU6v~~YHNcyzEtoZZH-CrhEqPc5ChR19qGFvNanJfgDBasDC3c1WGuBXUc-kQ5RpBqwXLHvnTAxL-JYviVaXts8A5-vdhmvFaEwfmuhKsQ__; CloudFront-Key-Pair-Id=APKAIFKBUKZZ73UYKL7A; PassiveAuthenticationCookie=true" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+      </con:settings>
+      <con:endpoint>https://contentqa01-thepoint.hlrpphoenix.com/Authentication/ProcessPostbackFromSso</con:endpoint>
+      <con:request><![CDATA[AuthenicationResult:<WkhpeAuthenticationResult xmlns="http://schemas.sso.wkhpe.com/2010/07/10" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><AccessToken>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzc28ud2tocGUuY29tIiwiYXVkIjoiM2MzOTg0NmMtODg2YS1kZjExLWIxMTUtMDA1MDU2YzAwMDA4IiwiYXV0aF90aW1lIjoxNjk5NzE3OTQzLCJuYW1lIjoiQVBJX0F1dG9tYXRpb24gSW5zdHJ1Y3RvcjEwIiwianRpIjoiZTc5M2MyMmItYTNkZi00ZmUxLTkxZjAtMDkxZjZkYWRkNGUxIiwiaWF0IjoxNjk5NzE3OTQzLCJleHAiOjE2OTk4MDQzNDMsInN1YiI6ImVkMjQ2MWJmLThlODAtNDAxZS04YmU5LTQ1NGMwMTMzOTg1MyIsInJvbGVzIjoid2tocGUtZW5kIHVzZXIiLCJ3a2hwZV9wZXJtaXNzaW9ucyI6WyJDYW5Vc2VQZXJzb25hbGl6YXRpb25GZWF0dXJlcyJdLCJ3a2hwZV90b2tlbiI6ImR1Nnp1dnBhMXFvNDBlVlBHOG94NWZRUllabWRmdy9VNGVNTjdDbmZjYmVNV042SU5Ec2JKS3R3UzVCTGlYN1JKM2NuRlAwVHZucXdXZFY2RXJhS0pEdDVvMlR6ZnpPeXBZUlRtQUlIT01WQllnU21ralBTVW01OTBFKzIvSmxXVmNpR2M2b3JkV25NcFhjTWFFWWtBR2tqeW1sdUNwM2VBeFBrZC9CT0hYamRWcHRadU1YWHhLOTBibGF3TDJDb0d5ZzR4WFlUS2pyeXN5a0FaSnRzWWNQOGN2dFVvdG53UnRqTC9aYXVjdlliS0RqRmRoTXFPdkt6S1FCa20yeGg2eGRlS2Vjd3BTM29WSU50SVZJRmJROUc0Tm5WTHJDSWFydVpmeU8vWU5jPSIsInRva2VuX3R5cGUiOiJiZWFyZXIifQ.MGIAPs3PhXocj_jDJfOHJTKooCNHle7HDNwnGepS8t55MD9H2-hyraPeppzO_vOhG4ewCInYigB19fQGS0KX8DqMr70qUA6YvWscgE8gVzn24ojJD0J-vL2C-_YcMsTSg4cYHGLJOiRnr4CWf2hXdGnBz4NgmMY5PTUKvTSwkvA</AccessToken><AccountMeetsTermsAndConditionsResults i:nil="true"/><AccountType>PersonalAccount</AccountType><ActiveProductCodesAndExpirations><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975132729</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975178703</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975124571</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975182649</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975186852</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975216863</ProductCode></ProductCodeAndExpirationResult></ActiveProductCodesAndExpirations><AddressLine1 i:nil="true"/><AddressLine2 i:nil="true"/><AllProductCodesAndExpirations><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975132729</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975178703</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975124571</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975182649</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975186852</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975216863</ProductCode></ProductCodeAndExpirationResult></AllProductCodesAndExpirations><AuthenticationMethod>Username</AuthenticationMethod><City i:nil="true"/><Country i:nil="true"/><Email>API_Automation.Instructor10@wktest.com</Email><FailureReasonCode i:nil="true"/><FailureResonMessage i:nil="true"/><FirstName>API_Automation</FirstName><IdToken>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzc28ud2tocGUuY29tIiwiYXVkIjoiM2MzOTg0NmMtODg2YS1kZjExLWIxMTUtMDA1MDU2YzAwMDA4IiwiYXV0aF90aW1lIjoxNjk5NzE3OTQzLCJuYW1lIjoiQVBJX0F1dG9tYXRpb24gSW5zdHJ1Y3RvcjEwIiwianRpIjoiMDNhYTFlZWYtNTZiMy00OGIxLTk4ZjktY2U3NTUyYjdhMDZkIiwiaWF0IjoxNjk5NzE3OTQzLCJleHAiOjE2OTk4MDQzNDMsInN1YiI6ImVkMjQ2MWJmLThlODAtNDAxZS04YmU5LTQ1NGMwMTMzOTg1MyIsInJvbGVzIjoid2tocGUtZW5kIHVzZXIiLCJ3a2hwZV9wZXJtaXNzaW9ucyI6WyJDYW5Vc2VQZXJzb25hbGl6YXRpb25GZWF0dXJlcyJdLCJnaXZlbl9uYW1lIjoiQVBJX0F1dG9tYXRpb24iLCJmYW1pbHlfbmFtZSI6Ikluc3RydWN0b3IxMCIsImVtYWlsIjoiQVBJX0F1dG9tYXRpb24uSW5zdHJ1Y3RvcjEwQHdrdGVzdC5jb20iLCJ1cGRhdGVkX2F0IjoxNjk1MzYyNzU1LCJ3a2hwZV9hY3RpdmVfc3Vic2NyaXB0aW9ucyI6Ilt7XCJpc2JuXCI6XCI5NzgxOTc1MTMyNTUyXCIsXCJwZXJzb25hXCI6XCJJbnN0cnVjdG9yXCIsXCJjb2RlXCI6XCI5NzgxOTc1MTMyNzI5XCJ9LHtcImlzYm5cIjpcIjk3ODE5NzUxNzg2NTlcIixcInBlcnNvbmFcIjpcIkluc3RydWN0b3IsIENQUGx1c1wiLFwiY29kZVwiOlwiOTc4MTk3NTE3ODcwM1wifSx7XCJpc2JuXCI6XCI5NzgxOTc1MTIzOTAxXCIsXCJwZXJzb25hXCI6XCJJbnN0cnVjdG9yLCBDUFBsdXNcIixcImNvZGVcIjpcIjk3ODE5NzUxMjQ1NzFcIn0se1wiaXNiblwiOlwiOTc4MTk3NTE4MjM4MFwiLFwicGVyc29uYVwiOlwiSW5zdHJ1Y3RvclwiLFwiY29kZVwiOlwiOTc4MTk3NTE4MjY0OVwifSx7XCJpc2JuXCI6XCI5NzgxOTc1MTg2Nzc3XCIsXCJwZXJzb25hXCI6XCJJbnN0cnVjdG9yLCBDUFBsdXNcIixcImNvZGVcIjpcIjk3ODE5NzUxODY4NTJcIn0se1wiaXNiblwiOlwiOTc4MTk3NTIyMjgyNlwiLFwicGVyc29uYVwiOlwiSW5zdHJ1Y3RvclwiLFwiY29kZVwiOlwiOTc4MTk3NTIxNjg2M1wifV0ifQ.nCjq9jLgh4nlhMUMiqEp4WlPPCTqXTVSUYNijm38NRV7089mWGPVgYmSwV-JLpuUhUDWj9Zz7KOl3O-8VJ3H_Lah55P4t7JcxTjZ0HFBnnaBAcq_rOeJH3Sr3klJoRp8nlOYvcKAP71CXO45FejSp4qdSVqKfkHoizX-0xF_IJo</IdToken><Impersonator i:nil="true"/><InstitutionName i:nil="true"/><IsReadOnly>false</IsReadOnly><LastName>Instructor10</LastName><MessageId>67e399ff-a5ec-4435-a816-809f9b984cd6</MessageId><Name>API_Automation Instructor10</Name><OriginalAuthenticationMethod>Username</OriginalAuthenticationMethod><Permisions><Permission><Description>Allow login into thePoint</Description><Id>1</Id></Permission><Permission><Description>Allows the user to use personalized features in thePoint Product Suite</Description><Id>17</Id></Permission><Permission><Description>Can edit user profile</Description><Id>8</Id></Permission></Permisions><Postal i:nil="true"/><Province i:nil="true"/><RoleId>1</RoleId><SessionId>00000000-0000-0000-0000-000000000000</SessionId><Successful>true</Successful><TimeStamp>2023-11-11T15:52:23.0388027Z</TimeStamp><TimeToLive i:nil="true"/><TokenKey>du6zuvpa1qo40eVPG8ox5fQRYZmdfw/U4eMN7CnfcbeMWN6INDsbJKtwS5BLiX7RJ3cnFP0TvnqwWdV6EraKJDt5o2TzfzOypYRTmAIHOMVBYgSmkjPSUm590E+2/JlWVciGc6ordWnMpXcMaEYkAGkjymluCp3eAxPkd/BOHXjdVptZuMXXxK90blawL2CoGyg4xXYTKjrysykAZJtsYcP8cvtUotnwRtjL/ZaucvYbKDjFdhMqOvKzKQBkm2xh6xdeKecwpS3oVINtIVIFbQ9G4NnVLrCIaruZfyO/YNc=</TokenKey><UserId>ed2461bf-8e80-401e-8be9-454c01339853</UserId><Institution><BookstoreNumber i:nil="true"/><Country i:nil="true"/><Identifier>99999999-9999-9999-9999-999999999999</Identifier><InstitutionNumber i:nil="true"/><Name>Unaffiliated</Name><SLXAccountId i:nil="true"/><SfdcAccountId i:nil="true"/></Institution><ThirdPartyIntegrations><ThirdPartyIntegration i:type="VitalSourceThirdPartyIntegration"><Type>VitalSourceThirdPartyIntegration</Type><AccessToken>c3f410ec4187087b1d585cd31c452482</AccessToken><Id>KSJQVRQMJE88CRMZZ58S</Id></ThirdPartyIntegration></ThirdPartyIntegrations><UserType>Unknown</UserType></WkhpeAuthenticationResult>
+MessageSignature:7165391b327afc33ccd51e73e869f8cd31b8d7f4
+TimeStamp:11/11/2023 3:52:23 PM
+UrlToRedirectOnSuccess:https://contentqa01-thepoint.hlrpphoenix.com/MyContent
+SourceUrl:https://contentqa01-thepoint.hlrpphoenix.com/gateway
+PostbackUrlOnSuccess:https://contentqa01-thepoint.hlrpphoenix.com/Authentication/ProcessPostbackFromSso]]></con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="httprequest" name="parameter" id="848a8825-d6f9-4c49-9491-7bf2b7e96245">
+    <con:settings/>
+    <con:config method="POST" xsi:type="con:HttpRequest" id="8905df9b-c319-41fd-b398-dceedb8da83f" name="parameter" postQueryString="true" mediaType="multipart/form-data" downloadIncludedResources="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://contentqa01-thepoint.hlrpphoenix.com/Authentication/ProcessPostbackFromSso</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>AuthenicationResult</con:name>
+          <con:value>${Get Instructor Access Token#Response#$['Data']['AuthenicationResult']}</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>${Get Instructor Access Token#Response#$['Data']['AuthenicationResult']}</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>MessageSignature</con:name>
+          <con:value>${Get Instructor Access Token#Response#$['Data']['MessageSignature']}</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>${Get Instructor Access Token#Response#$['Data']['MessageSignature']}</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>TimeStamp</con:name>
+          <con:value>${Get Instructor Access Token#Response#$['Data']['TimeStamp']}</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>${Get Instructor Access Token#Response#$['Data']['TimeStamp']}</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>UrlToRedirectOnSuccess</con:name>
+          <con:value>https://contentqa01-thepoint.hlrpphoenix.com/MyContent</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>https://contentqa01-thepoint.hlrpphoenix.com/MyContent</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>SourceUrl</con:name>
+          <con:value>https://contentqa01-thepoint.hlrpphoenix.com/gateway</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>https://contentqa01-thepoint.hlrpphoenix.com/gateway</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>PostbackUrlOnSuccess</con:name>
+          <con:value>https://contentqa01-thepoint.hlrpphoenix.com/Authentication/ProcessPostbackFromSso</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>https://contentqa01-thepoint.hlrpphoenix.com/Authentication/ProcessPostbackFromSso</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Groovy Script" id="f3a7ead4-6a19-4357-8a02-72a3215adeed">
+    <con:settings/>
+    <con:config>
+      <script><![CDATA[import groovy.json.JsonSlurper
+import java.lang.*;
+/*
+def value = testRunner.testCase.testSteps["Get Instructor Access Token"].testRequest.response.responseHeaders
+
+for(def cookie in value)
+{
+	log.info(cookie)
+}
+*/
+def value = testRunner.testCase.testSteps["Get Instructor Access Token"].testRequest.response.responseHeaders["Set-Cookie"]
+
+testRunner.testCase.setPropertyValue("TEJACOOKIE", value.toString())
+log.info("IMP "+value)
+log.info("value  "+value[3])
+def data1= value[3]
+testRunner.testCase.testSuite.project.setPropertyValue("IN_Set-Cookie", value[3].toString())
+for(def data in value)
+{
+	//log.info(data)
+}
+def response = context.expand( '${Get Instructor Access Token#Response}' )
+
+def resp = new JsonSlurper().parseText(response)
+
+def start = resp.Data.AuthenicationResult.indexOf("<AccessToken>")+13;
+def end = resp.Data.AuthenicationResult.indexOf("</AccessToken>");
+def xaccesstoken = resp.Data.AuthenicationResult.substring(start, end);
+
+//result["xaccessTokenInstructor"]=xaccesstoken
+
+def ssostart = resp.Data.AuthenicationResult.indexOf("<TokenKey>")+10;
+def ssoend = resp.Data.AuthenicationResult.indexOf("</TokenKey>");
+def ssotoken = resp.Data.AuthenicationResult.substring(ssostart, ssoend);
+//result["ssoInstructor"]=ssotoken
+
+def IDstart = resp.Data.AuthenicationResult.indexOf("<UserId>")+8;
+def IDend = resp.Data.AuthenicationResult.indexOf("</UserId>");
+def InstructorId = resp.Data.AuthenicationResult.substring(IDstart, IDend);
+//result["instructorUserId"]=InstructorId
+testRunner.testCase.testSuite.project.setPropertyValue("instructorUserId", InstructorId)
+testRunner.testCase.testSuite.project.setPropertyValue("xaccessTokenInstructor", xaccesstoken)
+testRunner.testCase.testSuite.project.setPropertyValue("ssoInstructor", ssotoken)
+
+
+log.info("instructorUserId = "+ InstructorId)
+log.info("xaccessTokenInstructor =  " + xaccesstoken)
+log.info("ssoInstructor = "+ssotoken)
+
+ testRunner.testCase.testSuite.project.setPropertyValue("QCSSoToken", "")
+
+ testRunner.testCase.testSuite.project.setPropertyValue("QCSSoToken", ssotoken.toString())]]></script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="httprequest" name="GET DATA" id="ee0fc1e6-ef9c-4ccd-a2ae-4e1b30819a81">
+    <con:settings/>
+    <con:config method="GET" xsi:type="con:HttpRequest" id="baaeb4f5-3dd5-4859-8e76-19b6b7e7712c" name="GET DATA" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Cookie" value=".ASPXAUTH=75C6284F3FBF5D692814607D4A58AF8D47A4DE6B338645C589BA2E7207CF2F6E291D97C2FF7EBF9CBC9F2F16340F35C759C3E678F982C03A99868E41B33E8B9CF9B489F1D35277D3379BD0EA6E436777B2DBE32B9AD4DFE053DAB02A016C366EEC96491FD1C8F2600911FF78FDE24816605EC7D4BD580C263E9507309B1AB9C47D9C54EFADCE3EBB255711DDD8929FA611E937E5AA00742EABDD0933DFC2545B; ASP.NET_SessionId=1vclhuenr1rlqwi5bll2keco; AWSALB=unLoxaurk0cjpDVCJSYSIwwXTI5nhYVTz7zgqtxoJwC4T4baGcrX4yooRkBPssAKgyYhOYr2VynvVVySwvw3jkcVaCQmL00hEJaBC3XXhrllVsD6NirYY/0igVqN; AWSALBCORS=unLoxaurk0cjpDVCJSYSIwwXTI5nhYVTz7zgqtxoJwC4T4baGcrX4yooRkBPssAKgyYhOYr2VynvVVySwvw3jkcVaCQmL00hEJaBC3XXhrllVsD6NirYY/0igVqN" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+      </con:settings>
+      <con:endpoint>https://qe02-support.thepoint.hlrpphoenix.com/Subscription/Search</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Wait for Access student" id="1ef703bd-4d38-4566-81fc-92c20e33b4bc">
+    <con:settings/>
+    <con:config>
+      <delay>${#Project#LoginDealy}</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Get Student Access Token" id="5eab8d4b-1fb6-4458-983f-3fbcbb07d22b">
+    <con:settings/>
+    <con:config service="UsernameInSso" resourcePath="/Authentication/UsernameInSso" methodName="UsernameInSSO" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Get Student Access Token" id="36f7287c-3c0a-4cce-b51d-818ec310d707" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request>{
+  "Email": "${#Project#StudentEmail}",
+  "Password": "${#Project#StudentPassword}",
+  "PostbackUrlOnSuccess": "${#Project#PostbackUrlOnSuccess}",
+  "SiteId": "3c39846c-886a-df11-b115-005056c00008",
+  "StaySignIn": false,
+  "UrlToRedirectOnSuccess": "${#Project#UrlToRedirectOnSuccess}",
+  "Timestamp": "2023-08-08T12:31:07.955Z",
+  "SourceUrl": "${#Project#SourceUrl}",
+  "AccessCode": "",
+  "SiteInfoType": "Education",
+  "WorkflowId": ""
+}</con:request>
+        <con:originalUri>https://preprod-sso.hlrpbooks.com/Authentication/UsernameInSso</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="0061b0f0-90fb-4c74-8171-60b90feeaf8a" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="GroovyScriptAssertion" id="82844c1d-e078-4d00-b988-9a742b22fadd" name="Script Assertion">
+          <con:configuration>
+            <scriptText>import groovy.json.JsonSlurper
+import java.lang.*;
+
+def response = context.expand( '${Get Student Access Token#Response}' )
+def verifyResponse = new JsonSlurper().parseText(response)
+log.info(verifyResponse.Data.AuthenicationResult)
+
+assert verifyResponse.Data.AuthenicationResult != null</scriptText>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="format" value="json"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>format</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Groovy Script 2" id="1cb8a5f6-5149-431c-9be4-3d50e4b3e8c2">
+    <con:settings/>
+    <con:config>
+      <script><![CDATA[import groovy.json.JsonSlurper
+import java.lang.*;
+def value = testRunner.testCase.testSteps["Get Student Access Token"].testRequest.response.responseHeaders["Set-Cookie"]
+
+log.info("value  "+value[3])
+testRunner.testCase.testSuite.project.setPropertyValue("Student_Set-Cookie", value.toString())
+def response = context.expand( '${Get Student Access Token#Response}' )
+def resp = new JsonSlurper().parseText(response)
+
+def start = resp.Data.AuthenicationResult.indexOf("<AccessToken>")+13;
+def end = resp.Data.AuthenicationResult.indexOf("</AccessToken>");
+def xaccesstoken = resp.Data.AuthenicationResult.substring(start, end);
+//result["xaccessTokenStudent"]=xaccesstoken
+
+def ssostart = resp.Data.AuthenicationResult.indexOf("<TokenKey>")+10;
+def ssoend = resp.Data.AuthenicationResult.indexOf("</TokenKey>");
+def ssotoken = resp.Data.AuthenicationResult.substring(ssostart, ssoend);
+//result["ssoStudent"]=ssotoken
+
+def IDstart = resp.Data.AuthenicationResult.indexOf("<UserId>")+8;
+def IDend = resp.Data.AuthenicationResult.indexOf("</UserId>");
+def StudentId = resp.Data.AuthenicationResult.substring(IDstart, IDend);
+
+
+testRunner.testCase.testSuite.project.setPropertyValue("StudentUserId", StudentId)
+testRunner.testCase.testSuite.project.setPropertyValue("xaccessTokenStudent", xaccesstoken)
+testRunner.testCase.testSuite.project.setPropertyValue("ssoStudent", ssotoken)
+
+log.info("StudentUserId = "+ StudentId)
+log.info("xaccessTokenStudent =  " + xaccesstoken)
+log.info("ssoStudent = "+ssotoken)]]></script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="TEJA TEST 2" id="95ec1d10-22f6-4c09-9ee4-91d0a8fba892">
+    <con:settings/>
+    <con:config service="Content URL End Points" resourcePath="/Authentication/ProcessPostbackFromSso" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="TEJA TEST 2" id="b433da26-0b30-4662-b3f8-c6ee22b06fea" mediaType="multipart/form-data" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="WKHPEAuthToken" value="${#TestSuite#IR_WKHPEAuthToken}" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:request><![CDATA[AuthenicationResult: <WkhpeAuthenticationResult xmlns="http://schemas.sso.wkhpe.com/2010/07/10" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><AccessToken>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzc28ud2tocGUuY29tIiwiYXVkIjoiM2MzOTg0NmMtODg2YS1kZjExLWIxMTUtMDA1MDU2YzAwMDA4IiwiYXV0aF90aW1lIjoxNjk1MTkzMzc1LCJuYW1lIjoicHJlcHUwNSBJbnN0cnVjdG9yMDUiLCJqdGkiOiI1YzMwZDdlYS1kMTAyLTRkZTEtYmQ4NC1kNWQzYWU2ZWU5ZjgiLCJpYXQiOjE2OTUxOTMzNzUsImV4cCI6MTY5NTI3OTc3NSwic3ViIjoiMDgyNDIyZTMtNDgyNi00NzU4LTkwZmMtNDU1ZTAxMGFjNWIwIiwicm9sZXMiOiJ3a2hwZS1lbmQgdXNlciIsIndraHBlX3Blcm1pc3Npb25zIjpbIkNhblVzZVBlcnNvbmFsaXphdGlvbkZlYXR1cmVzIl0sIndraHBlX3Rva2VuIjoiSmJ5QmF3TDJvUjliL1dFMVMrWU12Mlg3MG9oVk5lc1pRYUFRaUN5d2txNC9WemZFMXA5TDR0T3lOSUdoSVdZeDY5MGlqdjVRSFNMUlIzSzQ5QmF0cjZiUEJPQUt4TXhoQVhUS29jS2UvZHdrT2x4c2IzaGg0Nkhwb2dtcFp0Rk5qUnBWRW9BV3J4dGgrSjNpRnFIQi9BZXdoMjhaOE9BYXpJRC9wb1QxcUtEZjI3NEg0MlVHb1ZtcXBtaEFwM3ZZOE90V3NZblBMOEViS0RqRmRoTXFPc1A4Y3Z0VW90bndTbzBkbERPYkpiM3c2MWF4aWM4dndSc29PTVYyRXlvNjMwd3JCQnU3MTUwWXl3VU5JV1dxOTRjZkJWMFRVVy9TIiwidG9rZW5fdHlwZSI6ImJlYXJlciJ9.MguUjzpgzfHZ2QgqkO5ERgDnxZ3n5nWMt39ja4NcgnKLzaijO1zj56XiJl2vh9vDuZEWrfwJDufnXnwm0CJirWCpI7j-OY2OeYGbA-A6tehJiwN_ybC2QLFCJMjrMtBUQuA2hCS4K9HpAE47cQRqPB3d_7-h--EojzqjRDON1qc</AccessToken><AccountMeetsTermsAndConditionsResults i:nil="true"/><AccountType>PersonalAccount</AccountType><ActiveProductCodesAndExpirations><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781469872117</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781469830599</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975140656</ProductCode></ProductCodeAndExpirationResult></ActiveProductCodesAndExpirations><AddressLine1 i:nil="true"/><AddressLine2 i:nil="true"/><AllProductCodesAndExpirations><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781469872117</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781469830599</ProductCode></ProductCodeAndExpirationResult><ProductCodeAndExpirationResult><ExpirationDate>2024-12-12T00:00:00</ExpirationDate><ProductCode>9781975140656</ProductCode></ProductCodeAndExpirationResult></AllProductCodesAndExpirations><AuthenticationMethod>Username</AuthenticationMethod><City i:nil="true"/><Country i:nil="true"/><Email>prepu.instructor05@wktest.com</Email><FailureReasonCode i:nil="true"/><FailureResonMessage i:nil="true"/><FirstName>prepu05</FirstName><IdToken>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzc28ud2tocGUuY29tIiwiYXVkIjoiM2MzOTg0NmMtODg2YS1kZjExLWIxMTUtMDA1MDU2YzAwMDA4IiwiYXV0aF90aW1lIjoxNjk1MTkzMzc1LCJuYW1lIjoicHJlcHUwNSBJbnN0cnVjdG9yMDUiLCJqdGkiOiIwMDJkMDliZi1lZTIyLTRiOWEtOTZhNi1hOWM1MzhhY2ZlMDYiLCJpYXQiOjE2OTUxOTMzNzUsImV4cCI6MTY5NTI3OTc3NSwic3ViIjoiMDgyNDIyZTMtNDgyNi00NzU4LTkwZmMtNDU1ZTAxMGFjNWIwIiwicm9sZXMiOiJ3a2hwZS1lbmQgdXNlciIsIndraHBlX3Blcm1pc3Npb25zIjpbIkNhblVzZVBlcnNvbmFsaXphdGlvbkZlYXR1cmVzIl0sImdpdmVuX25hbWUiOiJwcmVwdTA1IiwiZmFtaWx5X25hbWUiOiJJbnN0cnVjdG9yMDUiLCJlbWFpbCI6InByZXB1Lmluc3RydWN0b3IwNUB3a3Rlc3QuY29tIiwidXBkYXRlZF9hdCI6MTY4NTU0MjYzNywid2tocGVfYWN0aXZlX3N1YnNjcmlwdGlvbnMiOiJbXSJ9.Hv1Vyw9Uvz7Ckq6XEhZeWQyRKc07mMoDVwRqi07y9LTtKmDSYQcvMOV96_lGNm6XCYJCjajjmg62PvCkd5BKyn06nEVTjLKoITul2ry8Cgx62a2FLq4tnIcAmu8RNMwTFSKHK7-x1Qz0y5nG6mXFlEC2rcI5A0ZPaJq6USqatm4</IdToken><Impersonator i:nil="true"/><InstitutionName>Misc-Default Filler</InstitutionName><IsReadOnly>false</IsReadOnly><LastName>Instructor05</LastName><MessageId>95a07cfa-456e-4d0e-b927-ca276c35fe4e</MessageId><Name>prepu05 Instructor05</Name><OriginalAuthenticationMethod>Username</OriginalAuthenticationMethod><Permisions><Permission><Description>Allow login into thePoint</Description><Id>1</Id></Permission><Permission><Description>Allows the user to use personalized features in thePoint Product Suite</Description><Id>17</Id></Permission><Permission><Description>Can edit user profile</Description><Id>8</Id></Permission></Permisions><Postal i:nil="true"/><Province i:nil="true"/><RoleId>1</RoleId><SessionId>00000000-0000-0000-0000-000000000000</SessionId><Successful>true</Successful><TimeStamp>2023-09-20T07:02:55.3579067Z</TimeStamp><TimeToLive i:nil="true"/><TokenKey>JbyBawL2oR9b/WE1S+YMv2X70ohVNesZQaAQiCywkq4/VzfE1p9L4tOyNIGhIWYx690ijv5QHSLRR3K49Batr6bPBOAKxMxhAXTKocKe/dwkOlxsb3hh46HpogmpZtFNjRpVEoAWrxth+J3iFqHB/Aewh28Z8OAazID/poT1qKDf274H42UGoVmqpmhAp3vY8OtWsYnPL8EbKDjFdhMqOsP8cvtUotnwSo0dlDObJb3w61axic8vwRsoOMV2Eyo630wrBBu7150YywUNIWWq94cfBV0TUW/S</TokenKey><UserId>082422e3-4826-4758-90fc-455e010ac5b0</UserId><Institution><BookstoreNumber i:nil="true"/><Country i:nil="true"/><Identifier>35618414-969d-415d-959d-60ab3dec3a52</Identifier><InstitutionNumber i:nil="true"/><Name>Misc-Default Filler</Name><SLXAccountId i:nil="true"/><SfdcAccountId>001d0000029ZCmSAAW</SfdcAccountId></Institution><ThirdPartyIntegrations/><UserType>Unknown</UserType></WkhpeAuthenticationResult>
+MessageSignature: 500719f94e24f88db436c1ad4ee5497c9f9c8066
+TimeStamp: 9/20/2023 7:02:55 AM
+UrlToRedirectOnSuccess: https://contentqa01-thepoint.hlrpphoenix.com/MyContent
+SourceUrl: https://contentqa01-thepoint.hlrpphoenix.com/gateway
+PostbackUrlOnSuccess: https://contentqa01-thepoint.hlrpphoenix.com/Authentication/ProcessPostbackFromSso]]></con:request>
+        <con:originalUri>https://contentqa01-thepoint.hlrpphoenix.com/Authentication/ProcessPostbackFromSso</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="e5258a4f-254d-4ce6-9bff-4f0c4086b71e" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="SourceUrl" value=""/>
+          <con:entry key="UrlToRedirectOnSuccess" value=""/>
+          <con:entry key="PostbackUrlOnSuccess" value=""/>
+          <con:entry key="MessageSignature" value=""/>
+          <con:entry key="AuthenicationResult" value=""/>
+          <con:entry key="TimeStamp" value=""/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>AuthenicationResult</con:entry>
+          <con:entry>MessageSignature</con:entry>
+          <con:entry>TimeStamp</con:entry>
+          <con:entry>UrlToRedirectOnSuccess</con:entry>
+          <con:entry>SourceUrl</con:entry>
+          <con:entry>PostbackUrlOnSuccess</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>TEJACOOKIE</con:name>
+      <con:value>AWSALB=IYcVAAGrUwDMsoQDV36hRuEUPShTv7KIS61LzqN+StvehSASckzhLNwCHPW9Mr8aP7qen7eJGz9xot+K4xczGVZaghTSCCEP0cjXeFHBlBW24xtLamTjXWsneDoD; Expires=Thu, 16 Nov 2023 12:24:47 GMT; Path=/AWSALBCORS=IYcVAAGrUwDMsoQDV36hRuEUPShTv7KIS61LzqN+StvehSASckzhLNwCHPW9Mr8aP7qen7eJGz9xot+K4xczGVZaghTSCCEP0cjXeFHBlBW24xtLamTjXWsneDoD; Expires=Thu, 16 Nov 2023 12:24:47 GMT; Path=/; SameSite=None; SecureWKHPEAuth.Attempts=; expires=Wed, 08-Nov-2023 12:24:48 GMT; path=/; SameSite=None;HttpOnly=trueWKHPEAuthToken.AutoSignedIn=cY8uRAsFS%2bevQVvfkX5OH%2b8u95TLoi5hwuuubINCRc371XCz6EsxUxGLv6EJTos11D5oSY8By%2bIw9Hc%2b2d3%2fyyk37%2f8Yp0kjefE%2b1sZOKn2QwzSGwezAaSMy9Je3Vhk81r72uIqv2fg7G5fZ%2buI1Ga7q4Wdsam%2bMmB%2bQOdsU%2beZfQkwGCrAo0Z2JjxmcPT2TG7cftN95PSgBzaFnuCjB9nOlPTqPj%2bqeWaqmaECne9idhm%2fRtlD298R0GzEkYZ2XeKtCmGR4RLZZqqZoQKd72PDrVrGJzy%2fBw%2fxy%2b1Si2fAlnPxbwYR9zRG8Pq1ZljUa; expires=Sat, 09-Dec-2023 12:24:48 GMT; path=/; SameSite=None;HttpOnly=trueWKHPEAuthToken=cY8uRAsFS%2bevQVvfkX5OH%2b8u95TLoi5hwuuubINCRc371XCz6EsxUxGLv6EJTos11D5oSY8By%2bIw9Hc%2b2d3%2fyyk37%2f8Yp0kjefE%2b1sZOKn2QwzSGwezAaSMy9Je3Vhk81r72uIqv2fg7G5fZ%2buI1Ga7q4Wdsam%2bMmB%2bQOdsU%2beZfQkwGCrAo0Z2JjxmcPT2TG7cftN95PSgBzaFnuCjB9nOlPTqPj%2bqeWaqmaECne9idhm%2fRtlD298R0GzEkYZ2XeKtCmGR4RLZZqqZoQKd72PDrVrGJzy%2fBw%2fxy%2b1Si2fAlnPxbwYR9zRG8Pq1ZljUa; path=/; HttpOnly; SameSite=None;HttpOnly=true</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

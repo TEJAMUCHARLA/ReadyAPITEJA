@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="POST Bookmark questions after assignment completion from Assignments" path="/${#Project#Version}/questionBookmarks" id="5f51849b-e54a-4043-abe4-13950088fd0d" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="5f51849b-e54a-4043-abe4-13950088fd0dfileName">POST-Bookmark-questions-after-assignment-completion-from-Assignments</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="POST Bookmark questions after assignment completion from Assignments" id="8b14e982-0ca7-410f-84d1-aaa8187af77e" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="POST Bookmark questions after assignment completion from Assignments" id="97995e8a-fd81-4b25-b956-4f9a93d41c30" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request>{
+  "question": "66350",
+  "quiz": "1744971879",
+  "nclexExam": null,
+  "result": null,
+  "reviewRefreshQuiz": null,
+  "reviewRefreshQuizQuestionNote": null,
+  "quizQuestionNote": null,
+  "nclexExamQuestionNote": null
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

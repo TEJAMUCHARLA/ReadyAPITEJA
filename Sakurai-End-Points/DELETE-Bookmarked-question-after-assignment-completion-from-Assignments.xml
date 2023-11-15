@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="DELETE Bookmarked question after assignment completion from Assignments" path="/${#Project#Version}/questionBookmarks/{ID}" id="65b6bb37-0b35-4b5f-906e-cd878e3eb6a7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="65b6bb37-0b35-4b5f-906e-cd878e3eb6a7fileName">DELETE-Bookmarked-question-after-assignment-completion-from-Assignments</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter>
+      <con:name>ID</con:name>
+      <con:value>1369558</con:value>
+      <con:style>TEMPLATE</con:style>
+      <con:default>1369558</con:default>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="DELETE Bookmarked question after assignment completion from Assignments" id="bf5b3663-9e13-4cf1-aa66-8017e9ff26e8" method="DELETE">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="DELETE Bookmarked question after assignment completion from Assignments" id="c28f3556-a91c-4404-b34e-d6f45bbcab9c" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>ID</con:entry>
+      </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

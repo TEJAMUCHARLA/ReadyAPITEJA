@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="b32eae13-4970-4251-97fa-d29190a025aa" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="User creation" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="b32eae13-4970-4251-97fa-d29190a025aafileName">User-creation</con:setting>
+  </con:settings>
+  <con:testStep type="groovy" name="Groovy Script 2" id="6a90354a-8ee6-45c7-a9c8-d7559165bad0">
+    <con:settings/>
+    <con:config>
+      <script>testRunner.testCase.setPropertyValue("MappedValues", "")</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasource" name="MACTH ISBN VALUES" id="f3a451da-a8cb-4432-90a1-2d89a177fa40">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>${projectDir}/Testdata.xlsx</file>
+          <worksheet>Prodcuts List</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>false</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>Instructor</con:property>
+      <con:property>InstructorProductName</con:property>
+      <con:property>InstructorProductISBN</con:property>
+      <con:property>Student</con:property>
+      <con:property>StudentProductName</con:property>
+      <con:property>StudentProductISBN</con:property>
+      <con:startRow/>
+      <con:endRow/>
+      <con:recordsPerIteration>1</con:recordsPerIteration>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:trimValues>false</con:trimValues>
+      <con:entitizeValues>false</con:entitizeValues>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:expandProperties>false</con:expandProperties>
+      <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="MAPING" id="b38a7761-4dd1-4653-aebd-93fa0bda739e">
+    <con:settings/>
+    <con:config>
+      <script>import org.jsoup.*
+import groovy.json.JsonSlurper
+import java.lang.*;
+import groovy.xml.*
+def mappedValues = context.expand( '${#TestCase#MappedValues}' )
+
+def instructorProductName = context.expand( '${MACTH ISBN VALUES#InstructorProductName}' )
+def instructorProductISBN = context.expand( '${MACTH ISBN VALUES#InstructorProductISBN}' )
+
+//def map = [:]
+def data = mappedValues
+data = data+instructorProductName+":"+instructorProductISBN
+log.info("data "+data)
+testRunner.testCase.setPropertyValue("MappedValues", data)</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="Data Source Loop 2" id="c9e0e65d-fb39-4e17-82be-deadb3740515">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>MACTH ISBN VALUES</dataSourceStep>
+      <targetStep>MAPING</targetStep>
+      <discardResults>false</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasource" name="Data Source" id="d110b203-d6c8-4ab7-8d93-166e0d430e1a" disabled="true">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Grid">
+        <con:configuration>
+          <check><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry></xml-fragment>]]></check>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">APIPerformance</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Instructor2@wk.com</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">APIPerformance</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Instructor03@wk.com</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">APIPerformance</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Instructor01@wk.com</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <recognizeAsPlainText>true</recognizeAsPlainText>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>FirstName</con:property>
+      <con:property>LATName</con:property>
+      <con:startRow/>
+      <con:endRow/>
+      <con:recordsPerIteration>1</con:recordsPerIteration>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:trimValues>false</con:trimValues>
+      <con:entitizeValues>false</con:entitizeValues>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:expandProperties>false</con:expandProperties>
+      <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasource" name="GET User Details" id="abf53c5b-2f11-488e-803a-1093bd8bc2b7" disabled="true">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>${#Project#TestDataExcelFile}</file>
+          <worksheet>InstrcutorCreateUsers</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>false</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>FirstName</con:property>
+      <con:property>Mid Name</con:property>
+      <con:property>LastName</con:property>
+      <con:property>UserName</con:property>
+      <con:property>Product_1</con:property>
+      <con:property>Product_2</con:property>
+      <con:property>Product_3</con:property>
+      <con:property>Product_4</con:property>
+      <con:property>Product_5</con:property>
+      <con:property>Product_6</con:property>
+      <con:property>Product_7</con:property>
+      <con:property>Product_8</con:property>
+      <con:property>Product_9</con:property>
+      <con:property>Product_10</con:property>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Set user details" id="69354d6d-31e3-4724-a987-9badffc573d0" disabled="true">
+    <con:settings/>
+    <con:config>
+      <script>def firstName = context.expand( '${Data Source#FirstName}' )
+def lATName = context.expand( '${Data Source#LATName}' )
+
+def UserName= firstName+lATName
+
+log.info("UserName "+UserName)
+testRunner.testCase.setPropertyValue("UserName", UserName.toString())</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Create user" id="f5b7c118-e5d2-4690-8aa7-e514396db8c7" disabled="true">
+    <con:settings/>
+    <con:config service="THE POINT Suport" resourcePath="/User/SaveUser?format=json" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Create user" id="51bef275-7081-4d81-847b-a1f5ba88345c" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Cookie" value="${#Project#ACookie_Value}" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:request>{
+  "Id": "00000000-0000-0000-0000-000000000000",
+  "InstanceId": "0",
+  "FirstName": "${Data Source#FirstName}",
+  "LastName": "${Data Source#LATName}",
+  "UserName": "${#TestCase#UserName}",
+  "Password": "Welcome01",
+  "Email": "${#TestCase#UserName}",
+  "UserRoleId": "1",
+  "CanEdit": true,
+  "MaxConcurrentUsersWarning": "",
+  "MaxConcurrentUsersError": ""
+}</con:request>
+        <con:originalUri>https://qe02-support.thepoint.hlrpphoenix.com/Authentication/Challenge</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="3d48c641-4a2a-4a43-a0a4-6eb2a29e78b1" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="GET  user details" id="ab86aad5-1519-439f-83b1-5b1d3e4bb3ee" disabled="true">
+    <con:settings/>
+    <con:config service="THE POINT Suport" resourcePath="/User" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GET  user details" id="0482f3bd-e76c-47a9-b209-96ff4856ecf0" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Cookie" value=".ASPXAUTH=860416E6C33C794DAE018B0A952AA08D8DF0AC573F1B09021195A88CFBB946B3AE384BD42AF53CBD543980552862E167526F10D548C3E5BF9E1CB354FDF26637BB7C9D8930F0AFD44549725E6E96303EFFAE6239CF189682AB0B5A3A29BC748119F46A97B334F490EE51ABEE6E0646F6936E9C2944A87CFD170BB1A4751D39A6BFC3950E91B276449434211B59A4D7FEC7550AEE60CE3DEFFC7BABC03E724B71; ASP.NET_SessionId=3my0wrb0olgj15h53sw1dd53;  AWSALB=UGAR1xkSOYQ3fctx2i7F38xyHkurhCxyMwUmb4kgEAMnaApBAReJOVA9TMtECoGRBnIyTznK2PsqcU58uA70zq6klgG4KDbN3isAAFy9nTShhMD6pWzD6l15FrMP" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qe02-sso.hlrpphoenix.com/Challenge</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="5190085f-b09c-4271-93ae-ffbe9327ea45" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="GroovyScriptAssertion" id="d8d86703-34fe-464a-b03a-88f1483c18c6" name="Script Assertion">
+          <con:configuration>
+            <scriptText>import org.jsoup.*
+import groovy.json.JsonSlurper
+import java.lang.*;
+import groovy.xml.*
+def responseAsXml = context.expand( '${GET  user details#ResponseAsXml}' )
+
+//testRunner.testCase.setPropertyValue("userId", "")
+def list = new XmlParser().parseText(responseAsXml) 
+//log.info("list +== "+list.body.div[0].div[1].form.div[2].div[0].table.tbody.tr[0].td[0].a)
+//log.info("list +== "+list.body.div[0].div[1].form.div[2].div[0].table.tbody.tr[0].td[0].a["@href"])
+def results = list.body.div[0].div[1].form.div[2].div[0].table.tbody.tr[0].td[0].a["@href"]
+
+//log.info("results +== "+results[0].indexOf("userId="))   
+//log.info("results +== "+results[0].indexOf("&amp;"))
+
+def startAt = results[0].indexOf("userId=")+7
+def endAt = results[0].indexOf("&amp;")
+log.info("startAt = "+startAt)
+log.info("endAt = "+endAt)
+def userID = results[0].substring(startAt,endAt)
+log.info("userID =="+userID)
+
+
+//log.info("responseAsXml "+responseAsXml.toString().substring(responseAsXml.toString().indexOf("userId=")+7,responseAsXml.toString().indexOf("callBackUrl"))
+def aa = responseAsXml.toString().indexOf("UserDetails?userId=")
+def bb = responseAsXml.toString().indexOf("callBackUrl")
+log.info("aa = "+aa+" bb = "+bb )
+def cc = responseAsXml.toString().substring(aa,aa+50)
+def dd=cc.toString().substring(0,cc.indexOf("&amp;amp"))
+def ff =dd.toString().substring(dd.indexOf("="))
+ff = ff.replace("=","")
+log.info("cc = "+cc)
+log.info("DD =  "+ff)
+
+assert ff==userID
+//testRunner.testCase.setPropertyValue("userId", userID.toString())</scriptText>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Username" value="${#TestCase#UserName}"/>
+          <con:entry key="Search" value="Search"/>
+          <con:entry key="SearchTypes" value="ExactMatch"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>FirstName</con:entry>
+          <con:entry>LastName</con:entry>
+          <con:entry>EmailAddress</con:entry>
+          <con:entry>Username</con:entry>
+          <con:entry>UserRoleId</con:entry>
+          <con:entry>SearchTypes</con:entry>
+          <con:entry>institutionName</con:entry>
+          <con:entry>customerId</con:entry>
+          <con:entry>currentInstitutionName</con:entry>
+          <con:entry>currentCustomerId</con:entry>
+          <con:entry>Search</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Groovy Script" id="9b656882-7191-4faf-b889-7b18e9084902" disabled="true">
+    <con:settings/>
+    <con:config>
+      <script>import org.jsoup.*
+import groovy.json.JsonSlurper
+import java.lang.*;
+import groovy.xml.*
+def responseAsXml = context.expand( '${GET  user details#ResponseAsXml}' )
+
+testRunner.testCase.setPropertyValue("userId", "")
+def list = new XmlParser().parseText(responseAsXml) 
+//log.info("list +== "+list.body.div[0].div[1].form.div[2].div[0].table.tbody.tr[0].td[0].a)
+//log.info("list +== "+list.body.div[0].div[1].form.div[2].div[0].table.tbody.tr[0].td[0].a["@href"])
+def results = list.body.div[0].div[1].form.div[2].div[0].table.tbody.tr[0].td[0].a["@href"]
+
+//log.info("results +== "+results[0].indexOf("userId="))   
+//log.info("results +== "+results[0].indexOf("&amp;"))
+
+def startAt = results[0].indexOf("userId=")+7
+def endAt = results[0].indexOf("&amp;")
+log.info("startAt = "+startAt)
+log.info("endAt = "+endAt)
+def userID = results[0].substring(startAt,endAt)
+log.info("userID =="+userID)
+
+
+//log.info("responseAsXml "+responseAsXml.toString().substring(responseAsXml.toString().indexOf("userId=")+7,responseAsXml.toString().indexOf("callBackUrl"))
+def aa = responseAsXml.toString().indexOf("UserDetails?userId=")
+def bb = responseAsXml.toString().indexOf("callBackUrl")
+log.info("aa = "+aa+" bb = "+bb )
+def cc = responseAsXml.toString().substring(aa,aa+50)
+def dd=cc.toString().substring(0,cc.indexOf("&amp;amp"))
+def ff =dd.toString().substring(dd.indexOf("="))
+ff = ff.replace("=","")
+log.info("cc = "+cc)
+log.info("DD =  "+ff)
+
+assert ff==userID
+testRunner.testCase.setPropertyValue("userId", userID.toString())</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Add subscripition" id="7b9a1788-f2ff-4e1b-8f00-7eee024ee214" disabled="true">
+    <con:settings/>
+    <con:config service="THE POINT Suport" resourcePath="/Subscription/Update" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Add subscripition" id="f1f3a3d2-25c8-450a-9e18-eea97dbab231" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Cookie" value="${#Project#ACookie_Value}" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:request>{
+  "ExpireSubscriptions": [],
+  "IncreaseExpirationOfSubscriptions": [],
+  "NewSubscriptions": [
+    {
+      "Isbn": "9781975186852",
+      "ExpirationDate": "11/11/2024",
+      "UserInstanceId": "${#TestCase#userId}"
+    },
+    {
+      "Isbn": "9781975182649",
+      "ExpirationDate": "11/11/2024",
+      "UserInstanceId": "${#TestCase#userId}"
+    }
+  ],
+  "SubscriptionChangeDocumentation": {
+    "Reason": "Instructor: Internal Testing/Review",
+    "OtherReason": null,
+    "ServiceCloudCaseId": "Test"
+  }
+}</con:request>
+        <con:originalUri>https://qe02-support.thepoint.hlrpphoenix.com/Authentication/Challenge</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="75bfdc1f-b42b-44c6-8469-ed95e9e28df6" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="Data Source Loop" id="f49f377d-ea9c-40cc-9005-0dbd5db21c8a" disabled="true">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>Data Source</dataSourceStep>
+      <targetStep>Set user details</targetStep>
+      <discardResults>false</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>userId</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>UserName</con:name>
+      <con:value>APIPerformanceInstructor01@wk.com</con:value>
+    </con:property>
+    <con:property>
+      <con:name>MappedValues</con:name>
+      <con:value>vsim phoenix next gen med-surg inst:9781975192457vsim phoenix next gen med-surg inst:9781975192457vsim phoenix next gen med-surg inst:9781975192457</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

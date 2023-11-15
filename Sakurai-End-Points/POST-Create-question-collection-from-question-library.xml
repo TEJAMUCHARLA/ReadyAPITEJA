@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="POST Create question collection from question library" path="/${#Project#Version}/questionSets" id="8de9e00b-b3f6-410e-bdc1-7e597e157aa4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="8de9e00b-b3f6-410e-bdc1-7e597e157aa4fileName">POST-Create-question-collection-from-question-library</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="POST Create question collection from question library" id="928d198d-28b4-4f93-8e8c-9ad36f29170d" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="POST Create question collection from question library" id="c6d843c1-c9e5-4162-b6d4-e5806c0fba22" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request>{
+  "parentId": null,
+  "name": "QC1",
+  "mode": null,
+  "totalQuestions": null,
+  "totalRetiredQuestions": null,
+  "clinicalJudgmentExam": null,
+  "enabled": false,
+  "isStandardizedExam": false,
+  "classIdScope": null,
+  "parentOwner": null,
+  "user": "1500764322",
+  "product": "89"
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

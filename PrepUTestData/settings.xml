@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="76c77fdc-6388-49c8-945c-67814109bdb1" name="PrepUTestData" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings id="a157ada6-e29e-4035-bb0d-348a97577554">
+    <con:setting id="76c77fdc-6388-49c8-945c-67814109bdb1fileName">PrepUTestData</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties>
+    <con:property>
+      <con:name>student_SetCookie2</con:name>
+      <con:value>JbyBawL2oR%2b4wLAkTuXcfjTX8vQWcTyIkzF38ad451s8mgz%2bAKg2S6rSgfuaj5BUvK7SptR1GqlSAAED33SFGKbPBOAKxMxhAXTKocKe%2fdwkOlxsb3hh46HpogmpZtFNjRpVEoAWrxth%2bJ3iFqHB%2fAewh28Z8OAazID%2fpoT1qKDf274H42UGoVmqpmhAp3vY8OtWsYnPL8EbKDjFdhMqOsP8cvtUotnwSo0dlDObJb3w61axic8vwRsoOMV2Eyo630wrBBu7150YywUNIWWq94cfBV0TUW%2fS; path=/; secure; HttpOnly; SameSite=None;HttpOnly=true</con:value>
+    </con:property>
+    <con:property>
+      <con:name>IR_WKHPEAuthToken</con:name>
+      <con:value>WKHPEAuthToken.AutoSignedIn=cY8uRAsFS%2beFP04Ye0pCGXl4b%2fQQuIikwuuubINCRc1t3TFhRXEXbdpTFV3i6NnuQYheAdpqgaX0xCiVKgMBK%2bHBdC2mGLyItyH2ePQclvOQwzSGwezAaSMy9Je3Vhk81r72uIqv2fg7G5fZ%2buI1Ga7q4Wdsam%2bMmB%2bQOdsU%2beZfQkwGCrAo0Z2JjxmcPT2TG7cftN95PSgBzaFnuCjB9nOlPTqPj%2bqeWaqmaECne9idhm%2fRtlD298R0GzEkYZ2XeKtCmGR4RLZZqqZoQKd72PDrVrGJzy%2fBw%2fxy%2b1Si2fAlnPxbwYR9zRG8Pq1ZljUa</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testSuite>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="POST QC Creation" path="/${#Project#Version}/questionSets" id="6d599375-7e95-427d-91f9-09c74d3482dc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="6d599375-7e95-427d-91f9-09c74d3482dcfileName">POST-QC-Creation</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="POST QC Creation" id="cd02121a-71fc-484e-8706-b72555742758" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="POST QC Creation" id="43996275-d5cf-4a6d-8e85-b534be688d87" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

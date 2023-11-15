@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="c6810e9a-f688-4c9c-934c-a2a747b193d5" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test Case 2" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c6810e9a-f688-4c9c-934c-a2a747b193d5fileName">Test-Case-2</con:setting>
+  </con:settings>
+  <con:testStep type="httprequest" name="HTTP Request" id="9bb95cc7-c831-49e7-81d1-1afe12441a58">
+    <con:settings/>
+    <con:config method="POST" xsi:type="con:HttpRequest" id="86e97621-6922-41bb-9bc4-11e874bb30e7" name="HTTP Request" postQueryString="false" mediaType="application/json" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Cookie" value="cf_clearance=8CBPfFoJx4aNUvlWEjriTndVtIbvaa3zg.ixJ592wFU-1699282296-0-1-cd0fc955.c265b9.21f56cb3-0.2.1699282296; .ASPXAUTH=3F5203E8736D3451382D06C085D107659682D4308D9B4C3286BCF9D6C34D08BBF85029E7B26281152E398BB19594581B363C91AC4C7D21AA66B25E7A597A14C6F732D3D3D639DC7F5511487B129767CD9410DF9590AFCECEE67B4F8D5378B30DEC67826B109DAEA0CA87D907EE8D1A39375C92E4028B77C86FDFFCB272CA7E194BB7BDEC92E74B2BC85F6C25935A3651CCE52993169968395EA69CC0564D3566; ASP.NET_SessionId=mtqwy0cudhgwq0gnbyqmfxov; AWSALB=1yFB5P2gU4+iZ1uVY0HOnXYmCtWRgwBvnfX3QqgwV7Z4A6yokEmc3rNDPqEsTGSE5yg/x+JaqsV+a840d0exPxZ8Qd5BhqxEchQi6yp5FdIWe4ifS8uc44l2ch2L; AWSALBCORS=1yFB5P2gU4+iZ1uVY0HOnXYmCtWRgwBvnfX3QqgwV7Z4A6yokEmc3rNDPqEsTGSE5yg/x+JaqsV+a840d0exPxZ8Qd5BhqxEchQi6yp5FdIWe4ifS8uc44l2ch2L" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+      </con:settings>
+      <con:endpoint>https://qe02-support.thepoint.hlrpphoenix.com/Subscription/Update?format=json</con:endpoint>
+      <con:request>{
+  "ExpireSubscriptions": [],
+  "IncreaseExpirationOfSubscriptions": [
+    {
+      "SubscriptionId": "5754108",
+      "ExpirationDate": "11/5/2025"
+    }
+  ],
+  "NewSubscriptions": [],
+  "SubscriptionChangeDocumentation": {
+    "Reason": "Instructor: Internal Testing/Review",
+    "OtherReason": null,
+    "ServiceCloudCaseId": "Test"
+  }
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

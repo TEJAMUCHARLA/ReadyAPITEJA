@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="GET Created assignment list from Assignment" path="/${#Project#Version}/assignments" id="a68eaf9b-762e-41fa-a32e-b9a2cfb21864" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="a68eaf9b-762e-41fa-a32e-b9a2cfb21864fileName">GET-Created-assignment-list-from-Assignment</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET Created assignment list from Assignment" id="57f04c90-e204-407c-a95a-90f45b6e49db" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>classId</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>studentId</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="GET Created assignment list from Assignment" id="2cb0d720-9c1a-4c57-9561-346da91d80de" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="studentId" value="1500765541"/>
+        <con:entry key="classId" value="1500176346"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>classId</con:entry>
+        <con:entry>studentId</con:entry>
+      </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

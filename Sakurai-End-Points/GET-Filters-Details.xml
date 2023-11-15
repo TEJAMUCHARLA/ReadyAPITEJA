@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="GET Filters Details" path="/${#Project#Version}/termTaxonomies" id="83085519-952e-4b33-b6d5-6fae16a23d98" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="83085519-952e-4b33-b6d5-6fae16a23d98fileName">GET-Filters-Details</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="true">
+      <con:name>productId</con:name>
+      <con:value>{ProductId}</con:value>
+      <con:style>QUERY</con:style>
+      <con:default>{ProductId}</con:default>
+    </con:parameter>
+    <con:parameter required="true">
+      <con:name>userId</con:name>
+      <con:value>{userId}</con:value>
+      <con:style>QUERY</con:style>
+      <con:default>{userId}</con:default>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="GET Filters Details" id="b3c67d95-d792-4649-a492-2c152b25ebb9" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="GET Filters Details" id="b91275d8-93a8-4893-9806-9f106a6faa50" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

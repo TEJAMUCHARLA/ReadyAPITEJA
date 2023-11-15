@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="POST Student Join Course" path="/Course/SignUp" id="2d486cc2-6f39-4ec4-9afa-8c18eb029015" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="2d486cc2-6f39-4ec4-9afa-8c18eb029015fileName">POST-Student-Join-Course</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="POST Student Join Course" id="cd976e7b-9c2e-43af-970a-0174c61f2b4e" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="POST Student Join Course" id="1905e1df-81cb-4eb1-a87a-1725d5887f05" mediaType="multipart/form-data" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request>Title: Lippincott NCLEX-RN PassPoint Powered by PrepU
+TitleIdentifier: ae1088d9-4b7c-47f1-aadf-36da00af87b9
+ContinueUrl: 
+AttemptCount: 0
+Passcode: 4D7FEAD4</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

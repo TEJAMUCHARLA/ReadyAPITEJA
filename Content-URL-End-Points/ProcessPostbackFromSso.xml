@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="ProcessPostbackFromSso" path="/Authentication/ProcessPostbackFromSso" id="c186a271-a358-4d75-95d9-566ffb4b4fc6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c186a271-a358-4d75-95d9-566ffb4b4fc6fileName">ProcessPostbackFromSso</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="a75f3c3c-e61d-479f-ad55-d0cca7fd8f01" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>AuthenicationResult</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>MessageSignature</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>TimeStamp</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>UrlToRedirectOnSuccess</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>SourceUrl</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>PostbackUrlOnSuccess</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="b433da26-0b30-4662-b3f8-c6ee22b06fea" mediaType="multipart/form-data" postQueryString="true">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="PostbackUrlOnSuccess" value=""/>
+        <con:entry key="MessageSignature" value="df"/>
+        <con:entry key="AuthenicationResult" value="sds"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>AuthenicationResult</con:entry>
+        <con:entry>MessageSignature</con:entry>
+        <con:entry>TimeStamp</con:entry>
+        <con:entry>UrlToRedirectOnSuccess</con:entry>
+        <con:entry>SourceUrl</con:entry>
+        <con:entry>PostbackUrlOnSuccess</con:entry>
+      </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

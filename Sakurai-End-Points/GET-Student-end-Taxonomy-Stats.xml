@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="GET Student end Taxonomy Stats" path="/${#Project#Version}/termTaxonomyStats" id="4b37f24a-2622-43f8-9ff8-b64e5f79149e" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="4b37f24a-2622-43f8-9ff8-b64e5f79149efileName">GET-Student-end-Taxonomy-Stats</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="true">
+      <con:name>classId</con:name>
+      <con:value>{classId}</con:value>
+      <con:style>QUERY</con:style>
+      <con:default>{classId}</con:default>
+    </con:parameter>
+    <con:parameter required="true">
+      <con:name>studentId</con:name>
+      <con:value>{studentID}</con:value>
+      <con:style>QUERY</con:style>
+      <con:default>{studentID}</con:default>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="GET Student end Taxonomy Stats" id="03c7a00d-8f1a-4736-a0bd-67ec4a3e9a6f" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="GET Student end Taxonomy Stats" id="42698bfa-2509-469c-9b8d-1db0383de6e0" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

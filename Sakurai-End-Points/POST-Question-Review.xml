@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="POST Question Review" path="/${#Project#Version}/questionReview" id="892f282e-fee6-4db7-b4ec-54c081a90f36" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="892f282e-fee6-4db7-b4ec-54c081a90f36fileName">POST-Question-Review</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="POST Question Review" id="d5ed0862-a220-42ec-a312-c92042464cba" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="POST Question Review" id="733cd38c-96d8-4b89-8f6a-60738a2f1c64" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

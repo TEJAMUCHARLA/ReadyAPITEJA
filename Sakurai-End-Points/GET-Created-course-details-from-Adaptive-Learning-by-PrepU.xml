@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="GET Created course details from Adaptive Learning by PrepU" path="/${#Project#Version}/classes" id="58758ea6-faca-4b22-a3c6-b30488cf114d" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="58758ea6-faca-4b22-a3c6-b30488cf114dfileName">GET-Created-course-details-from-Adaptive-Learning-by-PrepU</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET Created course details from Adaptive Learning by PrepU" id="76dc44b7-329b-40bf-9a60-81c3b2dccf86" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>productId</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>status</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>userId</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="GET Created course details from Adaptive Learning by PrepU" id="9386480a-dadc-4cdc-a767-5367998178ab" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="productId" value="89"/>
+        <con:entry key="userId" value="1500765541"/>
+        <con:entry key="status" value="active"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>productId</con:entry>
+        <con:entry>status</con:entry>
+        <con:entry>userId</con:entry>
+      </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

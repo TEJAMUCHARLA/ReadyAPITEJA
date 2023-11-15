@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="ba39814e-d930-44fe-8c53-edd3cf378c2d" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="true" name="teja" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" zephyrTestName="" zephyrTestId="" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="IncludeOverview">true</con:setting>
+    <con:setting id="IncludeResults">true</con:setting>
+    <con:setting id="FlowLayout">false</con:setting>
+    <con:setting id="ErrorDetails">true</con:setting>
+    <con:setting id="IncludeCoverage">true</con:setting>
+    <con:setting id="ba39814e-d930-44fe-8c53-edd3cf378c2dfileName">teja</con:setting>
+  </con:settings>
+  <con:testStep type="httprequest" name="HTTP Request" id="4e0bcda9-921f-4b27-8861-c05147591185">
+    <con:settings/>
+    <con:config method="POST" xsi:type="con:HttpRequest" id="f7f16682-50dc-45e2-8aa1-214e7e8223ec" name="HTTP Request" postQueryString="true" mediaType="multipart/form-data" downloadIncludedResources="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Cookie" value="WKHPEAuthToken=qM4H5OA0ZP%2fBGna3V7umJsO8xuMqOGjxnAzj8m7BfEFSoYN8m5yQVubokV5gXOLWQGM2TpQkisILiCWmP6wxi6bPBOAKxMxhAXTKocKe%2fdwkOlxsb3hh46HpogmpZtFNjRpVEoAWrxth%2bJ3iFqHB%2fAewh28Z8OAazID%2fpoT1qKDf274H42UGoVmqpmhAp3vY8OtWsYnPL8EbKDjFdhMqOsP8cvtUotnwSo0dlDObJb3w61axic8vwRsoOMV2Eyo630wrBBu7150YywUNIWWq94cfBV0TUW%2fS; AWSALBCORS=hozGnCaewgoigUuB5HQKrSRx5ppgCHKWBuvH8+hKmcjOgPU57WW0QcIpJ6MHEMG9KqRwt12sAj6vRSDvvUdFJo0FlBI03a2yppgp4Xc9329IMJFjFwrn4y5hwDqa" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+      </con:settings>
+      <con:endpoint>https://contentqa01-thepoint.hlrpphoenix.com/Course/Create</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>IsActive</con:name>
+          <con:value>True</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>True</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>Id</con:name>
+          <con:value>00000000-0000-0000-0000-000000000000</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>00000000-0000-0000-0000-000000000000</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>TitleId</con:name>
+          <con:value>ae1088d9-4b7c-47f1-aadf-36da00af87b9</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>ae1088d9-4b7c-47f1-aadf-36da00af87b9</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>RedirectOnComplete</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+        </con:parameter>
+        <con:parameter>
+          <con:name>InstitutionName</con:name>
+          <con:value>Misc-Default Filler</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>Misc-Default Filler</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>InstitutionId</con:name>
+          <con:value>001d0000029ZCmSAAW</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>001d0000029ZCmSAAW</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>ProgramType</con:name>
+          <con:value>LPN/LVN</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>LPN/LVN</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>Name</con:name>
+          <con:value>TEJA TEST1234345</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>TEJA TEST1234345</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>Section</con:name>
+          <con:value>sec1</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>sec1</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>Time</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+        </con:parameter>
+        <con:parameter>
+          <con:name>Term</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+        </con:parameter>
+      </con:parameters>
+      <con:environmentSpec>
+        <con:entry environmentId="cf5ed83e-b834-45a4-90bc-14b6aa7784d5">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="httprequest" name="HTTP Request12345" id="b104a802-d0e9-4f67-a961-cb59a1759d7c">
+    <con:settings/>
+    <con:config method="POST" xsi:type="con:HttpRequest" id="f3e62451-3acd-424a-8060-bae7a1590ad8" name="HTTP Request12345" postQueryString="true" mediaType="multipart/form-data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<con:entry key="Cookie" value="cf_clearance=RIkc6gZHZWAkkrpZJbywHKuAgXcZQzILL_F96O6NNFk-1694575055-0-1-cde3f126.c9cea907.e8f9a00d-0.2.1694575055; ASP.NET_SessionId=s4zmmvuim3dmkbwwwvvje4tm; WKHPE.ThePoint.CookieTest=&quot;&quot;; PassiveAuthenticationCookie=true; liveagent_oref=https://preprod-sso.hlrpbooks.com/; OptanonAlertBoxClosed=2023-09-13T03:17:49.595Z; liveagent_sid=f6b0acfa-1c66-4e2a-abd9-622d20e17054; liveagent_vc=2; liveagent_ptid=f6b0acfa-1c66-4e2a-abd9-622d20e17054; .ASPXAUTH=AC7442B32275A10B8577D6C4B50BCAA4FE2221F05B87B5693E84EE256C648CDC643E27F9156FB0437487338E8863984D2676C447E547C6961FA0A8280341A9DD55990C8D983004390C273A26357AF0AE01E72621E6BFA7B7C41DD6EDBE6F12141930587A07C50507D9F73C637E3193AC2214FE06494A96E50EE69F9833B03968BFD16DABD0CC406694780DDAAD6A2ACC83380CFEC6771C7DF9608D4E81457B256AAD3B6D2CCD312F90737AF083E0E9F5BC29C57BB0FD5585446747BE8607711EAE226B7492F9AA0CB28F32EF05ADF5B89450F0C2B308357786291E748916608B95B5F550B772C2444D364DFD299F19951564E43C10497D033E44567E2D65E82ADDC3C49FB4E9D11A7941355943962FE2E7579DF49164C509F9BE7315011187413E7B32782B4FE390708FEE4472D8549E06898096C74723DB261D68E1B6C448125D23ABA91544806309AFCF078D3DCBDE70D42FCBC53E4278D3396B9CBE043EFD36CD4C10B0DEFE2876E3FD9F52834B375C2A947568AEEA5E950F796281E1798E550C4A17CBAF4E4F04B9B032F8AAEE832F22F5C04EE9E70A8B952E27E55274B38D73E673735868B58383D2CC00A0EA2A5A964C6DC92FB886BB6A298AA3E2D85CCA086A3B0A62DB2D0D846A5B04462BCF98128391EA85B73CD06AC0D9491126C7C8F19CA9B7886633A2B7C535F53C7F963836BC13F2B4FD32D74AF0EB42260F604873DC5E5557281DB4FA050522CE715FA30EBF22B9FF15EE74A1FFB7448FC98D0692E0C38DC8A3297BA8583C83048D3882B4C54AAA2ED917129840CCE6169E54E85D2C67024C87FE2E9111E8271BD4BAAD8AC1233E1AFB29ADDCACABF8AC95045A7A2FD9816A3F2156B8C195B9CA0994484B159C279FAEA8F60085A0B751E801E077E283F1455AF4552C840F40AD480BA99D18943FC50C9A7417DE934D690964C66BB22E5D94CD667EF49D0CCDE46FBF8B319F65EFCB98CACA75E4F79D4C00F9; OptanonConsent=isGpcEnabled=0&amp;datestamp=Wed+Sep+13+2023+09%3A32%3A33+GMT%2B0530+(India+Standard+Time)&amp;version=6.38.0&amp;isIABGlobal=false&amp;consentId=eac55d60-90c5-4e15-a4a7-42265c46d1f4&amp;interactionCount=1&amp;landingPath=NotLandingPage&amp;groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&amp;hosts=H160%3A1%2CH115%3A1%2CH63%3A1%2CH114%3A1%2CH117%3A1%2CH23%3A1%2CH116%3A1&amp;genVendors=&amp;geolocation=IN%3BTG&amp;AwaitingReconsent=false; CloudFront-Key-Pair-Id=APKAIFKBUKZZ73UYKL7A; thepoint_token_access=&quot;eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzc28ud2tocGUuY29tIiwiYXVkIjoiM2MzOTg0NmMtODg2YS1kZjExLWIxMTUtMDA1MDU2YzAwMDA4IiwiYXV0aF90aW1lIjoxNjk0NTg0NTE2LCJuYW1lIjoiQVBJX0F1dG9tYXRpb24gU3R1ZGVudDEwIiwianRpIjoiNDc1N2MxOGQtNTM5Ny00NTQyLTk0OTYtMzliNzY1MGU2ODY5IiwiaWF0IjoxNjk0NTg0NTE2LCJleHAiOjE2OTQ2NzA5MTYsInN1YiI6IjFhOGY0MDM5LWQzZmYtNDY5OS05NzU0LTQ1NGMwMTJjZTI0MiIsInJvbGVzIjoid2tocGUtZW5kIHVzZXIiLCJ3a2hwZV9wZXJtaXNzaW9ucyI6WyJDYW5Vc2VQZXJzb25hbGl6YXRpb25GZWF0dXJlcyJdLCJ3a2hwZV90b2tlbiI6InBzNEhnVFgxWU1jbWNoRjRyZkp0Mk1CY1dLZis0UEU5SHBPZTlIREczV28rS2MzY21ZY1JKQzQveGJueDdoM3VucFZzU0JidVR0OFQ1TWU1cmhoY2NxYlBCT0FLeE14aEFYVEtvY0tlL2R3a09seHNiM2hoNCtSTThjc0IyV2FSdjZjTmUwSlJWMHJQQXVyUmphUjQvUVBPa3RTUWhWb0ZDcHkwMjE5ZlcrZVBIYmF1aUxyZEhWbXFwbWhBcDN2WThPdFdzWW5QTDhFYktEakZkaE1xT3NQOGN2dFVvdG53U28wZGxET2JKYjN3NjFheGljOHZ3UnNvT01WMkV5bzYzMHdyQkJ1NzE1MFl5d1VOSVdXcTk0Y2ZCVjBUVVcvUyIsInRva2VuX3R5cGUiOiJiZWFyZXIifQ.nDXKTDnK-x-ApauUAtTv5umrBH9G_6mv9bERR8Xn53I2uZMC0BmixBM0jhvtKyOMaRyG6ytNPxUeT0opM_4_p-rbVVKy_3coFMS3bOnv_9U4Uw9VYVBQUhNrcScpH9mrH2xVC_ySwZ5tkm2GCszvIbqrYAkHz2IVp5Uj2zXU3ss&quot;; CloudFront-Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9xZTAxLWNjbS5obHJwcGhvZW5peC5jb20vKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTY5NDYyNzcyM319fV19; CloudFront-Signature=QhqQ~~ONfyrkmJseGtIGqla~xa6EJYIWE~VlrqjV6i6yk2Rb-PvnyTP5r94Ri88g4c61ZIxPJLwpI4X1YwwkrnimVRf4VH27TKNDh4HPA40EYFQnHs2XFAwe89hushsO~CdJ65j3f3jV8DldhVfAD2~lJzR8oBo8xLWQfmrLA1wWm94e632VVLKe84wL0DjFM2Kx58bpsv9Jsohs2Oo1L-dzOft7QZNNvRyQC4J1L~f3Q12WwiB9lqsR~PjJCNTXcmp7e0wzQnDavQKKr~Fxz3yJoKUJsYYr3aU2gzaCmIkFFkMR5NWqdr6TH1SSuQtp7JluJDQ-ZBiZQOVZZe-1aA__; AWSALB=xon7agVYgU5bTJDca5g6dbG8WtO7DTf0kahw656i16fED//Mz8nkNfIzLNketsABv/UNcqRMaNreUuHsVtNEvTJXwtJ6LwsT7/XKIxGebkEKfwDrPRQuYR7y8GW1; AWSALBCORS=xon7agVYgU5bTJDca5g6dbG8WtO7DTf0kahw656i16fED//Mz8nkNfIzLNketsABv/UNcqRMaNreUuHsVtNEvTJXwtJ6LwsT7/XKIxGebkEKfwDrPRQuYR7y8GW1" xmlns:con="http://eviware.com/soapui/config"/>]]></con:setting>
+      </con:settings>
+      <con:endpoint>https://contentqa01-thepoint.hlrpphoenix.com/Course/Create</con:endpoint>
+      <con:request>IsActive: True
+Id: 00000000-0000-0000-0000-000000000000
+TitleId: ae1088d9-4b7c-47f1-aadf-36da00af87b9
+RedirectOnComplete: 
+InstitutionName: Misc-Default Filler
+InstitutionId: 001d0000029ZCmSAAW
+ProgramType: LPN/LVN
+Name: TEST TEJA 001
+Section: sec1
+Time: 
+Term:
+Location:</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="httprequest" name="Create class" id="1f9db6d0-dad9-4c27-878b-cc5139ddd62a">
+    <con:settings/>
+    <con:config method="POST" xsi:type="con:HttpRequest" id="5206f243-b0ca-4903-9cd8-d4843fddb464" name="Create class" postQueryString="true" mediaType="multipart/form-data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<con:entry key="Cookie" value="cf_clearance=yNuxZ9r.bo8XiNTqtgVMQJi9jbrGVGCMsbO.K6VCvuw-1694671689-0-1-cde3f126.c9cea907.e8f9a00d-0.2.1694671689;  ASP.NET_SessionId=jpyptinga5vsxxwwsrsoyfsw;  WKHPE.ThePoint.CookieTest=&quot;&quot;;  liveagent_oref=https://preprod-sso.hlrpbooks.com/;  liveagent_sid=29f2b278-b719-41f3-9c6d-b47fa7433345;  liveagent_vc=2;  liveagent_ptid=29f2b278-b719-41f3-9c6d-b47fa7433345;  OptanonAlertBoxClosed=2023-09-14T06:08:19.274Z;  CloudFront-Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jb250ZW50cWEwMS1jY20uaGxycHBob2VuaXguY29tLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2OTQ3MTQ5NDN9fX1dfQ__;  CloudFront-Signature=oBtc-f5ww3Cg6kr81lcuoZYvIUxStwOeJQRWtAAmrh9WbqTGYTRcKJnH6HMMEW9IUhnJbCpfRFLywnwpqDifjFxz0PaffS3jEunUFAkkWpwOYL24C0~pJTNT5FXkwT2mOoAaol5GaxrsA87fDdc5whoci1xPpiASb4hiOlva9RKnAeKf3~J0bsj1pK7lPFhWnYZTONA2kE7PrZXP61nxyi0vWppeGBA9cCbL0RnEcAaq2dEAHG1MVovAFYa~koD4acXk3u3ZiKPVT233y68RU6XFPT-i3TD19RlAWq~2KQNjUPStQczqi6NTSatlxvxXvz4OX07gWWh88HerxErk-g__;  CloudFront-Key-Pair-Id=APKAIFKBUKZZ73UYKL7A;  PassiveAuthenticationCookie=true;  .ASPXAUTH=4F01F8A4808E05CF4202ED7A39D49EDB71825B23D9851BA52AC59BA7A4E367E4A748C2F477B39DE81A510F9222B58828E2D712EDBF88137055035C7DD085A1AB3DB7C449488E167FCBF73C5E96A407500404ED1DB0FDF4AF4353AB6B43FD6033CB35CB9138C7C96B526B4B829B53CF29CCC1129F88A3DD1B436EC7C6A06991888E181DCBE9261D5080B66034C2FDED05ABD82714A55951612600078B6DB87AF3209D637BA50DFC983ED8114C4576F30C19A5AD4D445BC183AB1D909BC7681C9005A11371CB3B78F7BF3F559C83A4CBE65940F8D50D497C8B46F0C6BBABE32B2556D04A2B8098075608085FC73B997288550F1B5805EFF668B6104B8C04CE2CBA65CFC649C2325537AC8AEE6ED16A17E3985ABCFDD9DF11DD116B6CE964D3B5B95EBBA6D4FAF024D77AADC584423C8440165388AD7AB98D2635CBD085FE9C8DB418DB3C04152AB66EE683D112911B5472DCAA881E511150F2F9BD988B530BC0B943A5DCC9063960DB83D020D33551309E6E88DC8FDF1C55C059C259A9BD3EE905F47F7D4AA75DD2EEDBABA4D4A5CBBB3A03E6F2CD8156DB40ECA004ED4677A95F5C170A951A8DCF4B9AF237E6648D1B9A7B748E3688CB9CA76F3FC4E3F90ECBE06DEF7A0311045A7E81BB0E62ED3E96F7994CB78D2EC0EBE4CA0A89226DDF040CFCF2251269620378F3ED1E10AA29EC31A80F28C1F31B32316DE754D4CEAE208F75E3A4E97A8261443DA002D6CB7C3D2A368FAEDCAD3481AB0469E84C233D76B73B18090102A90A41CA2DB6A386736DBFAFBD3EB25676CF7E967AA61E25FB40ACC02E54EABB7E2EAA6C9C3B822DD4E4243F9A4542FD98A3719EBD84E71C185979F5096777A0F7F64696CC24A486E8345D85AFABF085A7459B3F6FE04D5D9689B56EDFFE2DFEB431149E76EBE0C083B8E626C72119D839E8D0C90ED03C6AA3C01AF73649FD41E94BB34AA3A165DD9520C2BD7B994076F7FEDE1F6CB6E1F00BED61;  thepoint_token_access=&quot;eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzc28ud2tocGUuY29tIiwiYXVkIjoiM2MzOTg0NmMtODg2YS1kZjExLWIxMTUtMDA1MDU2YzAwMDA4IiwiYXV0aF90aW1lIjoxNjk0NjkzODUzLCJuYW1lIjoicHJlcHUwNSBJbnN0cnVjdG9yMDUiLCJqdGkiOiJiMjNhOTA1ZC1lNWMzLTQ4MzktOTA4MS04MWU4MDNlZDQzYjQiLCJpYXQiOjE2OTQ2OTM4NTMsImV4cCI6MTY5NDc4MDI1Mywic3ViIjoiMDgyNDIyZTMtNDgyNi00NzU4LTkwZmMtNDU1ZTAxMGFjNWIwIiwicm9sZXMiOiJ3a2hwZS1lbmQgdXNlciIsIndraHBlX3Blcm1pc3Npb25zIjpbIkNhblVzZVBlcnNvbmFsaXphdGlvbkZlYXR1cmVzIl0sIndraHBlX3Rva2VuIjoicU00SDVPQTBaUC9CR25hM1Y3dW1KazljUHh1d0FzaW9DZ28vMmJ2ZUhDSGdFUVlpSXlKNHlnSUJqdC9hY0hsOWk3Q3h4cUlKUTB4YTZiMG1jSmpSS0tiUEJPQUt4TXhoQVhUS29jS2UvZHdrT2x4c2IzaGg0Nkhwb2dtcFp0Rk5qUnBWRW9BV3J4dGgrSjNpRnFIQi9BZXdoMjhaOE9BYXpJRC9wb1QxcUtEZjI3NEg0MlVHb1ZtcXBtaEFwM3ZZOE90V3NZblBMOEViS0RqRmRoTXFPc1A4Y3Z0VW90bndTbzBkbERPYkpiM3c2MWF4aWM4dndSc29PTVYyRXlvNjMwd3JCQnU3MTUwWXl3VU5JV1dxOTRjZkJWMFRVVy9TIiwidG9rZW5fdHlwZSI6ImJlYXJlciJ9.HhMgMCfjpWZqVSluZRb-ZbI2kcL6-EeyaH4-taZZW3huCrub9RR9Kh5QvdcN9oW4jXjZd6ssopJmG-RzvE1XB-JPR2GT3ZW7rI3UQEb0AjXAfTLicVETEZ02T-c_IyJitGOugU7asXoJJ3QjDvyFQ0WI8ZfNPM7pGeDYtDxv0nA&quot;;  OptanonConsent=isGpcEnabled=0&amp;datestamp=Thu+Sep+14+2023+17%3A50%3A02+GMT%2B0530+(India+Standard+Time)&amp;version=6.38.0&amp;geolocation=IN%3BTG&amp;isIABGlobal=false&amp;consentId=9994ac24-f671-41de-a812-7197275a8177&amp;interactionCount=1&amp;landingPath=NotLandingPage&amp;groups=C0001%3A1%2CC0003%3A0%2CC0002%3A0%2CC0004%3A0&amp;hosts=H160%3A1%2CH115%3A1%2CH63%3A1%2CH114%3A0%2CH117%3A0%2CH23%3A0%2CH116%3A0&amp;genVendors=&amp;AwaitingReconsent=false;  AWSALB=sKrRRWvOO+Basqdu4v14atvXR/eo1dPCN/iX4AUJAxNHX3/GLPIO1qDxRf6V4+Tk42TIE++QXYUYgkR6sfAuvPNe8MpHz14qTK3cVU3L/kIhxW5VI+NvDuvoxaVV;  AWSALBCORS=sKrRRWvOO+Basqdu4v14atvXR/eo1dPCN/iX4AUJAxNHX3/GLPIO1qDxRf6V4+Tk42TIE++QXYUYgkR6sfAuvPNe8MpHz14qTK3cVU3L/kIhxW5VI+NvDuvoxaVV" xmlns:con="http://eviware.com/soapui/config"/>]]></con:setting>
+      </con:settings>
+      <con:endpoint>https://contentqa01-thepoint.hlrpphoenix.com/Course/Create</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>IsActive</con:name>
+          <con:value>True</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>True</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>Id</con:name>
+          <con:value>00000000-0000-0000-0000-000000000000</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>00000000-0000-0000-0000-000000000000</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>TitleId</con:name>
+          <con:value>ae1088d9-4b7c-47f1-aadf-36da00af87b9</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>ae1088d9-4b7c-47f1-aadf-36da00af87b9</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>InstitutionName</con:name>
+          <con:value>Misc-Default Filler</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>Misc-Default Filler</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>InstitutionId</con:name>
+          <con:value>001d0000029ZCmSAAW</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>001d0000029ZCmSAAW</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>ProgramType</con:name>
+          <con:value>LPN/LVN</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>LPN/LVN</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>Name</con:name>
+          <con:value>TEST TEJA final2</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>TEST TEJA final2</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>Section</con:name>
+          <con:value>sec1</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>sec1</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>Time</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+        </con:parameter>
+        <con:parameter>
+          <con:name>Term</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+        </con:parameter>
+        <con:parameter>
+          <con:name>Location</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+        </con:parameter>
+        <con:parameter>
+          <con:name>RedirectOnComplete</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+        </con:parameter>
+      </con:parameters>
+      <con:environmentSpec>
+        <con:entry environmentId="cf5ed83e-b834-45a4-90bc-14b6aa7784d5">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="httprequest" name="Student Join" id="cdb1f587-972b-4a2c-81a6-a1fbc9d429de">
+    <con:settings/>
+    <con:config method="POST" xsi:type="con:HttpRequest" id="1e3eaeee-9e2d-4d22-b815-eb2fcc2566e7" name="Student Join" postQueryString="true" mediaType="multipart/form-data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Cookie" value="" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+      </con:settings>
+      <con:endpoint>https://contentqa01-thepoint.hlrpphoenix.com/Course/SignUp</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>Title</con:name>
+          <con:value>Lippincott NCLEX-RN PassPoint Powered by PrepU</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>Lippincott NCLEX-RN PassPoint Powered by PrepU</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>TitleIdentifier</con:name>
+          <con:value>ae1088d9-4b7c-47f1-aadf-36da00af87b9</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>ae1088d9-4b7c-47f1-aadf-36da00af87b9</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>ContinueUrl</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+        </con:parameter>
+        <con:parameter>
+          <con:name>AttemptCount</con:name>
+          <con:value>0</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>0</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>Passcode</con:name>
+          <con:value>99D73D24</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>99D73D24</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="httprequest" name="TEJA" id="5cbfbaf5-8d45-406f-990e-10a3ed686681">
+    <con:settings/>
+    <con:config method="POST" xsi:type="con:HttpRequest" id="f8b4e98d-4718-45e3-9fcc-3407d341cdd0" name="TEJA" postQueryString="false" mediaType="multipart/form-data; boundary=&lt;calculated when request is sent>" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment><con:entry key="Cookie" value="cf_clearance=yNuxZ9r.bo8XiNTqtgVMQJi9jbrGVGCMsbO.K6VCvuw-1694671689-0-1-cde3f126.c9cea907.e8f9a00d-0.2.1694671689; ASP.NET_SessionId=jpyptinga5vsxxwwsrsoyfsw; WKHPE.ThePoint.CookieTest=&quot;&quot;; liveagent_oref=https://preprod-sso.hlrpbooks.com/; liveagent_sid=29f2b278-b719-41f3-9c6d-b47fa7433345; liveagent_vc=2; liveagent_ptid=29f2b278-b719-41f3-9c6d-b47fa7433345; OptanonAlertBoxClosed=2023-09-14T06:08:19.274Z; CloudFront-Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jb250ZW50cWEwMS1jY20uaGxycHBob2VuaXguY29tLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2OTQ3MTQ5NDN9fX1dfQ__; CloudFront-Signature=oBtc-f5ww3Cg6kr81lcuoZYvIUxStwOeJQRWtAAmrh9WbqTGYTRcKJnH6HMMEW9IUhnJbCpfRFLywnwpqDifjFxz0PaffS3jEunUFAkkWpwOYL24C0~pJTNT5FXkwT2mOoAaol5GaxrsA87fDdc5whoci1xPpiASb4hiOlva9RKnAeKf3~J0bsj1pK7lPFhWnYZTONA2kE7PrZXP61nxyi0vWppeGBA9cCbL0RnEcAaq2dEAHG1MVovAFYa~koD4acXk3u3ZiKPVT233y68RU6XFPT-i3TD19RlAWq~2KQNjUPStQczqi6NTSatlxvxXvz4OX07gWWh88HerxErk-g__; CloudFront-Key-Pair-Id=APKAIFKBUKZZ73UYKL7A; PassiveAuthenticationCookie=true; .ASPXAUTH=4682D522B29D1605CB68B7ACEC58049AE201E5513C7E9F5D6706EC2AD0D81FEDB95D60BBAF7DB2B3A0CD7EA523DA9594E1F453285AA494B0F5CF7F36B2952E2E0D80A2B492EA35C966F1826754F983C7DF91F2C7056B7DAC8257E3C2EA3E1E00E343195D6FDCC93409A1EF6EEEFAFE8F253E8E208D367B1F4496529D66D6B53CAE46A645E62CFD1705216E649A8646322691CDA498D45B29FE7554CE19AB5408CF3E91E620E481F5835ED9D4A849AC16E0337634DAC5F3C625B30DBB172AB4D432BB98779AF05E474E145F35E4790A339D931223F9211C69028EB8D751746F8A2A3C03093431DDBB4B1298C579497188D0295185B1581DF0BD993804390711DDAA522E96291EC7A760880D3C8C86BD1A25B3020430A9C013982D9BECEA4164033970A5092B1C561DF64E8BEF25EDC161B62A2211CF71CC53115D19F6D444F85EC94F7AC154722D43BAB604DE7AE634500C51D7A3FF677F02B5BD7A7EECEF0BFBA7878CF6E3DF8452A7553EFED0CC18EED46BD624AC9201C1AD312CFE0C766DAF90F9C72BD07B131540BE0C2B9D4F7EE09B37E9127DAD4F064A866E6827D3A49C26CF3E927CCB217E8855BB97BC0579D11960AA609266C0A2DC7C4500601BC5575E54AFE51288B4430EDCBAA569F4D6186020EF3D1ECC39AFE818081B60C3CC738CC7A291F43E0755BF9AA6753B46CCA2074AAF2862FC2C782F01890B71269F44D3F4D76CD9D8546D07C15C4DC22F79CBA4AB736F5A4D779353B77EAAC0FF800620A4324E206F1C23844987B242CE1D16247A2D11F6A127977AF28B49618FFBAAD1E9B7CF87105BE4BBBEA537FA5965776A6066867321DA2ABAA5035442D44DDC0851F42AE14A4860F366D095862F6AC03E6469D68E39F44B0D7163263CFBE1F3F907AB62A460FBD47ED439B2C8334E07292CF51458826BBFEDA1A7A4908ADBD51B46E769249CACDED7D9715900FFCAFC850DB187423A14318818B435B6F86830; thepoint_token_access=&quot;eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzc28ud2tocGUuY29tIiwiYXVkIjoiM2MzOTg0NmMtODg2YS1kZjExLWIxMTUtMDA1MDU2YzAwMDA4IiwiYXV0aF90aW1lIjoxNjk0NzAzNDUxLCJuYW1lIjoicHJlcHUwNSBJbnN0cnVjdG9yMDUiLCJqdGkiOiI5MjIzOTk3ZS1mMjY3LTQ1M2QtODNhYi03MmU3ZWUzMGUyOTgiLCJpYXQiOjE2OTQ3MDM0NTEsImV4cCI6MTY5NDc4OTg1MSwic3ViIjoiMDgyNDIyZTMtNDgyNi00NzU4LTkwZmMtNDU1ZTAxMGFjNWIwIiwicm9sZXMiOiJ3a2hwZS1lbmQgdXNlciIsIndraHBlX3Blcm1pc3Npb25zIjpbIkNhblVzZVBlcnNvbmFsaXphdGlvbkZlYXR1cmVzIl0sIndraHBlX3Rva2VuIjoicU00SDVPQTBaUDlmMlV0UTJjQy9kNGVnTXdNUnZJbFpuSnRNYS9KZ25VbE9oZGVCYndYTDNKYUVWWm9lTHVuNkFQZHJXWnZZUmUxTHhsdUFFUlAzbFhIUGhUelk3NVVuMUJHKy9BSHRUYno2UjlIc2VFRXBwTEJCQjk3cGMwejl2cVE4RU53WXI5RkpmVHBQQUlma3JKVzk2UzR5YjJ1T280QUNnbm95VitTbFJ1aVlrYmFUQk5Ca1puV0hpYkR6YzZVOU9vK1A2cDVacXFab1FLZDcyTVA4Y3Z0VW90bndGRTFucklYZXluRnpwVDA2ajQvcW5sbXFwbWhBcDN2WW5ZWnYwYlpROXZmK2xlSUdHTkIrYktYOG5XU3NXOW9YIiwidG9rZW5fdHlwZSI6ImJlYXJlciJ9.Vj15qtZ3_A4ZXXGtxsmsnKMN2kN17Yu52rb9aMO5w4c0uz5awQklbAj10US-yaVu_MsxG-PuRQLhOYSxUfG-_MKrGliSWuTm40n70Q7MCj71y79SeXItdrliAlRihpEkk2an2YUAVLV9jdOJP4MfIoY6XRO4l9oVoMl3Mzf8ZQ4&quot;; OptanonConsent=isGpcEnabled=0&amp;datestamp=Thu+Sep+14+2023+20%3A27%3A31+GMT%2B0530+(India+Standard+Time)&amp;version=6.38.0&amp;geolocation=IN%3BTG&amp;isIABGlobal=false&amp;consentId=9994ac24-f671-41de-a812-7197275a8177&amp;interactionCount=1&amp;landingPath=NotLandingPage&amp;groups=C0001%3A1%2CC0003%3A0%2CC0002%3A0%2CC0004%3A0&amp;hosts=H160%3A1%2CH115%3A1%2CH63%3A1%2CH114%3A0%2CH117%3A0%2CH23%3A0%2CH116%3A0&amp;genVendors=&amp;AwaitingReconsent=false; AWSALB=Q4UF8ykb4YKfNxfycQP57+3eGyc4qJP6tCG9z8vG6QnKPPndrprratr9iWUs1mBUbbGEvX5FcuML8u7tRvhh7M3IND33j2IyK2tnhJ9x7whRnWRH5wRDUWLxq8UC; AWSALBCORS=Q4UF8ykb4YKfNxfycQP57+3eGyc4qJP6tCG9z8vG6QnKPPndrprratr9iWUs1mBUbbGEvX5FcuML8u7tRvhh7M3IND33j2IyK2tnhJ9x7whRnWRH5wRDUWLxq8UC" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Origin" value="https://contentqa01-thepoint.hlrpphoenix.com" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Sec-Ch-Ua" value="&quot;Chromium&quot;;v=&quot;116&quot;, &quot;Not)A;Brand&quot;;v=&quot;24&quot;, &quot;Google Chrome&quot;;v=&quot;116&quot;" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Accept" value="*/*" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="method" value="POST" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="scheme" value="https" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="X-Requested-With" value="XMLHttpRequest" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Sec-Ch-Ua-Platform" value="&quot;Windows&quot;" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Referer" value="https://contentqa01-thepoint.hlrpphoenix.com/book/show/366152" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Sec-Fetch-Dest" value="empty" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Sec-Fetch-Site" value="same-originUser-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Accept-Encoding" value="gzip, deflate, br" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Sec-Fetch-Mode" value="cors" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="path" value="/Course/Create" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="authority" value="contentqa01-thepoint.hlrpphoenix.com" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Accept-Language" value="en-US,en;q=0.9" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Content-Length" value="266" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Sec-Ch-Ua-Mobile" value="?0" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Content-Type" value="multipart/form-data; boundary=&lt;calculated when request is sent>" xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></con:setting>
+      </con:settings>
+      <con:endpoint>https://contentqa01-thepoint.hlrpphoenix.com/Course/Create</con:endpoint>
+      <con:request>IsActive:True
+Id:00000000-0000-0000-0000-000000000000
+TitleId:ae1088d9-4b7c-47f1-aadf-36da00af87b9
+RedirectOnComplete:
+InstitutionName:Misc-Default Filler
+InstitutionId:001d0000029ZCmSAAW
+ProgramType:LPN/LVN
+Name:TEST TEJA 122333
+Section:sec1
+Time:
+Term:
+Location:</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Groovy Script" id="5d9a8068-0779-44af-b4d1-fbc6983f65db">
+    <con:settings/>
+    <con:config>
+      <script>def student_SetCookie = context.expand( '${#Project#Student_Set-Cookie}' )
+
+
+log.info(student_SetCookie)
+
+def student_SetCookie2 = student_SetCookie.toString().replace("WKHPEAuthToken=","")
+log.info(student_SetCookie2)
+testRunner.testCase.testSuite.setPropertyValue("student_SetCookie2", student_SetCookie2.toString())</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="httprequest" name="Student Join 2" id="75f34698-b06b-4fc0-86e6-278bd0c7a42e">
+    <con:settings/>
+    <con:config method="POST" xsi:type="con:HttpRequest" id="1e3eaeee-9e2d-4d22-b815-eb2fcc2566e7" name="Student Join 2" postQueryString="true" mediaType="multipart/form-data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="WKHPEAuthToken" value="${#TestSuite#student_SetCookie2}" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+      </con:settings>
+      <con:endpoint>https://contentqa01-thepoint.hlrpphoenix.com/Course/SignUp</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>Title</con:name>
+          <con:value>Lippincott NCLEX-RN PassPoint Powered by PrepU</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>Lippincott NCLEX-RN PassPoint Powered by PrepU</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>TitleIdentifier</con:name>
+          <con:value>ae1088d9-4b7c-47f1-aadf-36da00af87b9</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>ae1088d9-4b7c-47f1-aadf-36da00af87b9</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>ContinueUrl</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+        </con:parameter>
+        <con:parameter>
+          <con:name>AttemptCount</con:name>
+          <con:value>0</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>0</con:default>
+        </con:parameter>
+        <con:parameter>
+          <con:name>Passcode</con:name>
+          <con:value>99D73D24</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>99D73D24</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

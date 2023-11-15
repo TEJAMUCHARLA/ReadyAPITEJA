@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="GET Bookmark questions feedback details from HAID" path="/${#Project#Version}/userQuestionFeedbackTypes" id="e4fffd2b-4a85-4b74-a050-0791eb717a70" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="e4fffd2b-4a85-4b74-a050-0791eb717a70fileName">GET-Bookmark-questions-feedback-details-from-HAID</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET Bookmark questions feedback details from HAID" id="424a06dc-8554-4189-acee-70166ef692aa" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="GET Bookmark questions feedback details from HAID" id="f259ad8f-d76c-4143-befc-aa480d22c1e9" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

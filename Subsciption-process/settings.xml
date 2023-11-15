@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="8e077a0c-e957-4b23-b953-e9ae76694858" name="Subsciption process" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="8e077a0c-e957-4b23-b953-e9ae76694858fileName">Subsciption-process</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

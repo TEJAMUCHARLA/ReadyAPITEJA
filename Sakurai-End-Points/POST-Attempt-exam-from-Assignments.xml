@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="POST Attempt exam from Assignments" path="/${#Project#Version}/exams" id="227202fb-90ff-4f1f-bd8f-c054d75a9e4f" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="227202fb-90ff-4f1f-bd8f-c054d75a9e4ffileName">POST-Attempt-exam-from-Assignments</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="POST Attempt exam from Assignments" id="99554fed-a2e3-4efe-b39f-44a4ff607b74" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="POST Attempt exam from Assignments" id="6667294f-ae1b-4be7-a4b1-844376cbbce6" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request>{
+  "questionsCompleted": null,
+  "correctResultsCount": null,
+  "examLength": 150,
+  "timeLeft": null,
+  "timeLimit": 300,
+  "masteryLevel": null,
+  "timeOnCurrentQuestion": null,
+  "timeOnExam": null,
+  "completedIn": null,
+  "averageTimeOnQuestion": null,
+  "examIndex": null,
+  "autoShutoff": false,
+  "inProgressAlert": false,
+  "minimumPerformanceReached": false,
+  "allowBookmarks": false,
+  "minimumProficiencyThreshold": null,
+  "productIsbn": null,
+  "student": "1500765541",
+  "class": "1500177737",
+  "courseSection": null,
+  "assignment": "1501424300"
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

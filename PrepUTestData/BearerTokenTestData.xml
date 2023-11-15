@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="f59208b4-e983-4fc1-8749-c6e163d1608e" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="BearerTokenTestData" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="f59208b4-e983-4fc1-8749-c6e163d1608efileName">BearerTokenTestData</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Get Bearer Token" id="e9da63c6-b998-47ca-811c-12d5be17a056">
+    <con:settings/>
+    <con:config service="BearerToken" resourcePath="/${#Project#Version}/authKeys/sso" methodName="sso" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Get Bearer Token" id="8c80f011-d1af-4025-910c-5444162ade09" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Sakurai-Primary-Product-Isbn" value="${#Project#Sakurai-Primary-Product-Isbn#$}" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://sakurai-api-contentqa.prep-u.com/1/authKeys/sso</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="bea26e62-8627-4b70-98de-4b72588cdc10" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="GroovyScriptAssertion" id="6a5f66a7-d7c7-4b73-b51c-0c676a658181" name="Script Assertion">
+          <con:configuration>
+            <scriptText>import groovy.json.JsonSlurper
+import java.lang.*;
+
+def response = context.expand( '${Get Bearer Token#Response}' )
+def ResponseData = new JsonSlurper().parseText(response)
+def sakuraiPrimaryProductIsbn = context.expand( '${#Project#Sakurai-Primary-Product-Isbn}' )
+
+assert ResponseData.data != null
+assert ResponseData.data.id != null
+assert ResponseData.data.token != null
+assert ResponseData.data.refreshToken != null
+assert ResponseData.data.tokenType == "bearer"
+assert ResponseData.data.product != null
+assert ResponseData.data.productISBN == sakuraiPrimaryProductIsbn
+assert ResponseData.sideLoaded.users != null
+assert ResponseData.sideLoaded.publishers != null
+assert ResponseData.sideLoaded.products != null
+
+context.testCase.testSuite.project.setPropertyValue('BearerToken',"Bearer "+ResponseData.data.token.toString())</scriptText>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="product" value="${#Project#Sakurai-Primary-Product-Isbn}"/>
+          <con:entry key="token" value="${#Project#QCSSoToken}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>token</con:entry>
+          <con:entry>product</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="fc5dccc3-63b2-40b9-8037-0f625641ec42">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>
