@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:soapui-project id="a62e73a5-5288-4787-ad43-a4ba70cf7ff3" created="3.46.1" activeEnvironment="CQA PrepU" encryptionMode="Not encrypted" name="API PrepU Smoke NOV 7" projectVersion="" updated="3.42.1" resourceRoot="" compositeProjectFormat="1.3" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings/>
+  <con:settings>
+    <con:setting id="a62e73a5-5288-4787-ad43-a4ba70cf7ff3fileName">PrepU-Smoke-readyapi-project</con:setting>
+  </con:settings>
   <con:requirements/>
   <con:properties>
     <con:property>
